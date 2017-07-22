@@ -13,15 +13,447 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Tokens">
+      <UniqueIdentifier>{e08ba81b-407f-498b-bdd8-4877892ff117}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Parsing">
+      <UniqueIdentifier>{1de647d8-c626-4a2f-ab89-9a97a8164cfd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Parsing">
+      <UniqueIdentifier>{e453d72e-ce16-4143-9b77-d4e79c538692}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Helpers">
+      <UniqueIdentifier>{a3546597-b9a0-4d8d-8d1d-1da2853a4e27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Helpers">
+      <UniqueIdentifier>{3518943d-0daa-4f7a-9a78-193e931d8653}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Exceptions">
+      <UniqueIdentifier>{fdec9250-8e04-4ae7-9da2-a4a819425402}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Exceptions">
+      <UniqueIdentifier>{59a307a9-0d9f-44ce-b386-175dadd7451f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Tokens">
+      <UniqueIdentifier>{6361b1ae-2743-45eb-939a-83e36af48f2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Parsing\LineParsers">
+      <UniqueIdentifier>{b0951aa5-a117-4596-80c3-148a29921ecf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Parsing\LineParsers">
+      <UniqueIdentifier>{997dc1b2-50de-426d-86fc-bd06dade444a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Math">
+      <UniqueIdentifier>{b81dd8d3-712c-4d74-b02c-380d7aa7dac6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Math">
+      <UniqueIdentifier>{ca1cfc39-2207-4ef6-b6b4-89e7effc0e4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Exceptions\ParserExceptions">
+      <UniqueIdentifier>{ae83a546-e536-4363-9868-3335ff08602a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Exceptions\ParserExceptions">
+      <UniqueIdentifier>{43944269-c02d-410b-936c-0cf0724656ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Parsing\ExpressionBuilding">
+      <UniqueIdentifier>{414f1827-862f-410c-bc6c-bf932be12319}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Parsing\ExpressionBuilding">
+      <UniqueIdentifier>{405c032d-986b-4081-8d4f-e8b88098bab7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Operands">
+      <UniqueIdentifier>{2c0e5b08-a516-4b00-826d-55997d9ccde1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Operands">
+      <UniqueIdentifier>{c7465953-224c-49a8-8378-90608f2728f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Parsing\OperandParsers">
+      <UniqueIdentifier>{8dd9da66-df94-414f-b9d3-502d750f8454}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Parsing\OperandParsers">
+      <UniqueIdentifier>{09b70fea-bfca-4b44-8873-a81614f99862}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Parsing\InstructionParsers">
+      <UniqueIdentifier>{f46e3b94-34cb-4bce-8cf3-6b89acc6310e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Parsing\InstructionParsers">
+      <UniqueIdentifier>{ee26eb44-6cc0-4704-bc10-4fb60444a740}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source.cpp">
+    <ClCompile Include="FileReader.cpp">
+      <Filter>Source Files\Parsing</Filter>
+    </ClCompile>
+    <ClCompile Include="StringHelper.cpp">
+      <Filter>Source Files\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="MicroRiscParser.cpp">
+      <Filter>Source Files\Parsing</Filter>
+    </ClCompile>
+    <ClCompile Include="Parser.cpp">
+      <Filter>Source Files\Parsing</Filter>
+    </ClCompile>
+    <ClCompile Include="AssemblerException.cpp">
+      <Filter>Source Files\Exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="LabelToken.cpp">
+      <Filter>Source Files\Tokens</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LineParser.cpp">
+      <Filter>Source Files\Parsing\LineParsers</Filter>
+    </ClCompile>
+    <ClCompile Include="Expression.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Literal.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Operation.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Symbol.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Token.cpp">
+      <Filter>Source Files\Tokens</Filter>
+    </ClCompile>
+    <ClCompile Include="AddOperation.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="MultiplyOperation.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="SubtractOperation.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="ParserException.cpp">
+      <Filter>Source Files\Exceptions\ParserExceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="DivisionByZeroException.cpp">
+      <Filter>Source Files\Exceptions\ParserExceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="NonExistingSymbolException.cpp">
+      <Filter>Source Files\Exceptions\ParserExceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="InvalidExpressionException.cpp">
+      <Filter>Source Files\Exceptions\ParserExceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="IncorrectLabelException.cpp">
+      <Filter>Source Files\Exceptions\ParserExceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="MicroRiscExpression.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="ExpressionBuilder.cpp">
+      <Filter>Source Files\Parsing</Filter>
+    </ClCompile>
+    <ClCompile Include="DivideOperation.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="MessageException.cpp">
+      <Filter>Source Files\Exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="ExpressionTokenFactory.cpp">
+      <Filter>Source Files\Parsing\ExpressionBuilding</Filter>
+    </ClCompile>
+    <ClCompile Include="SubtractToken.cpp">
+      <Filter>Source Files\Parsing\ExpressionBuilding</Filter>
+    </ClCompile>
+    <ClCompile Include="SymbolToken.cpp">
+      <Filter>Source Files\Parsing\ExpressionBuilding</Filter>
+    </ClCompile>
+    <ClCompile Include="LiteralToken.cpp">
+      <Filter>Source Files\Parsing\ExpressionBuilding</Filter>
+    </ClCompile>
+    <ClCompile Include="OperationToken.cpp">
+      <Filter>Source Files\Parsing\ExpressionBuilding</Filter>
+    </ClCompile>
+    <ClCompile Include="AddToken.cpp">
+      <Filter>Source Files\Parsing\ExpressionBuilding</Filter>
+    </ClCompile>
+    <ClCompile Include="ClosingBraceToken.cpp">
+      <Filter>Source Files\Parsing\ExpressionBuilding</Filter>
+    </ClCompile>
+    <ClCompile Include="DivideToken.cpp">
+      <Filter>Source Files\Parsing\ExpressionBuilding</Filter>
+    </ClCompile>
+    <ClCompile Include="MultiplyToken.cpp">
+      <Filter>Source Files\Parsing\ExpressionBuilding</Filter>
+    </ClCompile>
+    <ClCompile Include="OpeningBraceToken.cpp">
+      <Filter>Source Files\Parsing\ExpressionBuilding</Filter>
+    </ClCompile>
+    <ClCompile Include="Immediate.cpp">
+      <Filter>Source Files\Operands</Filter>
+    </ClCompile>
+    <ClCompile Include="MemoryDirect.cpp">
+      <Filter>Source Files\Operands</Filter>
+    </ClCompile>
+    <ClCompile Include="RegisterDirect.cpp">
+      <Filter>Source Files\Operands</Filter>
+    </ClCompile>
+    <ClCompile Include="RegisterIndirect.cpp">
+      <Filter>Source Files\Operands</Filter>
+    </ClCompile>
+    <ClCompile Include="RegisterIndirectOffset.cpp">
+      <Filter>Source Files\Operands</Filter>
+    </ClCompile>
+    <ClCompile Include="ImmediateParser.cpp">
+      <Filter>Source Files\Parsing\OperandParsers</Filter>
+    </ClCompile>
+    <ClCompile Include="InstructionToken.cpp">
+      <Filter>Source Files\Tokens</Filter>
+    </ClCompile>
+    <ClCompile Include="OperandParser.cpp">
+      <Filter>Source Files\Operands</Filter>
+    </ClCompile>
+    <ClCompile Include="RegisterDirectParser.cpp">
+      <Filter>Source Files\Parsing\OperandParsers</Filter>
+    </ClCompile>
+    <ClCompile Include="RegisterParser.cpp">
+      <Filter>Source Files\Parsing</Filter>
+    </ClCompile>
+    <ClCompile Include="MemoryDirectParser.cpp">
+      <Filter>Source Files\Parsing\OperandParsers</Filter>
+    </ClCompile>
+    <ClCompile Include="RegisterIndirectParser.cpp">
+      <Filter>Source Files\Parsing\OperandParsers</Filter>
+    </ClCompile>
+    <ClCompile Include="RegisterIndirectOffsetParser.cpp">
+      <Filter>Source Files\Parsing\OperandParsers</Filter>
+    </ClCompile>
+    <ClCompile Include="InstructionLineParser.cpp">
+      <Filter>Source Files\Parsing\LineParsers</Filter>
+    </ClCompile>
+    <ClCompile Include="InterruptInstructionParser.cpp">
+      <Filter>Source Files\Parsing\InstructionParsers</Filter>
+    </ClCompile>
+    <ClCompile Include="ConditionalJumpInstructionParser.cpp">
+      <Filter>Source Files\Parsing\InstructionParsers</Filter>
+    </ClCompile>
+    <ClCompile Include="InstructionParser.cpp">
+      <Filter>Source Files\Parsing\InstructionParsers</Filter>
+    </ClCompile>
+    <ClCompile Include="InstructionCodeParser.cpp">
+      <Filter>Source Files\Parsing</Filter>
+    </ClCompile>
+    <ClCompile Include="AluInstructionParser.cpp">
+      <Filter>Source Files\Parsing\OperandParsers</Filter>
+    </ClCompile>
+    <ClCompile Include="NotInstructionParser.cpp">
+      <Filter>Source Files\Parsing\OperandParsers</Filter>
+    </ClCompile>
+    <ClCompile Include="StackInstructionParser.cpp">
+      <Filter>Source Files\Parsing\OperandParsers</Filter>
+    </ClCompile>
+    <ClCompile Include="UnconditionalJumpInstructionParser.cpp">
+      <Filter>Source Files\Parsing\OperandParsers</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadInstructionParser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StoreInstructionParser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Header.h">
+    <ClInclude Include="Token.h">
+      <Filter>Header Files\Tokens</Filter>
+    </ClInclude>
+    <ClInclude Include="InstructionToken.h">
+      <Filter>Header Files\Tokens</Filter>
+    </ClInclude>
+    <ClInclude Include="FileReader.h">
+      <Filter>Header Files\Parsing</Filter>
+    </ClInclude>
+    <ClInclude Include="StringHelper.h">
+      <Filter>Header Files\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Parser.h">
+      <Filter>Header Files\Parsing</Filter>
+    </ClInclude>
+    <ClInclude Include="MicroRiscParser.h">
+      <Filter>Header Files\Parsing</Filter>
+    </ClInclude>
+    <ClInclude Include="AssemblerException.h">
+      <Filter>Header Files\Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="LabelToken.h">
+      <Filter>Header Files\Tokens</Filter>
+    </ClInclude>
+    <ClInclude Include="LineParser.h">
+      <Filter>Header Files\Parsing\LineParsers</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonRegexes.h">
+      <Filter>Header Files\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Expression.h">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Literal.h">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Operation.h">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Symbol.h">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="AddOperation.h">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="MultiplyOperation.h">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="SubtractOperation.h">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="DivideOperation.h">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="ParserException.h">
+      <Filter>Header Files\Exceptions\ParserExceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="DivisionByZeroException.h">
+      <Filter>Header Files\Exceptions\ParserExceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="NonExistingSymbolException.h">
+      <Filter>Header Files\Exceptions\ParserExceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="MicroRiscExpression.h">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="InvalidExpressionException.h">
+      <Filter>Header Files\Exceptions\ParserExceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="IncorrectLabelException.h">
+      <Filter>Header Files\Exceptions\ParserExceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="ExpressionBuilder.h">
+      <Filter>Header Files\Parsing\ExpressionBuilding</Filter>
+    </ClInclude>
+    <ClInclude Include="ExpressionToken.h">
+      <Filter>Header Files\Parsing\ExpressionBuilding</Filter>
+    </ClInclude>
+    <ClInclude Include="ExpressionTokenFactory.h">
+      <Filter>Header Files\Parsing\ExpressionBuilding</Filter>
+    </ClInclude>
+    <ClInclude Include="LiteralToken.h">
+      <Filter>Header Files\Parsing\ExpressionBuilding</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageException.h">
+      <Filter>Header Files\Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="OperationToken.h">
+      <Filter>Header Files\Parsing\ExpressionBuilding</Filter>
+    </ClInclude>
+    <ClInclude Include="SymbolToken.h">
+      <Filter>Header Files\Parsing\ExpressionBuilding</Filter>
+    </ClInclude>
+    <ClInclude Include="SubtractToken.h">
+      <Filter>Header Files\Parsing\ExpressionBuilding</Filter>
+    </ClInclude>
+    <ClInclude Include="AddToken.h">
+      <Filter>Header Files\Parsing\ExpressionBuilding</Filter>
+    </ClInclude>
+    <ClInclude Include="MultiplyToken.h">
+      <Filter>Header Files\Parsing\ExpressionBuilding</Filter>
+    </ClInclude>
+    <ClInclude Include="DivideToken.h">
+      <Filter>Header Files\Parsing\ExpressionBuilding</Filter>
+    </ClInclude>
+    <ClInclude Include="OpeningBraceToken.h">
+      <Filter>Header Files\Parsing\ExpressionBuilding</Filter>
+    </ClInclude>
+    <ClInclude Include="ClosingBraceToken.h">
+      <Filter>Header Files\Parsing\ExpressionBuilding</Filter>
+    </ClInclude>
+    <ClInclude Include="Operand.h">
+      <Filter>Header Files\Operands</Filter>
+    </ClInclude>
+    <ClInclude Include="Immediate.h">
+      <Filter>Header Files\Operands</Filter>
+    </ClInclude>
+    <ClInclude Include="Register.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RegisterDirect.h">
+      <Filter>Header Files\Operands</Filter>
+    </ClInclude>
+    <ClInclude Include="RegisterIndirect.h">
+      <Filter>Header Files\Operands</Filter>
+    </ClInclude>
+    <ClInclude Include="RegisterIndirectOffset.h">
+      <Filter>Header Files\Operands</Filter>
+    </ClInclude>
+    <ClInclude Include="MemoryDirect.h">
+      <Filter>Header Files\Operands</Filter>
+    </ClInclude>
+    <ClInclude Include="InstructionCode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OperandParser.h">
+      <Filter>Header Files\Parsing\OperandParsers</Filter>
+    </ClInclude>
+    <ClInclude Include="ImmediateParser.h">
+      <Filter>Header Files\Parsing\OperandParsers</Filter>
+    </ClInclude>
+    <ClInclude Include="RegisterDirectParser.h">
+      <Filter>Header Files\Parsing\OperandParsers</Filter>
+    </ClInclude>
+    <ClInclude Include="RegisterParser.h">
+      <Filter>Header Files\Parsing</Filter>
+    </ClInclude>
+    <ClInclude Include="MemoryDirectParser.h">
+      <Filter>Header Files\Parsing\OperandParsers</Filter>
+    </ClInclude>
+    <ClInclude Include="RegisterIndirectParser.h">
+      <Filter>Header Files\Parsing\OperandParsers</Filter>
+    </ClInclude>
+    <ClInclude Include="RegisterIndirectOffsetParser.h">
+      <Filter>Header Files\Parsing\OperandParsers</Filter>
+    </ClInclude>
+    <ClInclude Include="InstructionCodeParser.h">
+      <Filter>Header Files\Parsing</Filter>
+    </ClInclude>
+    <ClInclude Include="InstructionLineParser.h">
+      <Filter>Header Files\Parsing\LineParsers</Filter>
+    </ClInclude>
+    <ClInclude Include="InstructionParser.h">
+      <Filter>Header Files\Parsing\InstructionParsers</Filter>
+    </ClInclude>
+    <ClInclude Include="InterruptInstructionParser.h">
+      <Filter>Header Files\Parsing\InstructionParsers</Filter>
+    </ClInclude>
+    <ClInclude Include="NoOperandInstructionParser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ConditionalJumpInstructionParser.h">
+      <Filter>Header Files\Parsing\InstructionParsers</Filter>
+    </ClInclude>
+    <ClInclude Include="UnconditionalJumpInstructionParser.h">
+      <Filter>Header Files\Parsing\InstructionParsers</Filter>
+    </ClInclude>
+    <ClInclude Include="StackInstructionParser.h">
+      <Filter>Header Files\Parsing\InstructionParsers</Filter>
+    </ClInclude>
+    <ClInclude Include="AluInstructionParser.h">
+      <Filter>Header Files\Parsing\InstructionParsers</Filter>
+    </ClInclude>
+    <ClInclude Include="NotInstructionParser.h">
+      <Filter>Header Files\Parsing\InstructionParsers</Filter>
+    </ClInclude>
+    <ClInclude Include="OperandType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadInstructionParser.h">
+      <Filter>Header Files\Parsing\InstructionParsers</Filter>
+    </ClInclude>
+    <ClInclude Include="StoreInstructionParser.h">
+      <Filter>Header Files\Parsing\InstructionParsers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

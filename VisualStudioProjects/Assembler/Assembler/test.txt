@@ -1,0 +1,13 @@
+Load r1 , #(0x123 - 123);
+loadUB r3, #255
+            storew r1, 2
+add r1, r1, r3
+PUSH R1 ; comment
+pop r2 // comment
+
+JNZ r2, x // comment
+
+; just a comment
+ x : ASL R1, R1, R2
+y:
+kurac_moj : and r1, r2, r2
