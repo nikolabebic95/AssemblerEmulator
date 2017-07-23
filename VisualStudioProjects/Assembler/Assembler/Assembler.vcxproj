@@ -147,6 +147,10 @@
     <ClCompile Include="AssemblerException.cpp" />
     <ClCompile Include="ClosingBraceToken.cpp" />
     <ClCompile Include="ConditionalJumpInstructionParser.cpp" />
+    <ClCompile Include="Data.cpp" />
+    <ClCompile Include="DataDefinitionLineParser.cpp" />
+    <ClCompile Include="DataDefinitionToken.cpp" />
+    <ClCompile Include="DataTypeParser.cpp" />
     <ClCompile Include="DivideOperation.cpp" />
     <ClCompile Include="DivideToken.cpp" />
     <ClCompile Include="DivisionByZeroException.cpp" />
@@ -162,6 +166,8 @@
     <ClCompile Include="InstructionParser.cpp" />
     <ClCompile Include="InstructionToken.cpp" />
     <ClCompile Include="InterruptInstructionParser.cpp" />
+    <ClCompile Include="InvalidDataDefinitionException.cpp" />
+    <ClCompile Include="InvalidDataTypeException.cpp" />
     <ClCompile Include="InvalidExpressionException.cpp" />
     <ClCompile Include="LabelToken.cpp" />
     <ClCompile Include="LineParser.cpp" />
@@ -216,6 +222,11 @@
     <ClInclude Include="ClosingBraceToken.h" />
     <ClInclude Include="CommonRegexes.h" />
     <ClInclude Include="ConditionalJumpInstructionParser.h" />
+    <ClInclude Include="Data.h" />
+    <ClInclude Include="DataDefinitionLineParser.h" />
+    <ClInclude Include="DataDefinitionToken.h" />
+    <ClInclude Include="DataType.h" />
+    <ClInclude Include="DataTypeParser.h" />
     <ClInclude Include="DivideOperation.h" />
     <ClInclude Include="DivideToken.h" />
     <ClInclude Include="DivisionByZeroException.h" />
@@ -233,6 +244,8 @@
     <ClInclude Include="InstructionParser.h" />
     <ClInclude Include="InstructionToken.h" />
     <ClInclude Include="InterruptInstructionParser.h" />
+    <ClInclude Include="InvalidDataDefinitionException.h" />
+    <ClInclude Include="InvalidDataTypeException.h" />
     <ClInclude Include="InvalidExpressionException.h" />
     <ClInclude Include="LabelToken.h" />
     <ClInclude Include="LineParser.h" />

@@ -147,9 +147,6 @@
     <ClCompile Include="MicroRiscExpression.cpp">
       <Filter>Source Files\Math</Filter>
     </ClCompile>
-    <ClCompile Include="ExpressionBuilder.cpp">
-      <Filter>Source Files\Parsing</Filter>
-    </ClCompile>
     <ClCompile Include="DivideOperation.cpp">
       <Filter>Source Files\Math</Filter>
     </ClCompile>
@@ -278,6 +275,27 @@
     </ClCompile>
     <ClCompile Include="SymbolDefinitionToken.cpp">
       <Filter>Source Files\Tokens</Filter>
+    </ClCompile>
+    <ClCompile Include="ExpressionBuilder.cpp">
+      <Filter>Source Files\Parsing\ExpressionBuilding</Filter>
+    </ClCompile>
+    <ClCompile Include="DataDefinitionLineParser.cpp">
+      <Filter>Source Files\Parsing\LineParsers</Filter>
+    </ClCompile>
+    <ClCompile Include="Data.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DataDefinitionToken.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InvalidDataDefinitionException.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DataTypeParser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InvalidDataTypeException.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -494,11 +512,32 @@
     <ClInclude Include="OrgDirectiveToken.h">
       <Filter>Header Files\Tokens</Filter>
     </ClInclude>
-    <ClInclude Include="SymbolDefinitionLineParser.h">
-      <Filter>Source Files\Parsing\LineParsers</Filter>
-    </ClInclude>
     <ClInclude Include="SymbolDefinitionToken.h">
       <Filter>Header Files\Tokens</Filter>
+    </ClInclude>
+    <ClInclude Include="SymbolDefinitionLineParser.h">
+      <Filter>Header Files\Parsing\LineParsers</Filter>
+    </ClInclude>
+    <ClInclude Include="DataDefinitionLineParser.h">
+      <Filter>Header Files\Parsing\LineParsers</Filter>
+    </ClInclude>
+    <ClInclude Include="DataDefinitionToken.h">
+      <Filter>Header Files\Tokens</Filter>
+    </ClInclude>
+    <ClInclude Include="DataType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Data.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InvalidDataDefinitionException.h">
+      <Filter>Header Files\Exceptions\ParserExceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="DataTypeParser.h">
+      <Filter>Header Files\Parsing</Filter>
+    </ClInclude>
+    <ClInclude Include="InvalidDataTypeException.h">
+      <Filter>Header Files\Exceptions\ParserExceptions</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

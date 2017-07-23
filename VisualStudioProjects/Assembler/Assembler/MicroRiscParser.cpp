@@ -3,6 +3,7 @@
 #include "SectionStartLineParser.h"
 #include "OrgDirectiveLineParser.h"
 #include "SymbolDefinitionLineParser.h"
+#include "DataDefinitionLineParser.h"
 
 namespace bnss {
 
@@ -25,11 +26,13 @@ namespace bnss {
 
 	MicroRiscParser::MicroRiscParser() {
 		auto instructions = std::make_shared<InstructionLineParser>();
+		auto data = std::make_shared<DataDefinitionLineParser>();
 		auto sections = std::make_shared<SectionStartLineParser>();
 		auto org = std::make_shared<OrgDirectiveLineParser>();
 		auto symbol = std::make_shared<SymbolDefinitionLineParser>();
 
-		instructions->next(sections);
+		instructions->next(data);
+		data->next(sections);
 		sections->next(org);
 		org->next(symbol);
 
