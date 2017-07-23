@@ -13,8 +13,13 @@ namespace bnss {
 			return nullptr;
 		}
 
-		auto constant_term_string = regex_replace(str, regex, "$1");
-		auto expression = ExpressionBuilder::build(constant_term_string);
-		return std::make_shared<Immediate>(expression);
+		try {
+			auto constant_term_string = regex_replace(str, regex, "$1");
+			auto expression = ExpressionBuilder::build(constant_term_string);
+			return std::make_shared<Immediate>(expression);
+		}
+		catch (...) {
+			return nullptr;
+		}
 	}
 }

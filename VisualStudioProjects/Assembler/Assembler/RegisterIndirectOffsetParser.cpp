@@ -20,8 +20,14 @@ namespace bnss {
 			return nullptr;
 		}
 
-		auto reg = RegisterParser::parse(reg_str);
-		auto off = ExpressionBuilder::build(off_str);
-		return std::make_shared<RegisterIndirectOffset>(reg, off);
+		try {
+
+			auto reg = RegisterParser::parse(reg_str);
+			auto off = ExpressionBuilder::build(off_str);
+			return std::make_shared<RegisterIndirectOffset>(reg, off);
+		}
+		catch (...) {
+			return nullptr;
+		}
 	}
 }

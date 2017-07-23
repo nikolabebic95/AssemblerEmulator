@@ -51,6 +51,10 @@ namespace bnss {
 			ExpressionBuilder::popToPostfix(ret, stack, rank);
 		}
 
+		if (rank != 1) {
+			throw MessageException("Invalid expression rank");
+		}
+
 		return ret;
 	}
 
@@ -69,7 +73,7 @@ namespace bnss {
 		stack.push(root);
 		for (auto iterator = postfix_expression.rbegin(); iterator != postfix_expression.rend(); ++iterator) {
 			if (stack.empty()) {
-				throw MessageException("Invalid expression - not enough operands");
+				throw MessageException("Invalid expression - not enough operators");
 			}
 
 			std::shared_ptr<Expression> &curr = stack.top();
