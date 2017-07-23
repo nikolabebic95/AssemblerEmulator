@@ -177,6 +177,8 @@
     <ClCompile Include="NotInstructionParser.cpp" />
     <ClCompile Include="OpeningBraceToken.cpp" />
     <ClCompile Include="OperandParser.cpp" />
+    <ClCompile Include="OrgDirectiveLineParser.cpp" />
+    <ClCompile Include="OrgDirectiveToken.cpp" />
     <ClCompile Include="RegisterDirect.cpp" />
     <ClCompile Include="RegisterDirectParser.cpp" />
     <ClCompile Include="RegisterIndirect.cpp" />
@@ -201,6 +203,8 @@
     <ClCompile Include="StringHelper.cpp" />
     <ClCompile Include="SubtractOperation.cpp" />
     <ClCompile Include="Symbol.cpp" />
+    <ClCompile Include="SymbolDefinitionLineParser.cpp" />
+    <ClCompile Include="SymbolDefinitionToken.cpp" />
     <ClCompile Include="SymbolToken.cpp" />
     <ClCompile Include="Token.cpp" />
     <ClCompile Include="UnconditionalJumpInstructionParser.cpp" />
@@ -246,6 +250,8 @@
     <ClInclude Include="Operand.h" />
     <ClInclude Include="OperandParser.h" />
     <ClInclude Include="OperandType.h" />
+    <ClInclude Include="OrgDirectiveLineParser.h" />
+    <ClInclude Include="OrgDirectiveToken.h" />
     <ClInclude Include="Register.h" />
     <ClInclude Include="RegisterDirect.h" />
     <ClInclude Include="RegisterDirectParser.h" />
@@ -272,6 +278,8 @@
     <ClInclude Include="StringHelper.h" />
     <ClInclude Include="SubtractOperation.h" />
     <ClInclude Include="Symbol.h" />
+    <ClInclude Include="SymbolDefinitionLineParser.h" />
+    <ClInclude Include="SymbolDefinitionToken.h" />
     <ClInclude Include="SymbolToken.h" />
     <ClInclude Include="Token.h" />
     <ClInclude Include="UnconditionalJumpInstructionParser.h" />

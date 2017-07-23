@@ -16,6 +16,9 @@ namespace bnss {
 	const std::string LABEL = SYMBOL;
 	const std::string CONSTANT_TERM = "([[:space:]]*(" + LITERAL + "|" + OPERATOR + "|" + SYMBOL + ")[[:space:]]*)*";
 
+	const std::string ORG_DIRECTIVE = "[Oo][Rr][Gg]";
+	const std::string SYMBOL_DEFINITION = "[Dd][Ee][Ff]";
+
 	const std::regex DECIMAL_REGEX = std::regex(DECIMAL);
 	const std::regex HEX_REGEX = std::regex(HEX);
 	const std::regex BINARY_REGEX = std::regex(BINARY);
@@ -27,6 +30,9 @@ namespace bnss {
 	const std::regex SYMBOL_REGEX = std::regex(SYMBOL);
 	const std::regex LABEL_REGEX = std::regex(LABEL);
 	const std::regex CONSTANT_TERM_REGEX = std::regex(CONSTANT_TERM);
+
+	const std::regex ORG_DIRECTIVE_REGEX = std::regex(ORG_DIRECTIVE);
+	const std::regex SYMBOL_DEFINITION_REGEX = std::regex(SYMBOL_DEFINITION);
 }
 
 #endif

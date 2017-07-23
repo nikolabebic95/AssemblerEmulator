@@ -267,6 +267,18 @@
     <ClCompile Include="SectionTypeParser.cpp">
       <Filter>Source Files\Parsing</Filter>
     </ClCompile>
+    <ClCompile Include="OrgDirectiveLineParser.cpp">
+      <Filter>Source Files\Parsing\LineParsers</Filter>
+    </ClCompile>
+    <ClCompile Include="OrgDirectiveToken.cpp">
+      <Filter>Source Files\Tokens</Filter>
+    </ClCompile>
+    <ClCompile Include="SymbolDefinitionLineParser.cpp">
+      <Filter>Source Files\Parsing\LineParsers</Filter>
+    </ClCompile>
+    <ClCompile Include="SymbolDefinitionToken.cpp">
+      <Filter>Source Files\Tokens</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Token.h">
@@ -475,6 +487,18 @@
     </ClInclude>
     <ClInclude Include="SectionTypeParser.h">
       <Filter>Header Files\Parsing</Filter>
+    </ClInclude>
+    <ClInclude Include="OrgDirectiveLineParser.h">
+      <Filter>Header Files\Parsing\LineParsers</Filter>
+    </ClInclude>
+    <ClInclude Include="OrgDirectiveToken.h">
+      <Filter>Header Files\Tokens</Filter>
+    </ClInclude>
+    <ClInclude Include="SymbolDefinitionLineParser.h">
+      <Filter>Source Files\Parsing\LineParsers</Filter>
+    </ClInclude>
+    <ClInclude Include="SymbolDefinitionToken.h">
+      <Filter>Header Files\Tokens</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
