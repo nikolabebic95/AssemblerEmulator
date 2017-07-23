@@ -45,6 +45,12 @@ namespace bnss {
 		template <typename Num>
 		static std::string numberFormat(Num number) noexcept;
 
+		/**
+		 * \brief Parses the number from its string representation
+		 * \tparam Num Type of the number
+		 * \param number String representation of the number to be parsed
+		 * \return Parsed number
+		 */
 		template <typename Num>
 		static Num parseNumber(std::string number);
 
@@ -70,23 +76,23 @@ namespace bnss {
 
 	template<typename Num>
 	Num StringHelper::parseNumber(std::string number) {
-		long long ret;
+		long long long_long;
 
 		try {
-			if (regex_match(number, std::regex("[1-9][0-9]*"))) {
-				ret = stoll(number);
+			if (regex_match(number, DECIMAL_REGEX)) {
+				long_long = stoll(number);
 			}
 			else if (regex_match(number, HEX_REGEX)) {
-				ret = stoll(number.substr(2), nullptr, 16);
+				long_long = stoll(number.substr(2), nullptr, 16);
 			}
 			else if (regex_match(number, OCT_REGEX)) {
-				ret = stoll(number, nullptr, 8);
+				long_long = stoll(number, nullptr, 8);
 			}
 			else if (regex_match(number, BINARY_REGEX)) {
-				ret = stoll(number.substr(2), nullptr, 2);
+				long_long = stoll(number.substr(2), nullptr, 2);
 			}
 			else if (regex_match(number, CHARACTER_REGEX)) {
-				ret = static_cast<long long>(number[1]);
+				long_long = static_cast<long long>(number[1]);
 			}
 			else {
 				throw MessageException("The number " + number + " could not be parsed");
@@ -99,7 +105,13 @@ namespace bnss {
 			throw MessageException("The number " + number + " is out of range");
 		}
 
-		return static_cast<Num>(ret);
+		auto ret = static_cast<Num>(long_long);
+
+		if (ret != long_long) {
+			throw MessageException("The number + " + number + " is out of range");
+		}
+
+		return ret;
 	}
 }
 

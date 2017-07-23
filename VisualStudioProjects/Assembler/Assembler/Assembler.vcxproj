@@ -184,6 +184,9 @@
     <ClCompile Include="RegisterIndirectOffsetParser.cpp" />
     <ClCompile Include="RegisterIndirectParser.cpp" />
     <ClCompile Include="RegisterParser.cpp" />
+    <ClCompile Include="SectionStartLineParser.cpp" />
+    <ClCompile Include="SectionStartToken.cpp" />
+    <ClCompile Include="SectionTypeParser.cpp" />
     <ClCompile Include="StackInstructionParser.cpp" />
     <ClCompile Include="StoreInstructionParser.cpp" />
     <ClCompile Include="SubtractToken.cpp" />
@@ -252,6 +255,10 @@
     <ClInclude Include="RegisterIndirectParser.h" />
     <ClInclude Include="RegisterParser.h" />
     <ClInclude Include="NoOperandInstructionParser.h" />
+    <ClInclude Include="SectionStartLineParser.h" />
+    <ClInclude Include="SectionStartToken.h" />
+    <ClInclude Include="SectionType.h" />
+    <ClInclude Include="SectionTypeParser.h" />
     <ClInclude Include="StackInstructionParser.h" />
     <ClInclude Include="StoreInstructionParser.h" />
     <ClInclude Include="SubtractToken.h" />

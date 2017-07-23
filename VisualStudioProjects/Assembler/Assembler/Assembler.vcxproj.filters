@@ -240,12 +240,6 @@
     <ClCompile Include="InstructionCodeParser.cpp">
       <Filter>Source Files\Parsing</Filter>
     </ClCompile>
-    <ClCompile Include="LoadInstructionParser.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="StoreInstructionParser.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="AluInstructionParser.cpp">
       <Filter>Source Files\Parsing\InstructionParsers</Filter>
     </ClCompile>
@@ -257,6 +251,21 @@
     </ClCompile>
     <ClCompile Include="UnconditionalJumpInstructionParser.cpp">
       <Filter>Source Files\Parsing\InstructionParsers</Filter>
+    </ClCompile>
+    <ClCompile Include="SectionStartLineParser.cpp">
+      <Filter>Source Files\Parsing\LineParsers</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadInstructionParser.cpp">
+      <Filter>Source Files\Parsing\InstructionParsers</Filter>
+    </ClCompile>
+    <ClCompile Include="SectionStartToken.cpp">
+      <Filter>Source Files\Tokens</Filter>
+    </ClCompile>
+    <ClCompile Include="StoreInstructionParser.cpp">
+      <Filter>Source Files\Parsing\InstructionParsers</Filter>
+    </ClCompile>
+    <ClCompile Include="SectionTypeParser.cpp">
+      <Filter>Source Files\Parsing</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -454,6 +463,18 @@
     </ClInclude>
     <ClInclude Include="StoreInstructionParser.h">
       <Filter>Header Files\Parsing\InstructionParsers</Filter>
+    </ClInclude>
+    <ClInclude Include="SectionStartLineParser.h">
+      <Filter>Header Files\Parsing\LineParsers</Filter>
+    </ClInclude>
+    <ClInclude Include="SectionStartToken.h">
+      <Filter>Header Files\Tokens</Filter>
+    </ClInclude>
+    <ClInclude Include="SectionType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SectionTypeParser.h">
+      <Filter>Header Files\Parsing</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -102,7 +102,7 @@ namespace bnss {
 
 	void ExpressionBuilder::popToPostfix(std::list<std::shared_ptr<ExpressionToken>>& output, std::stack<std::shared_ptr<ExpressionToken>>& stack, int & expression_rank) {
 		if (stack.empty()) {
-			throw MessageException("The oppening brace is missing");
+			throw MessageException("The opening brace is missing");
 		}
 
 		auto top = stack.top();

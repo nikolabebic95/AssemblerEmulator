@@ -3,10 +3,13 @@
 #include "LineParser.h"
 #include <unordered_map>
 #include "InstructionCode.h"
+#include "InstructionParser.h"
 
 namespace bnss {
-	class InstructionParser;
 
+	/**
+	 * \brief Class used for parsing instructions
+	 */
 	class InstructionLineParser : public LineParser {
 	public:
 		InstructionLineParser() noexcept;

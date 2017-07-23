@@ -1,5 +1,6 @@
 #include "MicroRiscParser.h"
 #include "InstructionLineParser.h"
+#include "SectionStartLineParser.h"
 
 namespace bnss {
 
@@ -21,7 +22,11 @@ namespace bnss {
 	}
 
 	MicroRiscParser::MicroRiscParser() {
-		head_ = std::make_shared<InstructionLineParser>();
-	}
+		auto instructions = std::make_shared<InstructionLineParser>();
+		auto sections = std::make_shared<SectionStartLineParser>();
 
+		instructions->next(sections);
+
+		head_ = instructions;
+	}
 }
