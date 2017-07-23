@@ -22,12 +22,17 @@ namespace bnss {
 		}
 	}
 
+	/**
+	 * \brief Builds a postfix expression from the infix string
+	 * \param infix_expression Infix expression string
+	 * \return Postfix expression list of tokens
+	 */
 	static std::list<std::shared_ptr<ExpressionToken>> infixToPostfix(std::string infix_expression) {
 		std::list<std::shared_ptr<ExpressionToken>> ret;
 		std::stack<std::shared_ptr<ExpressionToken>> stack;
 		auto rank = 0;
 
-		static std::regex end_of_infix("[[:space:]]");
+		static std::regex end_of_infix("[[:space:]]*");
 		static std::regex token_extractor("[[:space:]]*(" + LITERAL + "|" + OPERATOR + "|" + SYMBOL + ")(.*)");
 
 		fixUnaryMinusStart(infix_expression, token_extractor);
@@ -52,7 +57,7 @@ namespace bnss {
 		}
 
 		if (rank != 1) {
-			throw MessageException("Invalid expression rank");
+			throw MessageException("Invalid expression - too many operands");
 		}
 
 		return ret;

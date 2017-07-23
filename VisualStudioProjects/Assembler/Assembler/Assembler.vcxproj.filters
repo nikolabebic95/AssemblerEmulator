@@ -240,23 +240,23 @@
     <ClCompile Include="InstructionCodeParser.cpp">
       <Filter>Source Files\Parsing</Filter>
     </ClCompile>
-    <ClCompile Include="AluInstructionParser.cpp">
-      <Filter>Source Files\Parsing\OperandParsers</Filter>
-    </ClCompile>
-    <ClCompile Include="NotInstructionParser.cpp">
-      <Filter>Source Files\Parsing\OperandParsers</Filter>
-    </ClCompile>
-    <ClCompile Include="StackInstructionParser.cpp">
-      <Filter>Source Files\Parsing\OperandParsers</Filter>
-    </ClCompile>
-    <ClCompile Include="UnconditionalJumpInstructionParser.cpp">
-      <Filter>Source Files\Parsing\OperandParsers</Filter>
-    </ClCompile>
     <ClCompile Include="LoadInstructionParser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="StoreInstructionParser.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AluInstructionParser.cpp">
+      <Filter>Source Files\Parsing\InstructionParsers</Filter>
+    </ClCompile>
+    <ClCompile Include="NotInstructionParser.cpp">
+      <Filter>Source Files\Parsing\InstructionParsers</Filter>
+    </ClCompile>
+    <ClCompile Include="StackInstructionParser.cpp">
+      <Filter>Source Files\Parsing\InstructionParsers</Filter>
+    </ClCompile>
+    <ClCompile Include="UnconditionalJumpInstructionParser.cpp">
+      <Filter>Source Files\Parsing\InstructionParsers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

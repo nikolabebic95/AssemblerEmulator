@@ -10,6 +10,7 @@
 #include "NotInstructionParser.h"
 #include "LoadInstructionParser.h"
 #include "StoreInstructionParser.h"
+#include "MessageException.h"
 
 namespace bnss {
 
@@ -96,7 +97,7 @@ namespace bnss {
 		instructions_[NOT] = std::make_shared<NotInstructionParser>();
 	}
 
-	std::shared_ptr<Token> InstructionLineParser::parse(const std::string &line, size_t line_number, std::string initial_line) const noexcept {
+	std::shared_ptr<Token> InstructionLineParser::parse(const std::string &line, size_t line_number, std::string initial_line) const {
 		std::regex regex("[[:space:]]*([A-Za-z]*)(.*)");
 		if (!regex_match(line, regex)) {
 			return nullptr;
@@ -108,14 +109,17 @@ namespace bnss {
 		auto type = DEFAULT;
 		loadStoreFixup(instruction_code_string, type);
 
+		InstructionCode instruction_code;
+
 		try {
-			auto instruction_code = InstructionCodeParser::parse(instruction_code_string);
-			auto instruction_parser = instructions_.at(instruction_code);
-			auto vector_of_operands = instruction_parser->parse(operands_string);
-			return std::make_shared<InstructionToken>(line_number, initial_line, instruction_code, vector_of_operands, type);
+			instruction_code = InstructionCodeParser::parse(instruction_code_string);
 		}
-		catch (...) {
+		catch (MessageException&) {
 			return nullptr;
 		}
+
+		auto instruction_parser = instructions_.at(instruction_code);
+		auto vector_of_operands = instruction_parser->parse(operands_string);
+		return std::make_shared<InstructionToken>(line_number, initial_line, instruction_code, vector_of_operands, type);
 	}
 }

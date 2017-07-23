@@ -9,7 +9,7 @@ namespace bnss {
 	 */
 	class LiteralToken : public ExpressionToken {
 	public:
-		explicit LiteralToken(std::string value) noexcept;
+		explicit LiteralToken(std::string value);
 		int inputPriority() const noexcept override;
 		int stackPriority() const noexcept override;
 		int rank() const noexcept override;

@@ -18,8 +18,9 @@ namespace bnss {
 		 * \param line_number Number of the line that is parsed
 		 * \param initial_line Initial line that is parsed
 		 * \return Extracted token from line or nullptr if the whole chain failed parsing
+		 * \throw Throws if the chain failed and the parser identified the error
 		 */
-		std::shared_ptr<Token> tryParse(const std::string &line, size_t line_number, std::string initial_line) const noexcept;
+		std::shared_ptr<Token> tryParse(const std::string &line, size_t line_number, std::string initial_line) const;
 		virtual ~LineParser() = default;
 
 		/**
@@ -35,8 +36,9 @@ namespace bnss {
 		 * \param line_number Number of the line that is parsed
 		 * \param initial_line Initial line that is parsed
 		 * \return Extracted token from line or nullptr if the parser failed parsing the line
+		 * \throw Throws if the parser failed and identified the error
 		 */
-		virtual std::shared_ptr<Token> parse(const std::string &line, size_t line_number, std::string initial_line) const noexcept = 0;
+		virtual std::shared_ptr<Token> parse(const std::string &line, size_t line_number, std::string initial_line) const = 0;
 	private:
 		/**
 		 * \brief The next parser in the chain

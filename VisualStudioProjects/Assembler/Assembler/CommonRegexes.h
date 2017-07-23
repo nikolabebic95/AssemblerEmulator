@@ -5,8 +5,8 @@
 namespace bnss {
 
 	const std::string DECIMAL = "[1-9][0-9]*";
-	const std::string HEX = "0x[0-9a-fA-F]*";
-	const std::string BINARY = "0b[01]*";
+	const std::string HEX = "0x[0-9a-fA-F][0-9a-fA-F]*";
+	const std::string BINARY = "0b[01][01]*";
 	const std::string OCT = "0[0-7]*";
 	const std::string CHARACTER = "'[[:print:]]'";
 

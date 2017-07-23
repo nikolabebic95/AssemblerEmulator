@@ -5,7 +5,7 @@
 #include <climits>
 
 namespace bnss {
-	LiteralToken::LiteralToken(std::string value) noexcept {
+	LiteralToken::LiteralToken(std::string value) {
 		value_ = StringHelper::parseNumber<int32_t>(value);
 	}
 

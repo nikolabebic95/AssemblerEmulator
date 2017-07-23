@@ -6,20 +6,15 @@
 
 namespace bnss {
 
-	std::shared_ptr<Operand> ImmediateParser::parse(std::string str) const noexcept {
+	std::shared_ptr<Operand> ImmediateParser::parse(std::string str) const {
 		static std::regex regex("#(" + CONSTANT_TERM + ")");
 
 		if (!regex_match(str, regex)) {
 			return nullptr;
 		}
-
-		try {
-			auto constant_term_string = regex_replace(str, regex, "$1");
-			auto expression = ExpressionBuilder::build(constant_term_string);
-			return std::make_shared<Immediate>(expression);
-		}
-		catch (...) {
-			return nullptr;
-		}
+		
+		auto constant_term_string = regex_replace(str, regex, "$1");
+		auto expression = ExpressionBuilder::build(constant_term_string);
+		return std::make_shared<Immediate>(expression);
 	}
 }

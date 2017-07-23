@@ -2,7 +2,7 @@
 
 namespace bnss {
 
-	std::shared_ptr<Token> LineParser::tryParse(const std::string & line, size_t line_number, std::string initial_line) const noexcept {
+	std::shared_ptr<Token> LineParser::tryParse(const std::string & line, size_t line_number, std::string initial_line) const {
 		auto ret = parse(line, line_number, initial_line);
 		if (ret != nullptr) {
 			return ret;

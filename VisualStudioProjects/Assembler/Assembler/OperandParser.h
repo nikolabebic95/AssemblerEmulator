@@ -15,8 +15,9 @@ namespace bnss {
 		 * \brief Tries to parse one operand. Calls the next parser in the chain if it fails
 		 * \param str Operand which should be parsed
 		 * \return Pointer to the operand or nullptr, if the whole chain failed parsing
+		 * \throw Throws if the chain fails but identifies the error
 		 */
-		std::shared_ptr<Operand> tryParse(std::string str) const noexcept;
+		std::shared_ptr<Operand> tryParse(std::string str) const;
 
 		void next(std::shared_ptr<OperandParser> next) noexcept;
 		virtual ~OperandParser() = default;
@@ -25,8 +26,9 @@ namespace bnss {
 		 * \brief Parses one operand. Does not call the next parser if it fails
 		 * \param str Operand which should be parsed
 		 * \return Pointer to the operand or nullptr, if the parser failed parsing
+		 * \throw Throws if the parser fails but identifies the error
 		 */
-		virtual std::shared_ptr<Operand> parse(std::string str) const noexcept = 0;
+		virtual std::shared_ptr<Operand> parse(std::string str) const = 0;
 	private:
 		/**
 		 * \brief The next parser in the chain

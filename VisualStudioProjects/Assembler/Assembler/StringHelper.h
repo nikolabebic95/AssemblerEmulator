@@ -72,23 +72,31 @@ namespace bnss {
 	Num StringHelper::parseNumber(std::string number) {
 		long long ret;
 
-		if (regex_match(number, std::regex("[1-9][0-9]*"))) {
-			ret = stoll(number);
+		try {
+			if (regex_match(number, std::regex("[1-9][0-9]*"))) {
+				ret = stoll(number);
+			}
+			else if (regex_match(number, HEX_REGEX)) {
+				ret = stoll(number.substr(2), nullptr, 16);
+			}
+			else if (regex_match(number, OCT_REGEX)) {
+				ret = stoll(number, nullptr, 8);
+			}
+			else if (regex_match(number, BINARY_REGEX)) {
+				ret = stoll(number.substr(2), nullptr, 2);
+			}
+			else if (regex_match(number, CHARACTER_REGEX)) {
+				ret = static_cast<long long>(number[1]);
+			}
+			else {
+				throw MessageException("The number " + number + " could not be parsed");
+			}
 		}
-		else if (regex_match(number, HEX_REGEX)) {
-			ret = stoll(number.substr(2), nullptr, 16);
-		}
-		else if (regex_match(number, OCT_REGEX)) {
-			ret = stoll(number, nullptr, 8);
-		}
-		else if (regex_match(number, BINARY_REGEX)) {
-			ret = stoll(number.substr(2), nullptr, 2);
-		}
-		else if (regex_match(number, CHARACTER_REGEX)) {
-			ret = static_cast<long long>(number[1]);
-		}
-		else {
+		catch (std::invalid_argument&) {
 			throw MessageException("The number " + number + " could not be parsed");
+		}
+		catch (std::out_of_range&) {
+			throw MessageException("The number " + number + " is out of range");
 		}
 
 		return static_cast<Num>(ret);

@@ -44,5 +44,4 @@ namespace bnss {
 	}
 
 	InstructionParser::~InstructionParser() {}
-
 }

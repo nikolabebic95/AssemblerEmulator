@@ -9,7 +9,7 @@ namespace bnss {
 	 */
 	class RegisterDirectParser : public OperandParser {
 	protected:
-		std::shared_ptr<Operand> parse(std::string str) const noexcept override;
+		std::shared_ptr<Operand> parse(std::string str) const override;
 	};
 }
 

@@ -6,17 +6,12 @@
 
 namespace bnss {
 
-	std::shared_ptr<Operand> MemoryDirectParser::parse(std::string str) const noexcept {
+	std::shared_ptr<Operand> MemoryDirectParser::parse(std::string str) const {
 		if (!regex_match(str, CONSTANT_TERM_REGEX)) {
 			return nullptr;
 		}
 
-		try {
-			auto expression = ExpressionBuilder::build(str);
-			return std::make_shared<MemoryDirect>(expression);
-		}
-		catch (...) {
-			return nullptr;
-		}
+		auto expression = ExpressionBuilder::build(str);
+		return std::make_shared<MemoryDirect>(expression);
 	}
 }
