@@ -12,13 +12,14 @@ namespace bnss {
 
 	const std::string LITERAL = "(" + DECIMAL + "|" + HEX + "|" + BINARY + "|" + OCT + "|" + CHARACTER + ")";
 	const std::string OPERATOR = "[-+*/()]";
-	const std::string SYMBOL = "[a-zA-Z_$][a-zA-Z_$0-9]*";
+	const std::string SYMBOL = "(([a-zA-Z_][a-zA-Z_0-9]*)|\\$)";
 	const std::string LABEL = SYMBOL;
 	const std::string CONSTANT_TERM = "([[:space:]]*(" + LITERAL + "|" + OPERATOR + "|" + SYMBOL + ")[[:space:]]*)*";
 
 	const std::string ORG_DIRECTIVE = "[Oo][Rr][Gg]";
 	const std::string SYMBOL_DEFINITION = "[Dd][Ee][Ff]";
 	const std::string DUPLICATE_DIRECTIVE = "[Dd][Uu][Pp]";
+	const std::string GLOBAL_DIRECTIVE = "[.][Gg][Ll][Oo][Bb][Aa][Ll]";
 
 	const std::string COMMA_TOKENIZER = "[[:space:]]*(.*?)[[:space:]]*,(.*)";
 	const std::string LAST_COMMA_TOKEN = "[[:space:]]*(.*?)[[:space:]]*";
@@ -38,6 +39,7 @@ namespace bnss {
 	const std::regex ORG_DIRECTIVE_REGEX = std::regex(ORG_DIRECTIVE);
 	const std::regex SYMBOL_DEFINITION_REGEX = std::regex(SYMBOL_DEFINITION);
 	const std::regex DUPLICATE_DIRECTIVE_REGEX = std::regex(DUPLICATE_DIRECTIVE);
+	const std::regex GLOBAL_DIRECTIVE_REGEX = std::regex(GLOBAL_DIRECTIVE);
 
 	const std::regex COMMA_TOKENIZER_REGEX = std::regex(COMMA_TOKENIZER);
 	const std::regex LAST_COMMA_TOKEN_REGEX = std::regex(LAST_COMMA_TOKEN);

@@ -11,7 +11,12 @@ namespace bnss {
 			return nullptr;
 		}
 
-		auto expression = ExpressionBuilder::build(str);
-		return std::make_shared<MemoryDirect>(expression);
+		try {
+			auto expression = ExpressionBuilder::build(str);
+			return std::make_shared<MemoryDirect>(expression);
+		}
+		catch (...) {
+			return nullptr;
+		}
 	}
 }

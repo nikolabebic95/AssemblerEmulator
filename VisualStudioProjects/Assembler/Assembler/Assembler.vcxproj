@@ -158,6 +158,8 @@
     <ClCompile Include="ExpressionBuilder.cpp" />
     <ClCompile Include="ExpressionTokenFactory.cpp" />
     <ClCompile Include="FileReader.cpp" />
+    <ClCompile Include="GlobalSymbolsLineParser.cpp" />
+    <ClCompile Include="GlobalSymbolToken.cpp" />
     <ClCompile Include="Immediate.cpp" />
     <ClCompile Include="ImmediateParser.cpp" />
     <ClCompile Include="IncorrectLabelException.cpp" />
@@ -235,6 +237,8 @@
     <ClInclude Include="ExpressionToken.h" />
     <ClInclude Include="ExpressionTokenFactory.h" />
     <ClInclude Include="FileReader.h" />
+    <ClInclude Include="GlobalSymbolsLineParser.h" />
+    <ClInclude Include="GlobalSymbolToken.h" />
     <ClInclude Include="Immediate.h" />
     <ClInclude Include="ImmediateParser.h" />
     <ClInclude Include="IncorrectLabelException.h" />

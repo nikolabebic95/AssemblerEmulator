@@ -2,7 +2,6 @@
 #include <regex>
 #include "StringHelper.h"
 #include "LabelToken.h"
-#include <algorithm>
 #include <string>
 #include <iostream>
 #include "IncorrectLabelException.h"

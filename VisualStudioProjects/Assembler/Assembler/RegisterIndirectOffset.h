@@ -11,10 +11,11 @@ namespace bnss {
 	 */
 	class RegisterIndirectOffset : public Operand {
 	public:
-		RegisterIndirectOffset(Register reg, MicroRiscExpression offset) noexcept;
+		RegisterIndirectOffset(Register reg, MicroRiscExpression offset_or_address, bool absolute);
 	private:
 		Register reg_;
-		MicroRiscExpression offset_;
+		MicroRiscExpression offset_or_address_;
+		bool absolute_ = false;
 	};
 }
 

@@ -47,7 +47,7 @@ namespace bnss {
 			}
 
 			auto token_string = regex_replace(infix_expression, token_extractor, "$1");
-			infix_expression = regex_replace(infix_expression, token_extractor, "$3");
+			infix_expression = regex_replace(infix_expression, token_extractor, "$5");
 			auto token = ExpressionTokenFactory::create(token_string);
 			token->process(ret, stack, rank);
 		}
