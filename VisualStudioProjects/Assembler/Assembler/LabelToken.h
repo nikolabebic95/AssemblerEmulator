@@ -1,7 +1,6 @@
 #ifndef _label_token_h_
 #define _label_token_h_
 #include "Token.h"
-#include <string>
 
 namespace bnss {
 	
@@ -11,6 +10,7 @@ namespace bnss {
 	class LabelToken : public Token {
 	public:
 		explicit LabelToken(std::string label, size_t line_number, std::string line) noexcept;
+		void firstPass(FirstPassData &data) const override;
 	private:
 		std::string label_;
 	};

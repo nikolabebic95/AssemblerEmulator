@@ -12,6 +12,8 @@ namespace bnss {
 	class RegisterIndirectOffset : public Operand {
 	public:
 		RegisterIndirectOffset(Register reg, MicroRiscExpression offset_or_address, bool absolute);
+		void resolveSymbols(std::unordered_set<SymbolDefinition> symbols) noexcept override;
+		AddressMode addressMode() const noexcept override;
 	private:
 		Register reg_;
 		MicroRiscExpression offset_or_address_;

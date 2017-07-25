@@ -7,4 +7,8 @@ namespace bnss {
 	int32_t MicroRiscExpression::value() const {
 		return expression_->value();
 	}
+
+	bool MicroRiscExpression::setValue(std::string name, MicroRiscExpression expression) const noexcept {
+		return expression_->setValue(name, expression.expression_);
+	}
 }

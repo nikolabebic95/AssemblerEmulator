@@ -12,7 +12,7 @@ pop r2 // comment
 JNZ r2, x // comment
 
 ORG 0x123
-abc: .text.123
+abc: .text.1
 ; just a comment
  x : ASL R1, R1, R2
 y:

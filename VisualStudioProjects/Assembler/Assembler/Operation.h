@@ -11,7 +11,7 @@ namespace bnss {
 	class Operation : public Expression {
 	public:
 		int32_t value() const override;
-		bool setValue(std::string symbol, int32_t value) noexcept override;
+		bool setValue(std::string symbol, std::shared_ptr<Expression> value) noexcept override;
 		bool containsSymbol() const noexcept override;
 		int symbolCount() const noexcept override;
 		void pushChildren(std::stack<std::reference_wrapper<std::shared_ptr<Expression>>> &stack) const noexcept override;

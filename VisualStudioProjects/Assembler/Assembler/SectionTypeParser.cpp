@@ -13,6 +13,10 @@ namespace bnss {
 		return staticData().map[type];
 	}
 
+	std::string SectionTypeParser::toString(SectionType type) noexcept {
+		return staticData().reverse[type];
+	}
+
 	SectionTypeParser::SectionTypeParserData & SectionTypeParser::staticData() noexcept {
 		static SectionTypeParserData static_data;
 		return static_data;
@@ -23,5 +27,10 @@ namespace bnss {
 		map["data"] = DATA;
 		map["rodata"] = RODATA;
 		map["bss"] = BSS;
+
+		reverse[TEXT] = "text";
+		reverse[DATA] = "data";
+		reverse[RODATA] = "rodata";
+		reverse[BSS] = "bss";
 	}
 }

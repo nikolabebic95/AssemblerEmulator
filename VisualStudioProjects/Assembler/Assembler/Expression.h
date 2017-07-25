@@ -23,7 +23,7 @@ namespace bnss {
 		 * \param value New value of the symbol
 		 * \return Whether the symbol was found and the value was set
 		 */
-		virtual bool setValue(std::string symbol, int32_t value) noexcept;
+		virtual bool setValue(std::string symbol, std::shared_ptr<Expression> value) noexcept;
 
 		/**
 		 * \brief Validates the expression

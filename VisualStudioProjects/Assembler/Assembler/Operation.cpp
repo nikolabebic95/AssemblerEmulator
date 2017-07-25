@@ -5,7 +5,7 @@ namespace bnss {
 		return calculate(left_->value(), right_->value());
 	}
 
-	bool Operation::setValue(std::string symbol, int32_t value) noexcept {
+	bool Operation::setValue(std::string symbol, std::shared_ptr<Expression> value) noexcept {
 		return left_->setValue(symbol, value) || right_->setValue(symbol, value);
  	}
 

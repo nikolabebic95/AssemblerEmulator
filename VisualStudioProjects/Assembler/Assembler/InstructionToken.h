@@ -16,11 +16,14 @@ namespace bnss {
 	class InstructionToken : public Token {
 	public:
 		InstructionToken(size_t line_number, std::string line, InstructionCode code, std::vector<std::shared_ptr<Operand>> operands, OperandType type = DEFAULT) noexcept;
-
+		void resolveSymbolDefinitions(std::unordered_set<SymbolDefinition> symbols) noexcept override;
+		void firstPass(FirstPassData &data) const override;
 	private:
 		InstructionCode code_;
 		OperandType type_;
 		std::vector<std::shared_ptr<Operand>> operands_;
+
+		size_t length() const;
 	};
 }
 

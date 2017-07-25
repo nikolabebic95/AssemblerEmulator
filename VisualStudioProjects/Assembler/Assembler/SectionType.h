@@ -7,7 +7,7 @@ namespace bnss {
 	 * \brief Enum representing the type of the section
 	 */
 	enum SectionType {
-		TEXT,		/**< Text section */
+		TEXT = 0,	/**< Text section */
 		DATA,		/**< Data section */
 		RODATA,		/**< Read-only data section */
 		BSS			/**< Block started by symbol section */

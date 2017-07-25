@@ -4,15 +4,13 @@
 #include "StringHelper.h"
 #include "MicroRiscParser.h"
 #include "AssemblerException.h"
-#include "ExpressionBuilder.h"
+#include "FirstPass.h"
 
 int main() {
 	try {
-		std::cout << "Hello, World!" << std::endl;
-
 		auto lines = bnss::FileReader::readAllLines("test.txt");
-
 		auto parsed = bnss::MicroRiscParser::instance().parse(lines);
+		auto first = bnss::FirstPass::execute(parsed);
 	}
 	catch (bnss::AssemblerException &e) {
 		std::cout << e.message() << std::endl;

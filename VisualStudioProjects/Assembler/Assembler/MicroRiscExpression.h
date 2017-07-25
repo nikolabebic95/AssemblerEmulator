@@ -22,6 +22,13 @@ namespace bnss {
 		 * \throw Throws if the value can not be calculated
 		 */
 		int32_t value() const;
+
+		/**
+		 * \brief Sets the value for the symbol
+		 * \param name Name of the symbol
+		 * \param expression Expression of the symbol
+		 */
+		bool setValue(std::string name, MicroRiscExpression expression) const noexcept;
 	private:
 		std::shared_ptr<Expression> expression_;
 	};

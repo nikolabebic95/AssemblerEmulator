@@ -78,8 +78,6 @@ namespace bnss {
 				}
 				
 				ret.push_back(token);
-
-				std::cout << i + 1 << ". " << line << std::endl;
 			}
 			catch (MessageException &e) {
 				throw ParserException(i + 1, initial_line, e.message());

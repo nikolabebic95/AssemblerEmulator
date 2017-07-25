@@ -11,6 +11,8 @@ namespace bnss {
 	class Immediate : public Operand {
 	public:
 		explicit Immediate(MicroRiscExpression value) noexcept;
+		void resolveSymbols(std::unordered_set<SymbolDefinition> symbols) noexcept override;
+		AddressMode addressMode() const noexcept override;
 	private:
 		MicroRiscExpression value_;
 	};

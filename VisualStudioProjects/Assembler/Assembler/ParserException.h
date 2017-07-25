@@ -10,6 +10,7 @@ namespace bnss {
 	class ParserException : public AssemblerException {
 	public:
 		ParserException(size_t line_number, std::string line, std::string specific_message) noexcept;
+	protected:
 		std::string messageBody() const noexcept override;
 	private:
 		std::string specific_message_;

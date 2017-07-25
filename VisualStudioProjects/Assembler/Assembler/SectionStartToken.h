@@ -26,6 +26,7 @@ namespace bnss {
 		* \param index Index of section
 		*/
 		SectionStartToken(SectionType type, size_t line_number, std::string line, size_t index) noexcept;
+		void firstPass(FirstPassData &data) const override;
 	private:
 		SectionType type_;
 		bool indexed_ = false;

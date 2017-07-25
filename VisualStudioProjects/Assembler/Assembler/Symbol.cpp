@@ -6,13 +6,13 @@ namespace bnss {
 
 	int32_t Symbol::value() const {
 		if (assigned_) {
-			return value_;
+			return value_->value();
 		}
 
 		throw NonExistingSymbolException(name_);
 	}
 
-	bool Symbol::setValue(std::string symbol, int32_t value) noexcept {
+	bool Symbol::setValue(std::string symbol, std::shared_ptr<Expression> value) noexcept {
 		if (symbol == name_) {
 			value_ = value;
 			assigned_ = true;

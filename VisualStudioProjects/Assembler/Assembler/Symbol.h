@@ -8,11 +8,11 @@ namespace bnss {
 	public:
 		explicit Symbol(std::string name) noexcept;
 		int32_t value() const override;
-		bool setValue(std::string symbol, int32_t value) noexcept override;
+		bool setValue(std::string symbol, std::shared_ptr<Expression> value) noexcept override;
 		int symbolCount() const noexcept override;
 	private:
 		std::string name_;
-		int32_t value_ = 0;
+		std::shared_ptr<Expression> value_ = nullptr;
 		bool assigned_ = false;
 	};
 }

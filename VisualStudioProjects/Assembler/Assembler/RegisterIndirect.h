@@ -11,6 +11,7 @@ namespace bnss {
 	class RegisterIndirect : public Operand {
 	public:
 		explicit RegisterIndirect(Register reg) noexcept;
+		AddressMode addressMode() const noexcept override;
 	private:
 		Register reg_;
 	};

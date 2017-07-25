@@ -15,6 +15,15 @@ namespace bnss {
 		return staticData().map[str];
 	}
 
+	size_t DataTypeParser::size(DataType data) {
+		switch (data) {
+		case BYTE: return 1;
+		case WORD: return 2;
+		case DOUBLE_WORD: return 3;
+		default: throw MessageException("DataType not yet implemented");
+		}
+	}
+
 	DataTypeParser::DataTypeParserStaticData::DataTypeParserStaticData() {
 		map["db"] = BYTE;
 		map["dw"] = WORD;

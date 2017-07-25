@@ -8,4 +8,14 @@ namespace bnss {
 			throw MessageException("Only PC relative address can be absolute");
 		}
 	}
+
+	void RegisterIndirectOffset::resolveSymbols(std::unordered_set<SymbolDefinition> symbols) noexcept {
+		for (auto &symbol : symbols) {
+			offset_or_address_.setValue(symbol.name(), symbol.expression());
+		}
+	}
+
+	AddressMode RegisterIndirectOffset::addressMode() const noexcept {
+		return REGISTER_INDIRECT_OFFSET;
+	}
 }

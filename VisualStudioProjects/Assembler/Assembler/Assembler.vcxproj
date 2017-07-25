@@ -158,6 +158,9 @@
     <ClCompile Include="ExpressionBuilder.cpp" />
     <ClCompile Include="ExpressionTokenFactory.cpp" />
     <ClCompile Include="FileReader.cpp" />
+    <ClCompile Include="FirstPass.cpp" />
+    <ClCompile Include="FirstPassData.cpp" />
+    <ClCompile Include="FirstPassException.cpp" />
     <ClCompile Include="GlobalSymbolsLineParser.cpp" />
     <ClCompile Include="GlobalSymbolToken.cpp" />
     <ClCompile Include="Immediate.cpp" />
@@ -184,6 +187,7 @@
     <ClCompile Include="MultiplyToken.cpp" />
     <ClCompile Include="NotInstructionParser.cpp" />
     <ClCompile Include="OpeningBraceToken.cpp" />
+    <ClCompile Include="Operand.cpp" />
     <ClCompile Include="OperandParser.cpp" />
     <ClCompile Include="OrgDirectiveLineParser.cpp" />
     <ClCompile Include="OrgDirectiveToken.cpp" />
@@ -194,8 +198,10 @@
     <ClCompile Include="RegisterIndirectOffsetParser.cpp" />
     <ClCompile Include="RegisterIndirectParser.cpp" />
     <ClCompile Include="RegisterParser.cpp" />
+    <ClCompile Include="SectionData.cpp" />
     <ClCompile Include="SectionStartLineParser.cpp" />
     <ClCompile Include="SectionStartToken.cpp" />
+    <ClCompile Include="SectionTable.cpp" />
     <ClCompile Include="SectionTypeParser.cpp" />
     <ClCompile Include="StackInstructionParser.cpp" />
     <ClCompile Include="StoreInstructionParser.cpp" />
@@ -211,14 +217,18 @@
     <ClCompile Include="StringHelper.cpp" />
     <ClCompile Include="SubtractOperation.cpp" />
     <ClCompile Include="Symbol.cpp" />
+    <ClCompile Include="SymbolData.cpp" />
+    <ClCompile Include="SymbolDefinition.cpp" />
     <ClCompile Include="SymbolDefinitionLineParser.cpp" />
     <ClCompile Include="SymbolDefinitionToken.cpp" />
+    <ClCompile Include="SymbolTable.cpp" />
     <ClCompile Include="SymbolToken.cpp" />
     <ClCompile Include="Token.cpp" />
     <ClCompile Include="UnconditionalJumpInstructionParser.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AddOperation.h" />
+    <ClInclude Include="AddressMode.h" />
     <ClInclude Include="AluInstructionParser.h" />
     <ClInclude Include="AssemblerException.h" />
     <ClInclude Include="ClosingBraceToken.h" />
@@ -237,6 +247,9 @@
     <ClInclude Include="ExpressionToken.h" />
     <ClInclude Include="ExpressionTokenFactory.h" />
     <ClInclude Include="FileReader.h" />
+    <ClInclude Include="FirstPass.h" />
+    <ClInclude Include="FirstPassData.h" />
+    <ClInclude Include="FirstPassException.h" />
     <ClInclude Include="GlobalSymbolsLineParser.h" />
     <ClInclude Include="GlobalSymbolToken.h" />
     <ClInclude Include="Immediate.h" />
@@ -278,8 +291,10 @@
     <ClInclude Include="RegisterIndirectParser.h" />
     <ClInclude Include="RegisterParser.h" />
     <ClInclude Include="NoOperandInstructionParser.h" />
+    <ClInclude Include="SectionData.h" />
     <ClInclude Include="SectionStartLineParser.h" />
     <ClInclude Include="SectionStartToken.h" />
+    <ClInclude Include="SectionTable.h" />
     <ClInclude Include="SectionType.h" />
     <ClInclude Include="SectionTypeParser.h" />
     <ClInclude Include="StackInstructionParser.h" />
@@ -295,8 +310,11 @@
     <ClInclude Include="StringHelper.h" />
     <ClInclude Include="SubtractOperation.h" />
     <ClInclude Include="Symbol.h" />
+    <ClInclude Include="SymbolData.h" />
+    <ClInclude Include="SymbolDefinition.h" />
     <ClInclude Include="SymbolDefinitionLineParser.h" />
     <ClInclude Include="SymbolDefinitionToken.h" />
+    <ClInclude Include="SymbolTable.h" />
     <ClInclude Include="SymbolToken.h" />
     <ClInclude Include="Token.h" />
     <ClInclude Include="UnconditionalJumpInstructionParser.h" />

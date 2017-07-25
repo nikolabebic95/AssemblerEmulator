@@ -16,6 +16,12 @@ namespace bnss {
 		 * \return Parsed data type
 		 */
 		static DataType parse(std::string str);
+
+		/**
+		 * \brief Returns the size of the data type in bytes
+		 * \param data DataType
+		 */
+		static size_t size(DataType data);
 	private:
 		struct DataTypeParserStaticData {
 			std::unordered_map<std::string, DataType> map;

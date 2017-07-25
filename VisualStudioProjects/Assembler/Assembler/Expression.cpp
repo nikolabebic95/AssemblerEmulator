@@ -1,7 +1,7 @@
 #include "Expression.h"
 
 namespace bnss {
-	bool Expression::setValue(std::string symbol, int32_t value) noexcept {
+	bool Expression::setValue(std::string symbol, std::shared_ptr<Expression> value) noexcept {
 		return false;
 	}
 
