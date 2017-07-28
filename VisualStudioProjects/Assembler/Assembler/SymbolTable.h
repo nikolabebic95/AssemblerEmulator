@@ -1,7 +1,7 @@
 #ifndef _symbol_table_h_
 #define _symbol_table_h_
-#include <unordered_map>
 #include "SymbolData.h"
+#include <unordered_map>
 
 namespace bnss {
 

@@ -1,9 +1,10 @@
 #ifndef _instruction_line_parser_h_
 #define _instruction_line_parser_h_
 #include "LineParser.h"
-#include <unordered_map>
 #include "InstructionCode.h"
 #include "InstructionParser.h"
+#include <memory>
+#include <unordered_map>
 
 namespace bnss {
 

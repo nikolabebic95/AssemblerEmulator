@@ -28,7 +28,7 @@ namespace bnss {
 	}
 
 	RegisterParser::RegisterParserStaticData::RegisterParserStaticData() noexcept {
-		for (auto i = 0; i < NUM_OF_REGISTERS; i++) {
+		for (size_t i = 0; i < NUM_OF_REGISTERS; i++) {
 			map["r" + std::to_string(i)] = static_cast<Register>(i);
 		}
 

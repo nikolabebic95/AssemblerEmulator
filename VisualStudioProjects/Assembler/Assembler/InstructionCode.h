@@ -1,12 +1,15 @@
 #ifndef _instruction_code_h_
 #define _instruction_code_h_
+#include <cstdint>
+// ReSharper disable once CppUnusedIncludeDirective
+#include <utility>
 
 namespace bnss {
 
 	/**
 	 * \brief Enum representing the instruction code
 	 */
-	enum InstructionCode {
+	enum InstructionCode : int8_t {
 		INT   = 0x00,
 		JMP   = 0x02,
 		CALL  = 0x03,
@@ -36,6 +39,16 @@ namespace bnss {
 		ASL   = 0x39,
 		ASR   = 0x3A
 	};
+}
+
+namespace std {
+	template <> struct hash<bnss::InstructionCode> {
+		size_t operator()(const bnss::InstructionCode & code) const;
+	};
+
+	inline size_t hash<bnss::InstructionCode>::operator()(const bnss::InstructionCode & code) const {
+		return hash<int8_t>()(static_cast<int8_t>(code));
+	}
 }
 
 #endif

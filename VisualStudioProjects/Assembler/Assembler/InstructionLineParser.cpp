@@ -11,6 +11,7 @@
 #include "LoadInstructionParser.h"
 #include "StoreInstructionParser.h"
 #include "MessageException.h"
+#include <unordered_map>
 
 namespace bnss {
 

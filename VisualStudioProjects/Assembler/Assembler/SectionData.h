@@ -2,6 +2,8 @@
 #define _section_data_h_
 #include "SectionType.h"
 #include <functional>
+#include <cstddef>
+#include <utility>
 
 namespace bnss {
 	

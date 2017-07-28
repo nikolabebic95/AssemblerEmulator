@@ -1,5 +1,7 @@
 #ifndef _register_h_
 #define _register_h_
+// ReSharper disable once CppUnusedIncludeDirective
+#include <cstddef>
 
 namespace bnss {
 

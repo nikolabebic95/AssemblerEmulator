@@ -3,6 +3,7 @@
 #include "SymbolTable.h"
 #include "SectionTable.h"
 #include "SymbolDefinition.h"
+#include <unordered_set>
 
 namespace bnss {
 	
