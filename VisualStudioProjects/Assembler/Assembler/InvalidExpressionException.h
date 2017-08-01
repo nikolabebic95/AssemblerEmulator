@@ -7,7 +7,7 @@ namespace bnss {
 	/**
 	 * \brief Exception representing the invalid expression
 	 */
-	class InvalidExpressionException : MessageException {
+	class InvalidExpressionException : public MessageException {
 	public:
 		InvalidExpressionException() noexcept;
 	};

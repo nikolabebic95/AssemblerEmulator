@@ -33,7 +33,7 @@ namespace bnss {
 		auto rank = 0;
 
 		static std::regex end_of_infix("[[:space:]]*");
-		static std::regex token_extractor("[[:space:]]*(" + LITERAL + "|" + OPERATOR + "|" + SYMBOL + ")(.*)");
+		static std::regex token_extractor("[[:space:]]*(" + LITERAL + "|" + OPERATOR + "|" + SYMBOL + ")(.*)[[:space:]]*");
 
 		fixUnaryMinusStart(infix_expression, token_extractor);
 

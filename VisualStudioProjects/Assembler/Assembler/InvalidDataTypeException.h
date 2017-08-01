@@ -4,7 +4,7 @@
 
 namespace bnss {
 	
-	class InvalidDataTypeException : MessageException {
+	class InvalidDataTypeException : public MessageException {
 	public:
 		explicit InvalidDataTypeException(std::string data_type) noexcept;
 	};

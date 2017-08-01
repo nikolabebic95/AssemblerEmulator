@@ -1,6 +1,7 @@
 #ifndef _message_exception_h_
 #define _message_exception_h_
 #include <string>
+#include <exception>
 
 namespace bnss {
 	

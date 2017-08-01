@@ -79,7 +79,10 @@ namespace bnss {
 		long long long_long;
 
 		try {
-			if (regex_match(number, DECIMAL_REGEX)) {
+			if (regex_match(number, ZERO_REGEX)) {
+				long_long = 0;
+			}
+			else if (regex_match(number, DECIMAL_REGEX)) {
 				long_long = stoll(number);
 			}
 			else if (regex_match(number, HEX_REGEX)) {

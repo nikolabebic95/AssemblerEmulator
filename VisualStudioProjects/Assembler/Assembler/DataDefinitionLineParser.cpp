@@ -78,7 +78,7 @@ namespace bnss {
 			return nullptr;
 		}
 
-		auto comma_token = regex_replace(parsed_line, COMMA_TOKENIZER_REGEX, "$1");
+		auto comma_token = regex_replace(parsed_line, LAST_COMMA_TOKEN_REGEX, "$1");
 		try {
 			data_vector.push_back(parseData(comma_token));
 		}

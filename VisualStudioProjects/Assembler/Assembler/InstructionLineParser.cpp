@@ -99,7 +99,7 @@ namespace bnss {
 	}
 
 	std::shared_ptr<Token> InstructionLineParser::parse(const std::string &line, size_t line_number, std::string initial_line) const {
-		std::regex regex("[[:space:]]*([A-Za-z]*)(.*)");
+		std::regex regex("[[:space:]]*([A-Za-z]*)(.*)[[:space:]]*");
 		if (!regex_match(line, regex)) {
 			return nullptr;
 		}

@@ -29,7 +29,7 @@ namespace bnss {
 	 */
 	static std::string extractLabel(std::string &line, std::vector<std::string> label_delimiters) {
 		auto delimiters = StringHelper::join(label_delimiters, "|");
-		static std::regex regex("(.*)(" + delimiters + ")(.*)");
+		static std::regex regex("[[:space:]]*(.*)[[:space:]]*(" + delimiters + ")[[:space:]]*(.*)[[:space:]]*");
 
 		if (regex_match(line, regex)) {
 			static std::regex label_regex("[[:space:]]*(" + LABEL + ")[[:space:]]*");
