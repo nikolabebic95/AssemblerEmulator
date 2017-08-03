@@ -5,6 +5,7 @@
 #include "SymbolDefinitionLineParser.h"
 #include "DataDefinitionLineParser.h"
 #include "GlobalSymbolsLineParser.h"
+#include <regex>
 
 namespace bnss {
 
@@ -19,6 +20,11 @@ namespace bnss {
 
 	std::vector<std::string> MicroRiscParser::labelDelimiters() const noexcept {
 		return { ":" };
+	}
+
+	bool MicroRiscParser::isEnd(std::string line) const noexcept {
+		static std::regex regex("[[:space:]]*[.][Ee][Nn][Dd][[:space:]]*");
+		return regex_match(line, regex);
 	}
 
 	std::shared_ptr<LineParser> MicroRiscParser::chain() const noexcept {

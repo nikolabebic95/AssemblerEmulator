@@ -71,6 +71,11 @@ namespace bnss {
 					continue;
 				}
 
+				// Check if the file should still be parsed
+				if (isEnd(line)) {
+					break;
+				}
+
 				// Parse the line
 				auto token = chain()->tryParse(line, i + 1, initial_line);
 				if (token == nullptr) {

@@ -17,6 +17,7 @@ namespace bnss {
 	protected:
 		std::vector<std::string> oneLineCommentDelimiters() const noexcept override;
 		std::vector<std::string> labelDelimiters() const noexcept override;
+		bool isEnd(std::string line) const noexcept override;
 		std::shared_ptr<LineParser> chain() const noexcept override;
 	private:
 		std::shared_ptr<LineParser> head_;

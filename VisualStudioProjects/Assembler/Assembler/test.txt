@@ -23,3 +23,5 @@ kurac_moj : and r1, r2, r2
              kurac  def  0x0
 
 v:  DD  6, DB 7 DUP    5 , dw 1 dup 11
+    .end 
+kurac

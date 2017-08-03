@@ -39,6 +39,12 @@ namespace bnss {
 		virtual std::vector<std::string> labelDelimiters() const noexcept = 0;
 
 		/**
+		 * \brief Checks if the parser should stop parsing the file
+		 * \param line Line to check
+		 */
+		virtual bool isEnd(std::string line) const noexcept = 0;
+
+		/**
 		 * \brief Returns the first LineParser in chain
 		 * \return Pointer to the first parser
 		 */
