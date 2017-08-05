@@ -30,6 +30,29 @@ namespace bnss {
 		virtual void firstPass(FirstPassData &data) const = 0;
 
 		/**
+		 * \brief Executes the second pass over the token
+		 * \param data Data that the token will modify
+		 */
+		virtual void secondPass(SecondPassData &data) const = 0;
+
+		/**
+		 * \brief Check whether the token can use the ORG address
+		 */
+		virtual bool usesAddress() const noexcept;
+
+		/**
+		 * \brief Resolves the symbols from the symbol table and updates relocation info
+		 * \param symbol_table Symbol table
+		 */
+		virtual void resolveSymbolTable(const SymbolTable &symbol_table) noexcept;
+
+		/**
+		 * \brief Resolves the imported symbols and updates relocation info
+		 * \param imported_symbols Collection of imported symbols
+		 */
+		virtual void resolveImports(std::unordered_set<std::string> imported_symbols) noexcept;
+
+		/**
 		 * \brief Get the line number of the token
 		 * \return Line number
 		 */

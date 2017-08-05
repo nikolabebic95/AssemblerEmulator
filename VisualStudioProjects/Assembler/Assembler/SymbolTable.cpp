@@ -1,4 +1,5 @@
 #include "SymbolTable.h"
+#include "SymbolData.h"
 
 namespace bnss {
 
@@ -9,5 +10,9 @@ namespace bnss {
 
 	bool SymbolTable::contains(std::string symbol) const noexcept {
 		return count(symbol) > 0;
+	}
+
+	void SymbolTable::exportSymbol(std::string symbol) noexcept {
+		(*this)[symbol].exportSymbol();
 	}
 }

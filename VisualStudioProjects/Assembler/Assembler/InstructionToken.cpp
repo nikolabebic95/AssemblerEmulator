@@ -1,4 +1,8 @@
 #include "InstructionToken.h"
+#include "InstructionBitFieldUnion.h"
+#include "SecondPassData.h"
+#include "Register.h"
+#include "MessageException.h"
 
 namespace bnss {
 
@@ -14,6 +18,31 @@ namespace bnss {
 		data.incLocationCounter(length());
 	}
 
+	void InstructionToken::secondPass(SecondPassData &data) const {
+		if (data.currentSectionType() != TEXT) {
+			throw MessageException("Instructions can only exist in text sections");
+		}
+
+		auto pair = packInstruction();
+		data.addData(pair.first, std::list<RelocationRecord>());
+
+		if (length() == 8) {
+			data.addData(pair.second.first, pair.second.second);
+		}
+	}
+
+	void InstructionToken::resolveSymbolTable(const SymbolTable &symbol_table) noexcept {
+		for (auto &operand : operands_) {
+			operand->resolveSymbolTable(symbol_table);
+		}
+	}
+
+	void InstructionToken::resolveImports(std::unordered_set<std::string> imported_symbols) noexcept {
+		for (auto &operand : operands_) {
+			operand->resolveImports(imported_symbols);
+		}
+	}
+
 	size_t InstructionToken::length() const {
 		for (auto &operand : operands_) {
 			if (
@@ -24,5 +53,25 @@ namespace bnss {
 		}
 
 		return 4;
+	}
+
+	std::pair<uint32_t, std::pair<uint32_t, std::list<RelocationRecord>>> InstructionToken::packInstruction() const noexcept {
+		std::pair<uint32_t, std::pair<uint32_t, std::list<RelocationRecord>>> ret;
+		InstructionBitFieldUnion instruction;
+		
+		instruction.bit_field.operation_code = code_;
+		instruction.bit_field.address_mode = REGISTER_DIRECT; // Default address mode
+		instruction.bit_field.register0 = NONE;
+		instruction.bit_field.register1 = NONE;
+		instruction.bit_field.register2 = NONE;
+		instruction.bit_field.type = type_;
+		
+		for (auto &operand : operands_) {
+			operand->packToInstruction(instruction, ret.second.first, ret.second.second);
+		}
+
+		// ReSharper disable once CppSomeObjectMembersMightNotBeInitialized
+		ret.first = instruction.data;
+		return ret;
 	}
 }

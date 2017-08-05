@@ -198,6 +198,10 @@
     <ClCompile Include="RegisterIndirectOffsetParser.cpp" />
     <ClCompile Include="RegisterIndirectParser.cpp" />
     <ClCompile Include="RegisterParser.cpp" />
+    <ClCompile Include="RelocationRecord.cpp" />
+    <ClCompile Include="SecondPass.cpp" />
+    <ClCompile Include="SecondPassData.cpp" />
+    <ClCompile Include="SecondPassException.cpp" />
     <ClCompile Include="SectionData.cpp" />
     <ClCompile Include="SectionStartLineParser.cpp" />
     <ClCompile Include="SectionStartToken.cpp" />
@@ -255,6 +259,8 @@
     <ClInclude Include="Immediate.h" />
     <ClInclude Include="ImmediateParser.h" />
     <ClInclude Include="IncorrectLabelException.h" />
+    <ClInclude Include="InstructionBitField.h" />
+    <ClInclude Include="InstructionBitFieldUnion.h" />
     <ClInclude Include="InstructionCode.h" />
     <ClInclude Include="InstructionCodeParser.h" />
     <ClInclude Include="InstructionLineParser.h" />
@@ -291,6 +297,10 @@
     <ClInclude Include="RegisterIndirectParser.h" />
     <ClInclude Include="RegisterParser.h" />
     <ClInclude Include="NoOperandInstructionParser.h" />
+    <ClInclude Include="RelocationRecord.h" />
+    <ClInclude Include="SecondPass.h" />
+    <ClInclude Include="SecondPassData.h" />
+    <ClInclude Include="SecondPassException.h" />
     <ClInclude Include="SectionData.h" />
     <ClInclude Include="SectionStartLineParser.h" />
     <ClInclude Include="SectionStartToken.h" />

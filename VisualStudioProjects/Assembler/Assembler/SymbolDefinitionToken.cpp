@@ -13,4 +13,8 @@ namespace bnss {
 	void SymbolDefinitionToken::firstPass(FirstPassData &data) const {
 		data.insertSymbolDefinition(SymbolDefinition(name_, value_));
 	}
+
+	void SymbolDefinitionToken::secondPass(SecondPassData &data) const {
+		// TODO: Implementation
+	}
 }

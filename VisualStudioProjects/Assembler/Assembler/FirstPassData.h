@@ -47,6 +47,8 @@ namespace bnss {
 		 */
 		std::unordered_set<SymbolDefinition> symbolDefinitions() const noexcept;
 	private:
+		friend class SecondPassData;
+
 		SymbolTable symbol_table_;
 		SectionTable section_table_;
 		std::unordered_set<SymbolDefinition> symbol_definitions_;

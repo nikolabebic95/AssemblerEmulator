@@ -1,4 +1,5 @@
 #include "SectionStartToken.h"
+#include "SecondPassData.h"
 
 namespace bnss {
 
@@ -13,5 +14,13 @@ namespace bnss {
 		else {
 			data.insertSection(type_);
 		}
+	}
+
+	void SectionStartToken::secondPass(SecondPassData &data) const {
+		data.nextSection();
+	}
+
+	bool SectionStartToken::usesAddress() const noexcept {
+		return true;
 	}
 }

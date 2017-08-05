@@ -8,6 +8,19 @@ namespace bnss {
 		// Default: Do nothing
 	}
 
+	bool Token::usesAddress() const noexcept {
+		// Default: Do not use address
+		return false;
+	}
+
+	void Token::resolveSymbolTable(const SymbolTable &symbol_table) noexcept {
+		// Default: Do nothing
+	}
+
+	void Token::resolveImports(std::unordered_set<std::string> imported_symbols) noexcept {
+		// Default: Do nothing
+	}
+
 	size_t Token::lineNumber() const noexcept {
 		return line_number_;
 	}

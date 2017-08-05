@@ -10,11 +10,11 @@ namespace bnss {
 		DEFAULT = 0,
 		UNSIGNED_BYTE = 1,
 		SIGNED_BYTE = 2,
-		BYTE = 3,
+		REGULAR_BYTE = 3,
 		UNSIGNED_WORD = 4,
 		SIGNED_WORD = 5,
-		WORD = 6,
-		DOUBLE_WORD = 7
+		REGULAR_WORD = 6,
+		REGULAR_DOUBLE_WORD = 7
 	};
 }
 

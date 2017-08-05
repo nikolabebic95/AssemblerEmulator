@@ -1,4 +1,5 @@
 #include "GlobalSymbolToken.h"
+#include "SecondPassData.h"
 
 namespace bnss {
 
@@ -6,5 +7,16 @@ namespace bnss {
 
 	void GlobalSymbolsToken::firstPass(FirstPassData &data) const {
 		// Do nothing
+	}
+
+	void GlobalSymbolsToken::secondPass(SecondPassData & data) const {
+		for (const auto &symbol : symbols_) {
+			if (data.contains(symbol)) {
+				data.exportSymbol(symbol);
+			}
+			else {
+				data.insertImported(symbol);
+			}
+		}
 	}
 }

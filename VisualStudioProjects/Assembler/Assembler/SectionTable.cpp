@@ -14,4 +14,32 @@ namespace bnss {
 		push_back(data);
 		return *this;
 	}
+
+	void SectionTable::nextSection() noexcept {
+		current_index_++;
+	}
+
+	SectionType SectionTable::currentSectionType() const noexcept {
+		return (*this)[current_index_].type();
+	}
+
+	void SectionTable::addData(uint8_t data, std::list<RelocationRecord> &relocations) {
+		(*this)[current_index_].addData(data, relocations);
+	}
+
+	void SectionTable::addData(uint16_t data, std::list<RelocationRecord> &relocations) {
+		(*this)[current_index_].addData(data, relocations);
+	}
+
+	void SectionTable::addData(uint32_t data, std::list<RelocationRecord> &relocations) {
+		(*this)[current_index_].addData(data, relocations);
+	}
+
+	SectionData & SectionTable::current() noexcept {
+		return (*this)[current_index_];
+	}
+
+	const SectionData & SectionTable::current() const noexcept {
+		return const_cast<SectionTable &>(*this).current();
+	}
 }

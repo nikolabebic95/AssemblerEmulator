@@ -2,8 +2,13 @@
 #define _section_data_h_
 #include "SectionType.h"
 #include <functional>
+// ReSharper disable once CppUnusedIncludeDirective
 #include <cstddef>
+// ReSharper disable once CppUnusedIncludeDirective
 #include <utility>
+#include <vector>
+#include <list>
+#include "RelocationRecord.h"
 
 namespace bnss {
 	
@@ -66,13 +71,54 @@ namespace bnss {
 		friend bool operator<=(const SectionData &lhs, const SectionData &rhs) noexcept;
 		friend bool operator>=(const SectionData &lhs, const SectionData &rhs) noexcept;
 
+		/**
+		 * \brief Hash the sectionData object
+		 * \return Hashed value
+		 */
 		size_t hash() const noexcept;
 
+		/**
+		 * \brief Adds 8 bits of data to the data array
+		 * \param data Data to be addded
+		 * \param relocations List of relocation records for the data
+		 */
+		void addData(uint8_t data, std::list<RelocationRecord> &relocations);
+
+		/**
+		 * \brief Adds 16 bits of data to the data array
+		 * \param data Data to be addded
+		 * \param relocations List of relocation records for the data
+		 */
+		void addData(uint16_t data, std::list<RelocationRecord> &relocations);
+
+		/**
+		 * \brief Adds 32 bits of data to the data array
+		 * \param data Data to be addded
+		 * \param relocations List of relocation records for the data
+		 */
+		void addData(uint32_t data, std::list<RelocationRecord> &relocations);
+
+		/**
+		 * \brief Sets the ORG address
+		 * \param address ORG address
+		 */
+		void org(uint32_t address);
 	private:
 		SectionType type_;
 		bool indexed_ = false;
 		size_t index_ = 0;
 		size_t location_counter_ = 0;
+		uint32_t org_address_ = 0;
+		bool org_valid_ = false;
+
+		std::vector<uint8_t> data_;
+		std::list<RelocationRecord> relocation_records_;
+
+		/**
+		 * \brief Adds 8 bits of data to the data array, without relocation records
+		 * \param data Data to be added
+		 */
+		void addData(uint8_t data);
 	};
 }
 

@@ -12,7 +12,8 @@ pop r2 // comment
 JNZ r2, x // comment
 
 ORG 0x123
-abc: .text.1
+.text.1
+abc:
 ; just a comment
  x : ASL R1, R1, R2
 y:
@@ -22,6 +23,6 @@ kurac_moj : and r1, r2, r2
 
              kurac  def  0x0
 
-v:  DD  6, DB 7 DUP    5 , dw 1 dup 11
+v:  DD  6, DB 7 DUP    5 , dw 2 dup 0x1234
     .end 
 kurac

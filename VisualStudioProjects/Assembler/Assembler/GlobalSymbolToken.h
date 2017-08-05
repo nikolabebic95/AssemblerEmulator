@@ -9,6 +9,7 @@ namespace bnss {
 	public:
 		GlobalSymbolsToken(std::vector<std::string> symbols, size_t line_number, std::string line) noexcept;
 		void firstPass(FirstPassData &data) const override;
+		void secondPass(SecondPassData &data) const override;
 	private:
 		std::vector<std::string> symbols_;
 	};

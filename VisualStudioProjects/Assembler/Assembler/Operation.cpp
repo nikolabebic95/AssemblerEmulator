@@ -37,4 +37,21 @@ namespace bnss {
 		stack.push(const_cast<std::shared_ptr<Expression>&>(left_));
 		stack.push(const_cast<std::shared_ptr<Expression>&>(right_));
 	}
+
+	void Operation::resolveSymbolTable(const SymbolTable &symbol_table) noexcept {
+		left_->resolveSymbolTable(symbol_table);
+		right_->resolveSymbolTable(symbol_table);
+	}
+
+	void Operation::resolveImports(std::unordered_set<std::string> imported_symbols) noexcept {
+		left_->resolveImports(imported_symbols);
+		right_->resolveImports(imported_symbols);
+	}
+
+	std::list<RelocationRecord> Operation::generateRelocations() const {
+		auto left = left_->generateRelocations();
+		auto right = right_->generateRelocations();
+		left.splice(left.end(), move(right));
+		return left;
+	}
 }

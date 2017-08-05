@@ -3,9 +3,15 @@
 
 namespace bnss {
 
-	// ReSharper disable once CppMemberFunctionMayBeStatic
-	// ReSharper disable once CppMemberFunctionMayBeConst
 	void Operand::resolveSymbols(std::unordered_set<SymbolDefinition> symbols) noexcept {
+		// Default: Do nothing
+	}
+
+	void Operand::resolveSymbolTable(const SymbolTable &symbol_table) noexcept {
+		// Default: Do nothing
+	}
+
+	void Operand::resolveImports(std::unordered_set<std::string> imported_symbols) noexcept {
 		// Default: Do nothing
 	}
 }

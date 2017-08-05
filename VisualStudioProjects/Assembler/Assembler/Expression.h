@@ -3,6 +3,9 @@
 #include <cstdint>
 #include <memory>
 #include <stack>
+#include "SymbolTable.h"
+#include <unordered_set>
+#include "RelocationRecord.h"
 
 namespace bnss {
 	
@@ -48,6 +51,24 @@ namespace bnss {
 		 * \param stack Reference to the stack
 		 */
 		virtual void pushChildren(std::stack<std::reference_wrapper<std::shared_ptr<Expression>>> &stack) const noexcept;
+
+		/**
+		 * \brief Resolves the symbols from the symbol table and sets the relocation info
+		 * \param symbol_table Symbol table
+		 */
+		virtual void resolveSymbolTable(const SymbolTable &symbol_table) noexcept;
+
+		/**
+		 * \brief Resolves the imported symbols and sets the relocation info
+		 * \param imported_symbols Collection of imported symbols
+		 */
+		virtual void resolveImports(std::unordered_set<std::string> imported_symbols) noexcept;
+
+		/**
+		 * \brief Generates the relocation records for the subtree
+		 * \return Collection of relocation records
+		 */
+		virtual std::list<RelocationRecord> generateRelocations() const;
 		virtual ~Expression() = default;
 	};
 }

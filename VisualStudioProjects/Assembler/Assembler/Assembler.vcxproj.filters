@@ -79,11 +79,23 @@
     <Filter Include="Source Files\Parsing\InstructionParsers">
       <UniqueIdentifier>{ee26eb44-6cc0-4704-bc10-4fb60444a740}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\FirstPass">
-      <UniqueIdentifier>{1972c665-d0b0-48de-b5d2-2f3001325e2e}</UniqueIdentifier>
+    <Filter Include="Source Files\TwoPasses">
+      <UniqueIdentifier>{222bdccd-9117-42cf-9fff-2256fd6b9911}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\FirstPass">
+    <Filter Include="Source Files\TwoPasses\FirstPass">
       <UniqueIdentifier>{2b29b04d-0b6a-43bb-b7bc-9005403eb0f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\TwoPasses\SecondPass">
+      <UniqueIdentifier>{959d82f0-af1c-4eb7-8a01-f132f867e0ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\TwoPasses">
+      <UniqueIdentifier>{8ef5e9df-1b4e-4a44-bf26-c0bc38c3a86a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\TwoPasses\SecondPass">
+      <UniqueIdentifier>{109aff1f-0102-4a6a-abf2-d48bbe82367e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\TwoPasses\FirstPass">
+      <UniqueIdentifier>{1972c665-d0b0-48de-b5d2-2f3001325e2e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -298,31 +310,16 @@
       <Filter>Source Files\Tokens</Filter>
     </ClCompile>
     <ClCompile Include="FirstPass.cpp">
-      <Filter>Source Files\FirstPass</Filter>
+      <Filter>Source Files\TwoPasses\FirstPass</Filter>
     </ClCompile>
     <ClCompile Include="FirstPassData.cpp">
-      <Filter>Source Files\FirstPass</Filter>
+      <Filter>Source Files\TwoPasses\FirstPass</Filter>
     </ClCompile>
     <ClCompile Include="FirstPassException.cpp">
       <Filter>Source Files\Exceptions</Filter>
     </ClCompile>
     <ClCompile Include="Operand.cpp">
       <Filter>Source Files\Operands</Filter>
-    </ClCompile>
-    <ClCompile Include="SectionData.cpp">
-      <Filter>Source Files\FirstPass</Filter>
-    </ClCompile>
-    <ClCompile Include="SectionTable.cpp">
-      <Filter>Source Files\FirstPass</Filter>
-    </ClCompile>
-    <ClCompile Include="SymbolData.cpp">
-      <Filter>Source Files\FirstPass</Filter>
-    </ClCompile>
-    <ClCompile Include="SymbolDefinition.cpp">
-      <Filter>Source Files\FirstPass</Filter>
-    </ClCompile>
-    <ClCompile Include="SymbolTable.cpp">
-      <Filter>Source Files\FirstPass</Filter>
     </ClCompile>
     <ClCompile Include="GlobalSymbolsLineParser.cpp">
       <Filter>Source Files\Parsing\LineParsers</Filter>
@@ -335,6 +332,33 @@
     </ClCompile>
     <ClCompile Include="GlobalSymbolToken.cpp">
       <Filter>Source Files\Tokens</Filter>
+    </ClCompile>
+    <ClCompile Include="SectionData.cpp">
+      <Filter>Source Files\TwoPasses</Filter>
+    </ClCompile>
+    <ClCompile Include="SectionTable.cpp">
+      <Filter>Source Files\TwoPasses</Filter>
+    </ClCompile>
+    <ClCompile Include="SymbolData.cpp">
+      <Filter>Source Files\TwoPasses</Filter>
+    </ClCompile>
+    <ClCompile Include="SymbolDefinition.cpp">
+      <Filter>Source Files\TwoPasses</Filter>
+    </ClCompile>
+    <ClCompile Include="SymbolTable.cpp">
+      <Filter>Source Files\TwoPasses</Filter>
+    </ClCompile>
+    <ClCompile Include="SecondPass.cpp">
+      <Filter>Source Files\TwoPasses\SecondPass</Filter>
+    </ClCompile>
+    <ClCompile Include="SecondPassData.cpp">
+      <Filter>Source Files\TwoPasses\SecondPass</Filter>
+    </ClCompile>
+    <ClCompile Include="SecondPassException.cpp">
+      <Filter>Source Files\Exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="RelocationRecord.cpp">
+      <Filter>Source Files\TwoPasses\SecondPass</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -585,31 +609,49 @@
       <Filter>Header Files\Parsing\LineParsers</Filter>
     </ClInclude>
     <ClInclude Include="FirstPassData.h">
-      <Filter>Header Files\FirstPass</Filter>
-    </ClInclude>
-    <ClInclude Include="SymbolTable.h">
-      <Filter>Header Files\FirstPass</Filter>
-    </ClInclude>
-    <ClInclude Include="SymbolData.h">
-      <Filter>Header Files\FirstPass</Filter>
-    </ClInclude>
-    <ClInclude Include="SectionTable.h">
-      <Filter>Header Files\FirstPass</Filter>
-    </ClInclude>
-    <ClInclude Include="SectionData.h">
-      <Filter>Header Files\FirstPass</Filter>
-    </ClInclude>
-    <ClInclude Include="SymbolDefinition.h">
-      <Filter>Header Files\FirstPass</Filter>
+      <Filter>Header Files\TwoPasses\FirstPass</Filter>
     </ClInclude>
     <ClInclude Include="AddressMode.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FirstPass.h">
-      <Filter>Header Files\FirstPass</Filter>
+      <Filter>Header Files\TwoPasses\FirstPass</Filter>
     </ClInclude>
     <ClInclude Include="FirstPassException.h">
       <Filter>Header Files\Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="SecondPass.h">
+      <Filter>Header Files\TwoPasses\SecondPass</Filter>
+    </ClInclude>
+    <ClInclude Include="SecondPassData.h">
+      <Filter>Header Files\TwoPasses\SecondPass</Filter>
+    </ClInclude>
+    <ClInclude Include="SecondPassException.h">
+      <Filter>Header Files\Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="SymbolTable.h">
+      <Filter>Header Files\TwoPasses</Filter>
+    </ClInclude>
+    <ClInclude Include="SymbolData.h">
+      <Filter>Header Files\TwoPasses</Filter>
+    </ClInclude>
+    <ClInclude Include="SectionTable.h">
+      <Filter>Header Files\TwoPasses</Filter>
+    </ClInclude>
+    <ClInclude Include="SymbolDefinition.h">
+      <Filter>Header Files\TwoPasses</Filter>
+    </ClInclude>
+    <ClInclude Include="SectionData.h">
+      <Filter>Header Files\TwoPasses</Filter>
+    </ClInclude>
+    <ClInclude Include="InstructionBitField.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InstructionBitFieldUnion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RelocationRecord.h">
+      <Filter>Header Files\TwoPasses\SecondPass</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

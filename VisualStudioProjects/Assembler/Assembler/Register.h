@@ -8,7 +8,7 @@ namespace bnss {
 	const size_t NUM_OF_REGISTERS = 16;
 
 	enum Register {
-		R0 = 0,
+		R0 = 0x00,
 		R1,
 		R2,
 		R3,
@@ -24,8 +24,9 @@ namespace bnss {
 		R13,
 		R14,
 		R15,
-		PC,
-		SP
+		SP = 0x10,
+		PC = 0x11,
+		NONE = 0xFF
 	};
 }
 

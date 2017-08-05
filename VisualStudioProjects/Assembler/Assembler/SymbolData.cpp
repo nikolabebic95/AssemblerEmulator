@@ -7,4 +7,20 @@ namespace bnss {
 	std::string SymbolData::name() const noexcept {
 		return name_;
 	}
+
+	size_t SymbolData::sectionIndex() const noexcept {
+		return section_index_;
+	}
+
+	size_t SymbolData::offset() const noexcept {
+		return offset_;
+	}
+
+	bool SymbolData::local() const noexcept {
+		return local_;
+	}
+
+	void SymbolData::exportSymbol() noexcept {
+		local_ = false;
+	}
 }

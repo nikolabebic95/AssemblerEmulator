@@ -7,11 +7,11 @@ namespace bnss {
 	 * \brief Enum representing the address mode
 	 */
 	enum AddressMode {
-		IMMEDIATE,
-		REGISTER_DIRECT,
-		MEMORY_DIRECT,
-		REGISTER_INDIRECT,
-		REGISTER_INDIRECT_OFFSET
+		IMMEDIATE					= 0b100,
+		REGISTER_DIRECT				= 0b000,
+		MEMORY_DIRECT				= 0b110,
+		REGISTER_INDIRECT			= 0b010,
+		REGISTER_INDIRECT_OFFSET	= 0b111
 	};
 }
 

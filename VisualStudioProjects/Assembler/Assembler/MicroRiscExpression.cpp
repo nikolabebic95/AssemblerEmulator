@@ -11,4 +11,17 @@ namespace bnss {
 	bool MicroRiscExpression::setValue(std::string name, MicroRiscExpression expression) const noexcept {
 		return expression_->setValue(name, expression.expression_);
 	}
+
+	void MicroRiscExpression::resolveSymbolTable(const SymbolTable &symbol_table) const noexcept {
+		expression_->resolveSymbolTable(symbol_table);
+	}
+
+	void MicroRiscExpression::resolveImports(std::unordered_set<std::string> imported_symbols) const noexcept {
+		expression_->resolveImports(imported_symbols);
+	}
+
+	std::list<RelocationRecord> MicroRiscExpression::generateRelocations() const {
+		expression_->validate();
+		return expression_->generateRelocations();
+	}
 }

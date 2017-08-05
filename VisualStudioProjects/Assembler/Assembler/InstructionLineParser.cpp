@@ -45,18 +45,18 @@ namespace bnss {
 			type = SIGNED_WORD;
 		}
 		else if (instruction == "load") {
-			type = DOUBLE_WORD;
+			type = REGULAR_DOUBLE_WORD;
 		}
 		else if (instruction == "storeb") {
 			instruction = "store";
-			type = BYTE;
+			type = REGULAR_BYTE;
 		}
 		else if (instruction == "storew") {
 			instruction = "store";
-			type = WORD;
+			type = REGULAR_WORD;
 		}
 		else if (instruction == "store") {
-			type = DOUBLE_WORD;
+			type = REGULAR_DOUBLE_WORD;
 		}
 	}
 

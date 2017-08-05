@@ -15,6 +15,9 @@ namespace bnss {
 		bool containsSymbol() const noexcept override;
 		int symbolCount() const noexcept override;
 		void pushChildren(std::stack<std::reference_wrapper<std::shared_ptr<Expression>>> &stack) const noexcept override;
+		void resolveSymbolTable(const SymbolTable &symbol_table) noexcept override;
+		void resolveImports(std::unordered_set<std::string> imported_symbols) noexcept override;
+		std::list<RelocationRecord> generateRelocations() const override;
 
 		/**
 		 * \brief Sets the left side of the operator

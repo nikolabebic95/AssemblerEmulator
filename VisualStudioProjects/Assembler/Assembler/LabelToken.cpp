@@ -7,4 +7,8 @@ namespace bnss {
 	void LabelToken::firstPass(FirstPassData &data) const {
 		data.insertSymbol(label_);
 	}
+
+	void LabelToken::secondPass(SecondPassData &data) const {
+		// Do nothing
+	}
 }

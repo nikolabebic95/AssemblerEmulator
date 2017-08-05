@@ -29,6 +29,24 @@ namespace bnss {
 		 * \param expression Expression of the symbol
 		 */
 		bool setValue(std::string name, MicroRiscExpression expression) const noexcept;
+
+		/**
+		 * \brief Resolves the symbols from the symbol table and sets the relocation info
+		 * \param symbol_table Symbol table
+		 */
+		void resolveSymbolTable(const SymbolTable &symbol_table) const noexcept;
+
+		/**
+		* \brief Resolves the imported symbols and sets the relocation info
+		* \param imported_symbols Collection of imported symbols
+		*/
+		void resolveImports(std::unordered_set<std::string> imported_symbols) const noexcept;
+
+		/**
+		 * \brief Validates the tree and generates the relocation records for the expression
+		 * \return Collection of relocation records
+		 */
+		std::list<RelocationRecord> generateRelocations() const;
 	private:
 		std::shared_ptr<Expression> expression_;
 	};

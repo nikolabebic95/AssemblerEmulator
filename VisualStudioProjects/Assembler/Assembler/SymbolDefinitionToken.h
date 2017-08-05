@@ -13,6 +13,7 @@ namespace bnss {
 		SymbolDefinitionToken(std::string name, MicroRiscExpression value, size_t line_number, std::string line) noexcept;
 		void resolveSymbolDefinitions(std::unordered_set<SymbolDefinition> symbols) noexcept override;
 		void firstPass(FirstPassData &data) const override;
+		void secondPass(SecondPassData &data) const override;
 	private:
 		std::string name_;
 		MicroRiscExpression value_;

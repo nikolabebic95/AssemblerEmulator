@@ -5,12 +5,14 @@
 #include "MicroRiscParser.h"
 #include "AssemblerException.h"
 #include "FirstPass.h"
+#include "SecondPass.h"
 
 int main() {
 	try {
 		auto lines = bnss::FileReader::readAllLines("test.txt");
 		auto parsed = bnss::MicroRiscParser::instance().parse(lines);
 		auto first = bnss::FirstPass::execute(parsed);
+		auto second = bnss::SecondPass::execute(parsed, std::move(first));
 	}
 	catch (bnss::AssemblerException &e) {
 		std::cout << e.message() << std::endl;

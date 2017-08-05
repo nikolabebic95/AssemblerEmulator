@@ -11,6 +11,7 @@ namespace bnss {
 	class RegisterDirect : public Operand {
 	public:
 		explicit RegisterDirect(Register reg) noexcept;
+		void packToInstruction(InstructionBitFieldUnion &instruction, uint32_t &second_word, std::list<RelocationRecord> &relocations) const override;
 		AddressMode addressMode() const noexcept override;
 	private:
 		Register reg_;

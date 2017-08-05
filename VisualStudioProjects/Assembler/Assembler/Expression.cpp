@@ -17,5 +17,20 @@ namespace bnss {
 		return 0;
 	}
 
-	void Expression::pushChildren(std::stack<std::reference_wrapper<std::shared_ptr<Expression>>> &stack) const noexcept {}
+	void Expression::pushChildren(std::stack<std::reference_wrapper<std::shared_ptr<Expression>>> &stack) const noexcept {
+		// Default: Do nothing
+	}
+
+	void Expression::resolveSymbolTable(const SymbolTable &symbol_table) noexcept {
+		// Default: Do nothing
+	}
+
+	void Expression::resolveImports(std::unordered_set<std::string> imported_symbols) noexcept {
+		// Default: Do nothing
+	}
+
+	std::list<RelocationRecord> Expression::generateRelocations() const {
+		// Default: Return empty list
+		return std::list<RelocationRecord>();
+	}
 }

@@ -33,6 +33,49 @@ namespace bnss {
 		return type_;
 	}
 
+	void SectionData::addData(uint8_t data, std::list<RelocationRecord> &relocations) {
+		addData(data);
+		for (auto &relocation : relocations) {
+			relocation.offset(data_.size() - 1);
+			relocation.dataType(BYTE);
+		}
+
+		relocation_records_.splice(relocation_records_.end(), move(relocations));
+	}
+
+	void SectionData::addData(uint16_t data, std::list<RelocationRecord> &relocations) {
+		addData(static_cast<uint8_t>(data & 0x00FF));
+		addData(static_cast<uint8_t>((data & 0xFF00) >> 8));
+		for (auto &relocation : relocations) {
+			relocation.offset(data_.size() - 2);
+			relocation.dataType(WORD);
+		}
+
+		relocation_records_.splice(relocation_records_.end(), move(relocations));
+	}
+
+	void SectionData::addData(uint32_t data, std::list<RelocationRecord> &relocations) {
+		addData(static_cast<uint8_t>(data & 0x000000FF));
+		addData(static_cast<uint8_t>((data & 0x0000FF00) >> 8));
+		addData(static_cast<uint8_t>((data & 0x00FF0000) >> 16));
+		addData(static_cast<uint8_t>((data & 0xFF000000) >> 24));
+		for (auto &relocation : relocations) {
+			relocation.offset(data_.size() - 4);
+			relocation.dataType(DOUBLE_WORD);
+		}
+
+		relocation_records_.splice(relocation_records_.end(), move(relocations));
+	}
+
+	void SectionData::org(uint32_t address) {
+		org_address_ = address;
+		org_valid_ = true;
+	}
+
+	void SectionData::addData(uint8_t data) {
+		data_.push_back(data);
+	}
+
 	bool operator==(const SectionData & lhs, const SectionData & rhs) noexcept {
 		return lhs.type_ == rhs.type_ && lhs.indexed_ == rhs.indexed_ && (lhs.indexed_ ? lhs.index_ == rhs.index_ : true);
 	}

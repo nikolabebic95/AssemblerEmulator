@@ -23,6 +23,14 @@ namespace bnss {
 		 * \return Whether the symbol exists in the table
 		 */
 		bool contains(std::string symbol) const noexcept;
+
+		/**
+		 * \brief Export a symbol
+		 * \param symbol Symbol to be exported
+		 */
+		void exportSymbol(std::string symbol) noexcept;
+
+		using unordered_map::at;
 	};
 }
 
