@@ -5,6 +5,7 @@
 #include <stack>
 #include "SymbolTable.h"
 #include <unordered_set>
+#include <list>
 #include "RelocationRecord.h"
 
 namespace bnss {

@@ -2,6 +2,8 @@
 #define _token_h_
 
 #include "FirstPassData.h"
+// ReSharper disable once CppUnusedIncludeDirective
+#include "SecondPassData.h"
 
 namespace bnss {
 

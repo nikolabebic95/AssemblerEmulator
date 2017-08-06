@@ -90,10 +90,6 @@ namespace bnss {
 		return root;
 	}
 
-	static bool validateTree(std::shared_ptr<Expression> expression) noexcept {
-		return expression->validate();
-	}
-
 	MicroRiscExpression ExpressionBuilder::build(std::string infix_expression) {
 		auto postfix = infixToPostfix(infix_expression);
 		auto tree = postfixToTree(postfix);

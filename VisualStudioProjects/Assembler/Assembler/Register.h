@@ -26,7 +26,7 @@ namespace bnss {
 		R15,
 		SP = 0x10,
 		PC = 0x11,
-		NONE = 0xFF
+		NONE = 0x1F
 	};
 }
 
