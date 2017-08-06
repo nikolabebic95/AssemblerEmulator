@@ -36,6 +36,11 @@ namespace bnss {
 		 * \brief Sets the data type of the relocation
 		 */
 		void dataType(DataType data_type) noexcept;
+		
+		/**
+		 * \brief Toggles the opposite flag
+		 */
+		void toggleOpposite() noexcept;
 
 		/**
 		 * \brief Gets the section index of the relocation
@@ -47,13 +52,19 @@ namespace bnss {
 		 * \brief Gets the symbol name of the relocation
 		 * \return Symbol name
 		 */
-		std::string symbol_name() const noexcept;
+		std::string symbolName() const noexcept;
 
 		/**
 		 * \brief Test whether the relocation is by section or by symbol
 		 * \return Whether the relocation is by section
 		 */
 		bool section() const noexcept;
+
+		/**
+		 * \brief Gets the opposite flag
+		 * \return Opposite flag
+		 */
+		bool opposite() const noexcept;
 		
 		/**
 		* \brief Writes the content of the object to a stream
@@ -61,6 +72,11 @@ namespace bnss {
 		* \param record Data that will be written
 		*/
 		friend std::ostream &operator<<(std::ostream &os, const RelocationRecord &record);
+
+		// Operator overloads
+		friend bool operator==(const RelocationRecord &lhs, const RelocationRecord &rhs);
+		friend bool operator!=(const RelocationRecord &lhs, const RelocationRecord &rhs);
+
 	private:
 		size_t offset_ = 0;
 		bool absolute_;
@@ -68,6 +84,7 @@ namespace bnss {
 		std::string symbol_name_;
 		bool section_;
 		DataType data_type_ = DOUBLE_WORD;
+		bool opposite_ = false;
 	};
 }
 

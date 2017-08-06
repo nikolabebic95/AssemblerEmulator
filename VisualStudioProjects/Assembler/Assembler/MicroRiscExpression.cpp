@@ -1,4 +1,5 @@
 #include "MicroRiscExpression.h"
+#include "MessageException.h"
 
 namespace bnss {
 
@@ -22,6 +23,13 @@ namespace bnss {
 
 	std::list<RelocationRecord> MicroRiscExpression::generateRelocations() const {
 		expression_->validate();
-		return expression_->generateRelocations();
+		auto ret = expression_->generateRelocations();
+		for (auto &element : ret) {
+			if (element.opposite()) {
+				throw MessageException((element.section() ? "Symbols from " + std::to_string(element.sectionIndex() + 1) + "th section are " : "Symbol " + element.symbolName() + " is ") + "subtracted more times than added");
+			}
+		}
+
+		return ret;
 	}
 }

@@ -16,16 +16,24 @@ namespace bnss {
 		data_type_ = data_type;
 	}
 
+	void RelocationRecord::toggleOpposite() noexcept {
+		opposite_ = !opposite_;
+	}
+
 	size_t RelocationRecord::sectionIndex() const noexcept {
 		return section_index_;
 	}
 
-	std::string RelocationRecord::symbol_name() const noexcept {
+	std::string RelocationRecord::symbolName() const noexcept {
 		return symbol_name_;
 	}
 
 	bool RelocationRecord::section() const noexcept {
 		return section_;
+	}
+
+	bool RelocationRecord::opposite() const noexcept {
+		return opposite_;
 	}
 
 	std::ostream & operator<<(std::ostream &os, const RelocationRecord &record) {
@@ -50,5 +58,18 @@ namespace bnss {
 		}
 
 		return os;
+	}
+
+	bool operator==(const RelocationRecord &lhs, const RelocationRecord &rhs) {
+		return
+			lhs.offset_ == rhs.offset_ &&
+			lhs.absolute_ == rhs.absolute_ &&
+			lhs.section_ == rhs.section_ &&
+			(lhs.section_ ? lhs.section_index_ == rhs.section_index_ : lhs.symbol_name_ == rhs.symbol_name_) &&
+			lhs.data_type_ == rhs.data_type_;
+	}
+
+	bool operator!=(const RelocationRecord &lhs, const RelocationRecord &rhs) {
+		return !(lhs == rhs);
 	}
 }
