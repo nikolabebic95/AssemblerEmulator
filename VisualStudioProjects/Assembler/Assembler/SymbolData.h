@@ -44,6 +44,14 @@ namespace bnss {
 		 * \brief Exports the symbol
 		 */
 		void exportSymbol() noexcept;
+
+		/**
+		* \brief Writes the content of the object to a stream
+		* \param os Stream where the content will be written
+		* \param data Data that will be written
+		*/
+		friend std::ostream &operator<<(std::ostream &os, const SymbolData &data);
+
 	private:
 		std::string name_;
 		size_t section_index_;

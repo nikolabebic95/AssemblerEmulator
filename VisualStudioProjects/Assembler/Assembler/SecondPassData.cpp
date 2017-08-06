@@ -1,4 +1,7 @@
 #include "SecondPassData.h"
+#include "StringHelper.h"
+#include <iostream>
+#include "PrintHelpers.h"
 
 namespace bnss {
 
@@ -65,4 +68,24 @@ namespace bnss {
 		return const_cast<SecondPassData &>(*this).importedSymbols();
 	}
 
+	std::ostream & operator<<(std::ostream &os, const SecondPassData &data) {
+		os << data.imported_symbols_.size() << std::endl;
+
+		std::cout << UPPER_LEFT << multiple(HORIZONTAL, 81) << UPPER_RIGHT << std::endl;
+		std::cout << VERTICAL << UPPER_LEFT << multiple(HORIZONTAL, 79) << UPPER_RIGHT << VERTICAL << std::endl;
+		std::cout << VERTICAL << VERTICAL << std::setw(79) << std::left << " Imported symbols:" << VERTICAL << VERTICAL << std::endl;
+		std::cout << VERTICAL << LOWER_LEFT << multiple(HORIZONTAL, 79) << LOWER_RIGHT << VERTICAL << std::endl;
+		std::cout << T_RIGHT << multiple(HORIZONTAL, 81) << T_LEFT << std::endl;
+
+		for (auto &symbol : data.imported_symbols_) {
+			os << symbol << std::endl;
+			std::cout << VERTICAL << " " << std::setw(80) << std::left << symbol << VERTICAL << std::endl;
+		}
+
+		std::cout << LOWER_LEFT << multiple(HORIZONTAL, 81) << LOWER_RIGHT << std::endl << std::endl << std::endl;
+		os << data.section_table_ << std::endl;
+		os << data.symbol_table_ << std::endl;
+		
+		return os;
+	}
 }

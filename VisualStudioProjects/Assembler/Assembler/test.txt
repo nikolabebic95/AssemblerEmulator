@@ -1,6 +1,7 @@
        org 0
 .text
 .global _start ,           kurac_moj
+.global mogla_sam
 _start:
 Load r1 , #(0x123 - 123);
 loadUB r3, $kurac_moj

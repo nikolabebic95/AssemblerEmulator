@@ -97,11 +97,14 @@
     <Filter Include="Header Files\TwoPasses\FirstPass">
       <UniqueIdentifier>{1972c665-d0b0-48de-b5d2-2f3001325e2e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Files">
+      <UniqueIdentifier>{c290de0b-a5e1-4815-8dda-ea1bf0f25f22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Files">
+      <UniqueIdentifier>{8b8e28f4-a3b2-4a7b-a805-21fea1e68b86}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="FileReader.cpp">
-      <Filter>Source Files\Parsing</Filter>
-    </ClCompile>
     <ClCompile Include="StringHelper.cpp">
       <Filter>Source Files\Helpers</Filter>
     </ClCompile>
@@ -360,6 +363,12 @@
     <ClCompile Include="RelocationRecord.cpp">
       <Filter>Source Files\TwoPasses\SecondPass</Filter>
     </ClCompile>
+    <ClCompile Include="FileReader.cpp">
+      <Filter>Source Files\Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FileWriter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Token.h">
@@ -367,9 +376,6 @@
     </ClInclude>
     <ClInclude Include="InstructionToken.h">
       <Filter>Header Files\Tokens</Filter>
-    </ClInclude>
-    <ClInclude Include="FileReader.h">
-      <Filter>Header Files\Parsing</Filter>
     </ClInclude>
     <ClInclude Include="StringHelper.h">
       <Filter>Header Files\Helpers</Filter>
@@ -652,6 +658,15 @@
     </ClInclude>
     <ClInclude Include="RelocationRecord.h">
       <Filter>Header Files\TwoPasses\SecondPass</Filter>
+    </ClInclude>
+    <ClInclude Include="FileReader.h">
+      <Filter>Header Files\Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FileWriter.h">
+      <Filter>Header Files\Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PrintHelpers.h">
+      <Filter>Header Files\Helpers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

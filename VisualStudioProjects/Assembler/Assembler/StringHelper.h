@@ -2,10 +2,11 @@
 #define _string_helper_h_
 
 #include <vector>
-#include <sstream>
 #include "CommonRegexes.h"
 #include <regex>
 #include "MessageException.h"
+#include <iomanip>
+#include <sstream>
 
 namespace bnss {
 
@@ -46,6 +47,31 @@ namespace bnss {
 		static std::string numberFormat(Num number) noexcept;
 
 		/**
+		 * \brief Converts the number to its hex string representation
+		 * \tparam Num Type of the number
+		 * \param number Number to be converted
+		 * \return Hex string representation of the number
+		 */
+		template <typename Num>
+		static std::string toHexString(Num number) noexcept;
+
+		/**
+		* \brief Converts the number to its hex string representation
+		* \tparam Num Type of the number
+		* \param number Number to be converted
+		* \return Hex string representation of the number
+		*/
+		static std::string toHexString(unsigned char number) noexcept;
+
+		/**
+		* \brief Converts the number to its hex string representation
+		* \tparam Num Type of the number
+		* \param number Number to be converted
+		* \return Hex string representation of the number
+		*/
+		static std::string toHexString(signed char number) noexcept;
+
+		/**
 		 * \brief Parses the number from its string representation
 		 * \tparam Num Type of the number
 		 * \param number String representation of the number to be parsed
@@ -69,9 +95,16 @@ namespace bnss {
 
 	template <typename Num>
 	std::string StringHelper::numberFormat(Num number) noexcept {
-		std::stringstream ss;
-		ss << number;
-		return ss.str();
+		return std::to_string(number);
+	}
+
+	template <typename Num>
+	std::string StringHelper::toHexString(Num number) noexcept {
+		std::stringstream stream;
+		stream << "0x"
+			<< std::setfill('0') << std::setw(sizeof(Num) * 2)
+			<< std::hex << number;
+		return stream.str();
 	}
 
 	template<typename Num>

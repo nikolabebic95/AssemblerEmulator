@@ -158,6 +158,7 @@
     <ClCompile Include="ExpressionBuilder.cpp" />
     <ClCompile Include="ExpressionTokenFactory.cpp" />
     <ClCompile Include="FileReader.cpp" />
+    <ClCompile Include="FileWriter.cpp" />
     <ClCompile Include="FirstPass.cpp" />
     <ClCompile Include="FirstPassData.cpp" />
     <ClCompile Include="FirstPassException.cpp" />
@@ -251,6 +252,7 @@
     <ClInclude Include="ExpressionToken.h" />
     <ClInclude Include="ExpressionTokenFactory.h" />
     <ClInclude Include="FileReader.h" />
+    <ClInclude Include="FileWriter.h" />
     <ClInclude Include="FirstPass.h" />
     <ClInclude Include="FirstPassData.h" />
     <ClInclude Include="FirstPassException.h" />
@@ -288,6 +290,7 @@
     <ClInclude Include="OperandType.h" />
     <ClInclude Include="OrgDirectiveLineParser.h" />
     <ClInclude Include="OrgDirectiveToken.h" />
+    <ClInclude Include="PrintHelpers.h" />
     <ClInclude Include="Register.h" />
     <ClInclude Include="RegisterDirect.h" />
     <ClInclude Include="RegisterDirectParser.h" />

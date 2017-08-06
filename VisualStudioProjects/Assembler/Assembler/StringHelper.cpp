@@ -3,6 +3,7 @@
 #include <sstream>
 #include <iterator>
 #include <stdexcept>
+#include <iomanip>
 
 namespace bnss {
 
@@ -50,6 +51,22 @@ namespace bnss {
 			os << *strings.rbegin();
 			return os.str();
 		}
+	}
+
+	std::string StringHelper::toHexString(unsigned char number) noexcept {
+		std::stringstream stream;
+		stream << "0x"
+			<< std::setfill('0') << std::setw(2)
+			<< std::hex << static_cast<unsigned int>(number);
+		return stream.str();
+	}
+
+	std::string StringHelper::toHexString(signed char number) noexcept {
+		std::stringstream stream;
+		stream << "0x"
+			<< std::setfill('0') << std::setw(2)
+			<< std::hex << static_cast<signed int>(number);
+		return stream.str();
 	}
 
 	bool StringHelper::isAllWhiteSpace(const std::string & string) noexcept {

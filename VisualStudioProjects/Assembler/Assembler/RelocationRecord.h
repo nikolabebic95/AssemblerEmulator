@@ -54,6 +54,13 @@ namespace bnss {
 		 * \return Whether the relocation is by section
 		 */
 		bool section() const noexcept;
+		
+		/**
+		* \brief Writes the content of the object to a stream
+		* \param os Stream where the content will be written
+		* \param record Data that will be written
+		*/
+		friend std::ostream &operator<<(std::ostream &os, const RelocationRecord &record);
 	private:
 		size_t offset_ = 0;
 		bool absolute_;

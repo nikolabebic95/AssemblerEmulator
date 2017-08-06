@@ -31,6 +31,13 @@ namespace bnss {
 		void exportSymbol(std::string symbol) noexcept;
 
 		using unordered_map::at;
+
+		/**
+		* \brief Writes the content of the object to a stream
+		* \param os Stream where the content will be written
+		* \param table Data that will be written
+		*/
+		friend std::ostream &operator<<(std::ostream &os, const SymbolTable &table);
 	};
 }
 

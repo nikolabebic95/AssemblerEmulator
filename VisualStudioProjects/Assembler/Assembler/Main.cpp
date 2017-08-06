@@ -6,6 +6,7 @@
 #include "AssemblerException.h"
 #include "FirstPass.h"
 #include "SecondPass.h"
+#include "FileWriter.h"
 
 int main() {
 	try {
@@ -13,15 +14,16 @@ int main() {
 		auto parsed = bnss::MicroRiscParser::instance().parse(lines);
 		auto first = bnss::FirstPass::execute(parsed);
 		auto second = bnss::SecondPass::execute(parsed, std::move(first));
+		bnss::FileWriter::write("out.txt", second);
 	}
 	catch (bnss::AssemblerException &e) {
-		std::cout << e.message() << std::endl;
+		std::cerr << e.message() << std::endl;
 	}
 	catch (std::exception &e) {
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 	catch (...) {
-		std::cout << "Unknown error" << std::endl;
+		std::cerr << "Unknown error" << std::endl;
 	}
 
 	return 0;

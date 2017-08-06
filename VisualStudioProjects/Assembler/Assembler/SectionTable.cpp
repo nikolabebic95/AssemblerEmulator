@@ -1,6 +1,9 @@
 #include "SectionTable.h"
 #include "MessageException.h"
 #include "SectionTypeParser.h"
+#include <iostream>
+#include "PrintHelpers.h"
+#include <iomanip>
 
 namespace bnss {
 
@@ -41,5 +44,23 @@ namespace bnss {
 
 	const SectionData & SectionTable::current() const noexcept {
 		return const_cast<SectionTable &>(*this).current();
+	}
+
+	std::ostream & operator<<(std::ostream &os, const SectionTable &section_table) {
+		os << section_table.size() << std::endl;
+
+		std::cout << UPPER_LEFT << multiple(HORIZONTAL, 81) << UPPER_RIGHT << std::endl;
+		std::cout << VERTICAL << UPPER_LEFT << multiple(HORIZONTAL, 79) << UPPER_RIGHT << VERTICAL << std::endl;
+		std::cout << VERTICAL << VERTICAL << std::setw(79) << std::left << " Section table:" << VERTICAL << VERTICAL << std::endl;
+		std::cout << VERTICAL << LOWER_LEFT << multiple(HORIZONTAL, 79) << LOWER_RIGHT << VERTICAL << std::endl;
+		std::cout << LOWER_LEFT << multiple(HORIZONTAL, 81) << LOWER_RIGHT << std::endl;
+
+		for (auto &section : section_table) {
+			os << section << std::endl;
+		}
+
+		std::cout << std::endl << std::endl;
+
+		return os;
 	}
 }

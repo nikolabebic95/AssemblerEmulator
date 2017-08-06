@@ -99,6 +99,13 @@ namespace bnss {
 		* \return Collection of imported symbols
 		*/
 		const std::unordered_set<std::string> &importedSymbols() const;
+
+		/**
+		 * \brief Writes the content of the object to a stream
+		 * \param os Stream where the content will be written
+		 * \param data Data that will be written
+		 */
+		friend std::ostream &operator<<(std::ostream &os, const SecondPassData &data);
 	private:
 		std::unordered_set<std::string> imported_symbols_;
 		SymbolTable symbol_table_;

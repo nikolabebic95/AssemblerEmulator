@@ -103,6 +103,13 @@ namespace bnss {
 		 * \param address ORG address
 		 */
 		void org(uint32_t address);
+
+		/**
+		* \brief Writes the content of the object to a stream
+		* \param os Stream where the content will be written
+		* \param data Data that will be written
+		*/
+		friend std::ostream &operator<<(std::ostream &os, const SectionData &data);
 	private:
 		SectionType type_;
 		bool indexed_ = false;

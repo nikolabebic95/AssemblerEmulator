@@ -62,6 +62,13 @@ namespace bnss {
 		 */
 		const SectionData &current() const noexcept;
 
+		/**
+		 * \brief Writes the content of the object to a stream
+		 * \param os Stream where the content will be written
+		 * \param section_table Data that will be written
+		 */
+		friend std::ostream &operator<<(std::ostream &os, const SectionTable &section_table);
+
 		using vector::back;
 		using vector::empty;
 		using vector::size;

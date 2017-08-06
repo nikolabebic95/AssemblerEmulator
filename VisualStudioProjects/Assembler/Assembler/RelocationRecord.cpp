@@ -1,4 +1,7 @@
 #include "RelocationRecord.h"
+#include <iostream>
+#include <iomanip>
+#include "PrintHelpers.h"
 
 namespace bnss {
 
@@ -23,5 +26,29 @@ namespace bnss {
 
 	bool RelocationRecord::section() const noexcept {
 		return section_;
+	}
+
+	std::ostream & operator<<(std::ostream &os, const RelocationRecord &record) {
+		os << record.offset_ << std::endl;
+		os << record.absolute_ << std::endl;
+		os << record.section_ << std::endl;
+		if (record.section_) {
+			os << record.section_index_ << std::endl;
+		}
+		else {
+			os << record.symbol_name_ << std::endl;
+		}
+
+		os << record.data_type_ << std::endl;
+
+		std::cout << VERTICAL << " " << std::setw(7) << std::left << record.offset_ << VERTICAL << " " << (record.absolute_ ? "Absolute" : "Relative") << " " << VERTICAL << " ";
+		if (record.section_) {
+			std::cout << std::setw(8) << std::left << std::to_string(record.section_index_) + "." << VERTICAL << std::setw(51) << " " << VERTICAL << std::endl;
+		}
+		else {
+			std::cout << std::setw(8) << " " << VERTICAL << std::setw(51) << std::left << record.symbol_name_ << VERTICAL << std::endl;
+		}
+
+		return os;
 	}
 }
