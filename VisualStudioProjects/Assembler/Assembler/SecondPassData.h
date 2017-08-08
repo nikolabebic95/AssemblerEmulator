@@ -101,6 +101,16 @@ namespace bnss {
 		const std::unordered_set<std::string> &importedSymbols() const;
 
 		/**
+		 * \brief Gets the index of the current section
+		 */
+		size_t currentSectionIndex() const noexcept;
+
+		/**
+		 * \brief Gets the current offset inside the current section
+		 */
+		size_t currentSectionOffset() const noexcept;
+
+		/**
 		 * \brief Writes the content of the object to a stream
 		 * \param os Stream where the content will be written
 		 * \param data Data that will be written

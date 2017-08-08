@@ -1,11 +1,11 @@
-       org kurac_moj - x
+       org 0
 .text
 .global _start ,           kurac_moj
 .global mogla_sam
 _start:
-Load r1 , #(0x123 - 123);
+Load r1 , $_start
 loadUB r3, $kurac_moj
-            storew r1, 0b10101010
+            storew r1, $ + 0b10101010
 add r1, r1, r3
 PUSH R1 ; comment
 pop r2 // comment
@@ -19,6 +19,7 @@ abc:
  x : ASL R1, R1, R2
 y:
 kurac_moj : and r1, r2, r2
+load r1, $
 
  .data
 

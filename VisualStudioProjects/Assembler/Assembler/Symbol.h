@@ -13,6 +13,7 @@ namespace bnss {
 		int symbolCount() const noexcept override;
 		void resolveSymbolTable(const SymbolTable &symbol_table) noexcept override;
 		void resolveImports(std::unordered_set<std::string> imported_symbols) noexcept override;
+		void resolveCurrentPcSymbol(size_t section_index, size_t offset) noexcept override;
 		std::list<RelocationRecord> generateRelocations() const override;
 
 	private:

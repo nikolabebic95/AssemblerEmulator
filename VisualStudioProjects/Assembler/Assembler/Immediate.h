@@ -15,6 +15,7 @@ namespace bnss {
 		void resolveSymbols(std::unordered_set<SymbolDefinition> symbols) noexcept override;
 		void resolveSymbolTable(const SymbolTable &symbol_table) noexcept override;
 		void resolveImports(std::unordered_set<std::string> imported_symbols) noexcept override;
+		void resolveCurrentPcSymbol(size_t section_index, size_t offset) noexcept override;
 		AddressMode addressMode() const noexcept override;
 	private:
 		MicroRiscExpression value_;

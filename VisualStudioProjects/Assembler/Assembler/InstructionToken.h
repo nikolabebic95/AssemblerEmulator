@@ -21,6 +21,7 @@ namespace bnss {
 		void secondPass(SecondPassData &data) const override;
 		void resolveSymbolTable(const SymbolTable &symbol_table) noexcept override;
 		void resolveImports(std::unordered_set<std::string> imported_symbols) noexcept override;
+		void resolveCurrentPcSymbol(size_t section_index, size_t offset) noexcept override;
 	private:
 		InstructionCode code_;
 		OperandType type_;

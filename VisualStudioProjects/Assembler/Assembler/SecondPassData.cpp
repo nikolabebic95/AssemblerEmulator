@@ -68,6 +68,18 @@ namespace bnss {
 		return const_cast<SecondPassData &>(*this).importedSymbols();
 	}
 
+	size_t SecondPassData::currentSectionIndex() const noexcept {
+		return section_table_.currentIndex();
+	}
+
+	size_t SecondPassData::currentSectionOffset() const noexcept {
+		if (currentSectionIndex() == static_cast<size_t>(-1)) {
+			return 0;
+		}
+
+		return section_table_.current().size();
+	}
+
 	std::ostream & operator<<(std::ostream &os, const SecondPassData &data) {
 		os << data.imported_symbols_.size() << std::endl;
 

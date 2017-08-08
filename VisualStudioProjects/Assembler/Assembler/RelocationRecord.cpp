@@ -16,6 +16,10 @@ namespace bnss {
 		data_type_ = data_type;
 	}
 
+	void RelocationRecord::absolute(bool absolute) noexcept {
+		absolute_ = absolute;
+	}
+
 	void RelocationRecord::toggleOpposite() noexcept {
 		opposite_ = !opposite_;
 	}

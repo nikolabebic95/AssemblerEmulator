@@ -21,6 +21,10 @@ namespace bnss {
 		expression_->resolveImports(imported_symbols);
 	}
 
+	void MicroRiscExpression::resolveCurrentPcSymbol(size_t section_index, size_t offset) const noexcept {
+		expression_->resolveCurrentPcSymbol(section_index, offset);
+	}
+
 	std::list<RelocationRecord> MicroRiscExpression::generateRelocations() const {
 		expression_->validate();
 		auto ret = expression_->generateRelocations();

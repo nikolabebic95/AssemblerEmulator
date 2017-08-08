@@ -13,7 +13,28 @@ namespace bnss {
 		instruction.bit_field.address_mode = REGISTER_INDIRECT_OFFSET;
 		second_word = offset_or_address_.value();
 		if (absolute_) {
-			// TODO: pcrel
+			second_word += pc_offset_ + 4;
+			auto rels = offset_or_address_.generateRelocations();
+			if (rels.empty()) {
+				throw MessageException("PC Relative address must contain at least one label");
+			}
+
+			auto found_same_section = false;
+
+			for (auto &rel : rels) {
+				if (rel.sectionIndex() == pc_section_index_) {
+					found_same_section = true;
+					second_word -= (pc_offset_ + 4) * 2;
+					rels.remove(rel);
+					break;
+				}
+			}
+
+			if (!found_same_section) {
+				rels.front().absolute(false);
+			}
+
+			relocations.splice(relocations.end(), rels);
 		}
 		else {
 			relocations.splice(relocations.end(), offset_or_address_.generateRelocations());
@@ -46,6 +67,12 @@ namespace bnss {
 
 	void RegisterIndirectOffset::resolveImports(std::unordered_set<std::string> imported_symbols) noexcept {
 		offset_or_address_.resolveImports(imported_symbols);
+	}
+
+	void RegisterIndirectOffset::resolveCurrentPcSymbol(size_t section_index, size_t offset) noexcept {
+		offset_or_address_.resolveCurrentPcSymbol(section_index, offset);
+		pc_section_index_ = section_index;
+		pc_offset_ = offset;
 	}
 
 	AddressMode RegisterIndirectOffset::addressMode() const noexcept {

@@ -16,11 +16,14 @@ namespace bnss {
 		void resolveSymbols(std::unordered_set<SymbolDefinition> symbols) noexcept override;
 		void resolveSymbolTable(const SymbolTable &symbol_table) noexcept override;
 		void resolveImports(std::unordered_set<std::string> imported_symbols) noexcept override;
+		void resolveCurrentPcSymbol(size_t section_index, size_t offset) noexcept override;
 		AddressMode addressMode() const noexcept override;
 	private:
 		Register reg_;
 		MicroRiscExpression offset_or_address_;
 		bool absolute_ = false;
+		size_t pc_section_index_ = 0;
+		size_t pc_offset_ = 0;
 	};
 }
 

@@ -75,6 +75,10 @@ namespace bnss {
 		org_valid_ = true;
 	}
 
+	size_t SectionData::size() const noexcept {
+		return data_.size();
+	}
+
 	void SectionData::addData(uint8_t data) {
 		data_.push_back(data);
 	}

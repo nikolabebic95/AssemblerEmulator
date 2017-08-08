@@ -43,6 +43,12 @@ namespace bnss {
 		}
 	}
 
+	void InstructionToken::resolveCurrentPcSymbol(size_t section_index, size_t offset) noexcept {
+		for (auto &operand: operands_) {
+			operand->resolveCurrentPcSymbol(section_index, offset);
+		}
+	}
+
 	size_t InstructionToken::length() const {
 		for (auto &operand : operands_) {
 			if (

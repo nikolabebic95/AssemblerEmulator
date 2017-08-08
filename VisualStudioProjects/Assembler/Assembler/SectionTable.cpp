@@ -46,6 +46,10 @@ namespace bnss {
 		return const_cast<SectionTable &>(*this).current();
 	}
 
+	size_t SectionTable::currentIndex() const noexcept {
+		return current_index_;
+	}
+
 	std::ostream & operator<<(std::ostream &os, const SectionTable &section_table) {
 		os << section_table.size() << std::endl;
 

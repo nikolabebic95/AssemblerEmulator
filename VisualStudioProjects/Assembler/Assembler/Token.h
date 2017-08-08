@@ -55,6 +55,13 @@ namespace bnss {
 		virtual void resolveImports(std::unordered_set<std::string> imported_symbols) noexcept;
 
 		/**
+		* \brief Resolves the current PC symbol and sets the relocation info
+		* \param section_index Current PC section
+		* \param offset PC address in relation to the current section beginning
+		*/
+		virtual void resolveCurrentPcSymbol(size_t section_index, size_t offset) noexcept;
+
+		/**
 		 * \brief Get the line number of the token
 		 * \return Line number
 		 */

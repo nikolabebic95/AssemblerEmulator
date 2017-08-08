@@ -43,6 +43,12 @@ namespace bnss {
 		void toggleOpposite() noexcept;
 
 		/**
+		* \brief Sets the absolute flag
+		* \param absolute Absolute flag
+		*/
+		void absolute(bool absolute) noexcept;
+
+		/**
 		 * \brief Gets the section index of the relocation
 		 * \return Section index
 		 */

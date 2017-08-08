@@ -24,6 +24,10 @@ namespace bnss {
 		value_.resolveImports(imported_symbols);
 	}
 
+	void Immediate::resolveCurrentPcSymbol(size_t section_index, size_t offset) noexcept {
+		value_.resolveCurrentPcSymbol(section_index, offset);
+	}
+
 	AddressMode Immediate::addressMode() const noexcept {
 		return IMMEDIATE;
 	}

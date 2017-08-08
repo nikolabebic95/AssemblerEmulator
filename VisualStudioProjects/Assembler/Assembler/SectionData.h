@@ -105,6 +105,11 @@ namespace bnss {
 		void org(uint32_t address);
 
 		/**
+		 * \brief Gets the current size of the data
+		 */
+		size_t size() const noexcept;
+
+		/**
 		* \brief Writes the content of the object to a stream
 		* \param os Stream where the content will be written
 		* \param data Data that will be written

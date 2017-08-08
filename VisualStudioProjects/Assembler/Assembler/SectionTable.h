@@ -63,6 +63,12 @@ namespace bnss {
 		const SectionData &current() const noexcept;
 
 		/**
+		 * \brief Gets the index of current section
+		 * \return Index of current section
+		 */
+		size_t currentIndex() const noexcept;
+
+		/**
 		 * \brief Writes the content of the object to a stream
 		 * \param os Stream where the content will be written
 		 * \param section_table Data that will be written
@@ -74,7 +80,8 @@ namespace bnss {
 		using vector::size;
 	private:
 		std::unordered_set<SectionData> set_;
-		size_t current_index_ = -1;
+		size_t current_index_ = static_cast<size_t>(-1);
+
 	};
 }
 

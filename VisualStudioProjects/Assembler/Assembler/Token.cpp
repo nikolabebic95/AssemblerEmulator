@@ -21,6 +21,10 @@ namespace bnss {
 		// Default: Do nothing
 	}
 
+	void Token::resolveCurrentPcSymbol(size_t section_index, size_t offset) noexcept {
+		// Default: Do nothing
+	}
+
 	size_t Token::lineNumber() const noexcept {
 		return line_number_;
 	}

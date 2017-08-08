@@ -13,6 +13,7 @@ namespace bnss {
 					throw MessageException("ORG directive must be followed by a section start");
 				}
 
+				token->resolveCurrentPcSymbol(ret.currentSectionIndex(), ret.currentSectionOffset());
 				token->resolveSymbolTable(ret.symbolTable());
 				token->resolveImports(ret.importedSymbols());
 				token->secondPass(ret);

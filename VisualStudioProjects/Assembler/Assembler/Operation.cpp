@@ -48,6 +48,11 @@ namespace bnss {
 		right_->resolveImports(imported_symbols);
 	}
 
+	void Operation::resolveCurrentPcSymbol(size_t section_index, size_t offset) noexcept {
+		left_->resolveCurrentPcSymbol(section_index, offset);
+		right_->resolveCurrentPcSymbol(section_index, offset);
+	}
+
 	std::list<RelocationRecord> Operation::generateRelocations() const {
 		auto left = left_->generateRelocations();
 		auto right = right_->generateRelocations();

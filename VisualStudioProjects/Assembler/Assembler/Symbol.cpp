@@ -76,6 +76,16 @@ namespace bnss {
 		}
 	}
 
+	void Symbol::resolveCurrentPcSymbol(size_t section_index, size_t offset) noexcept {
+		if (name_ == "$") {
+			relocatable_value_ = static_cast<int32_t>(offset);
+			relocatable_ = true;
+			section_index_ = section_index;
+			absolute_ = true;
+			section_ = true;
+		}
+	}
+
 	std::list<RelocationRecord> Symbol::generateRelocations() const {
 		if (relocatable_) {
 			if (section_) {
