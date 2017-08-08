@@ -103,6 +103,12 @@
     <Filter Include="Source Files\Files">
       <UniqueIdentifier>{8b8e28f4-a3b2-4a7b-a805-21fea1e68b86}</UniqueIdentifier>
     </Filter>
+    <Filter Include="External Files">
+      <UniqueIdentifier>{0ba9d26a-50f8-4659-a0f1-803eb9e6399e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="External Files\Z85">
+      <UniqueIdentifier>{6291c988-abf5-4f60-8ee2-06aaf70f6c83}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="StringHelper.cpp">
@@ -368,6 +374,12 @@
     </ClCompile>
     <ClCompile Include="FileWriter.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="z85_impl.cpp">
+      <Filter>External Files\Z85</Filter>
+    </ClCompile>
+    <ClCompile Include="z85.cpp">
+      <Filter>External Files\Z85</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -667,6 +679,12 @@
     </ClInclude>
     <ClInclude Include="PrintHelpers.h">
       <Filter>Header Files\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="z85.h">
+      <Filter>External Files\Z85</Filter>
+    </ClInclude>
+    <ClInclude Include="z85_cpp.h">
+      <Filter>External Files\Z85</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

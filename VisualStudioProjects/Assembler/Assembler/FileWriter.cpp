@@ -2,6 +2,7 @@
 #include "fstream"
 #include "SecondPassData.h"
 #include <sstream>
+#include "z85_cpp.h"
 
 namespace bnss {
 
@@ -10,7 +11,7 @@ namespace bnss {
 		// TODO: Somehow write the input file name and timestamp
 		std::ostringstream stringstream(std::ostringstream::out | std::ostringstream::binary);
 		stringstream << data;
-		// TODO: Encode the data
-		out_file << stringstream.str();
+		auto encoded = z85::encode_with_padding(stringstream.str());
+		out_file << encoded;
 	}
 }
