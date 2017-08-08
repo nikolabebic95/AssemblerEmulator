@@ -28,7 +28,7 @@ namespace bnss {
 
 		size_t length() const;
 
-		std::pair<uint32_t, std::pair<uint32_t, std::list<RelocationRecord>>> packInstruction() const noexcept;
+		std::pair<uint32_t, std::pair<uint32_t, std::list<RelocationRecord>>> packInstruction() const;
 	};
 }
 

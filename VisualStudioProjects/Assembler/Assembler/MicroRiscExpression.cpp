@@ -26,7 +26,7 @@ namespace bnss {
 		auto ret = expression_->generateRelocations();
 		for (auto &element : ret) {
 			if (element.opposite()) {
-				throw MessageException((element.section() ? "Symbols from " + std::to_string(element.sectionIndex() + 1) + "th section are " : "Symbol " + element.symbolName() + " is ") + "subtracted more times than added");
+				throw MessageException((element.section() ? "Symbols from " + std::to_string(element.sectionIndex()) + "th section are " : "Symbol " + element.symbolName() + " is ") + "subtracted more times than added");
 			}
 		}
 

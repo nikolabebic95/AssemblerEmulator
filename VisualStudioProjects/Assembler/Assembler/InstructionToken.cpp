@@ -55,7 +55,7 @@ namespace bnss {
 		return 4;
 	}
 
-	std::pair<uint32_t, std::pair<uint32_t, std::list<RelocationRecord>>> InstructionToken::packInstruction() const noexcept {
+	std::pair<uint32_t, std::pair<uint32_t, std::list<RelocationRecord>>> InstructionToken::packInstruction() const {
 		std::pair<uint32_t, std::pair<uint32_t, std::list<RelocationRecord>>> ret;
 		InstructionBitFieldUnion instruction;
 		
