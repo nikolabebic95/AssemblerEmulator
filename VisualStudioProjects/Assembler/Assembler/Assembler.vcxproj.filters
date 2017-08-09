@@ -109,6 +109,9 @@
     <Filter Include="External Files\Z85">
       <UniqueIdentifier>{6291c988-abf5-4f60-8ee2-06aaf70f6c83}</UniqueIdentifier>
     </Filter>
+    <Filter Include="External Files\CxxOpts">
+      <UniqueIdentifier>{5aee4794-a6d1-4582-84e1-ee987937ce6d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="StringHelper.cpp">
@@ -380,6 +383,9 @@
     </ClCompile>
     <ClCompile Include="z85.cpp">
       <Filter>External Files\Z85</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandLineHelper.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -685,6 +691,12 @@
     </ClInclude>
     <ClInclude Include="z85_cpp.h">
       <Filter>External Files\Z85</Filter>
+    </ClInclude>
+    <ClInclude Include="cxxopts.h">
+      <Filter>External Files\CxxOpts</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandLineHelper.h">
+      <Filter>Header Files\Helpers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -10,7 +10,10 @@ namespace bnss {
 	void DataDefinitionToken::resolveSymbolDefinitions(std::unordered_set<SymbolDefinition> symbols) noexcept {
 		for (auto &symbol : symbols) {
 			for (auto &data : data_) {
-				data.value().setValue(symbol.name(), symbol.expression());
+				if (data.initialized()) {
+					data.value().setValue(symbol.name(), symbol.expression());
+				}
+
 				data.count().setValue(symbol.name(), symbol.expression());
 			}
 		}
@@ -53,14 +56,20 @@ namespace bnss {
 
 	void DataDefinitionToken::resolveSymbolTable(const SymbolTable &symbol_table) noexcept {
 		for (auto &data: data_) {
-			data.value().resolveSymbolTable(symbol_table);
+			if (data.initialized()) {
+				data.value().resolveSymbolTable(symbol_table);
+			}
+
 			data.count().resolveSymbolTable(symbol_table);
 		}
 	}
 
 	void DataDefinitionToken::resolveImports(std::unordered_set<std::string> imported_symbols) noexcept {
 		for (auto &data: data_) {
-			data.value().resolveImports(imported_symbols);
+			if (data.initialized()) {
+				data.value().resolveImports(imported_symbols);
+			}
+
 			data.count().resolveImports(imported_symbols);
 		}
 	}

@@ -7,14 +7,16 @@
 #include "FirstPass.h"
 #include "SecondPass.h"
 #include "FileWriter.h"
+#include "CommandLineHelper.h"
 
-int main() {
+int main(int argc, char *argv[]) {
 	try {
-		auto lines = bnss::FileReader::readAllLines("test.txt");
+		auto in_out = bnss::CommandLineHelper::parse(argc, argv);
+		auto lines = bnss::FileReader::readAllLines(in_out.first);
 		auto parsed = bnss::MicroRiscParser::instance().parse(lines);
 		auto first = bnss::FirstPass::execute(parsed);
 		auto second = bnss::SecondPass::execute(parsed, std::move(first));
-		bnss::FileWriter::write("out.txt", second);
+		bnss::FileWriter::write(in_out.second, second);
 	}
 	catch (bnss::AssemblerException &e) {
 		std::cerr << e.message() << std::endl;

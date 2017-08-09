@@ -146,6 +146,7 @@
     <ClCompile Include="AluInstructionParser.cpp" />
     <ClCompile Include="AssemblerException.cpp" />
     <ClCompile Include="ClosingBraceToken.cpp" />
+    <ClCompile Include="CommandLineHelper.cpp" />
     <ClCompile Include="ConditionalJumpInstructionParser.cpp" />
     <ClCompile Include="Data.cpp" />
     <ClCompile Include="DataDefinitionLineParser.cpp" />
@@ -239,8 +240,10 @@
     <ClInclude Include="AluInstructionParser.h" />
     <ClInclude Include="AssemblerException.h" />
     <ClInclude Include="ClosingBraceToken.h" />
+    <ClInclude Include="CommandLineHelper.h" />
     <ClInclude Include="CommonRegexes.h" />
     <ClInclude Include="ConditionalJumpInstructionParser.h" />
+    <ClInclude Include="cxxopts.h" />
     <ClInclude Include="Data.h" />
     <ClInclude Include="DataDefinitionLineParser.h" />
     <ClInclude Include="DataDefinitionToken.h" />

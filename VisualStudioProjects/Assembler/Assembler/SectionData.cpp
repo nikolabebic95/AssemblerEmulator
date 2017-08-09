@@ -153,9 +153,9 @@ namespace bnss {
 		return ret;
 	}
 
-	static void writeDescription(SectionType type, bool indexed, size_t index, bool org_valid, uint32_t org_address) {
+	static void writeDescription(SectionType type, bool indexed, size_t index, bool org_valid, uint32_t org_address, size_t size) {
 		std::cout << UPPER_LEFT << multiple(HORIZONTAL, 81) << UPPER_RIGHT << std::endl;
-		auto description = name(type, indexed, index) + (org_valid ? " ORG: " + StringHelper::toHexString(org_address) : "");
+		auto description = name(type, indexed, index) + " size: " + StringHelper::toHexString(size) + (org_valid ? " ORG: " + StringHelper::toHexString(org_address) : "");
 		std::cout << VERTICAL << std::setw(81) << std::left << description << VERTICAL << std::endl;
 		std::cout << T_RIGHT << multiple(HORIZONTAL, 81) << T_LEFT << std::endl;
 	}
@@ -172,12 +172,13 @@ namespace bnss {
 			os << data.org_address_ << std::endl;
 		}
 
+		os << data.location_counter_ << std::endl;
 		os << data.data_.size() << std::endl;
 		for (auto &entry : data.data_) {
 			os << StringHelper::numberFormat(entry) << std::endl;
 		}
 
-		writeDescription(data.type_, data.indexed_, data.index_, data.org_valid_, data.org_address_);
+		writeDescription(data.type_, data.indexed_, data.index_, data.org_valid_, data.org_address_, data.location_counter_);
 
 		std::cout << VERTICAL << " ";
 
@@ -191,7 +192,7 @@ namespace bnss {
 			std::cout << StringHelper::toHexString(entry) << " ";
 		}
 
-		for (; i % 16 != 0; i++) {
+		for (; i % 16 != 0 || i == 0; i++) {
 			std::cout << "     ";
 		}
 
