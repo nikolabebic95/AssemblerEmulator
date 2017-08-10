@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="External files">
+      <UniqueIdentifier>{fea08b71-6055-4520-ab5f-266d2a4ae238}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="External files\CxxOpts">
+      <UniqueIdentifier>{5cee533f-f144-406e-96d3-2cb95789fe48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="External files\Z85">
+      <UniqueIdentifier>{be0c8845-6a44-4497-ac39-7731649ca41c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Helpers">
+      <UniqueIdentifier>{3c9ebfa7-2d51-4e52-891b-f3762668f653}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Helpers">
+      <UniqueIdentifier>{a0989e05-9326-46b9-80f2-6b3f709bce8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Files">
+      <UniqueIdentifier>{3795e8f6-8aac-4ba4-a7e4-a931514febde}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Assembler">
+      <UniqueIdentifier>{3a104a36-4ddd-4896-885d-28295724eb49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Exceptions">
+      <UniqueIdentifier>{61b1e38f-e972-4a64-a9ef-0119c8b7e833}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Files">
+      <UniqueIdentifier>{f75cee17-2981-4a6b-83be-805ee7585dc2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Exceptions">
+      <UniqueIdentifier>{826b6c18-f02f-4186-85c1-b35afddc9282}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="z85.cpp">
+      <Filter>External files\Z85</Filter>
+    </ClCompile>
+    <ClCompile Include="z85_impl.cpp">
+      <Filter>External files\Z85</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandLineHelper.cpp">
+      <Filter>Source Files\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="FileReader.cpp">
+      <Filter>Source Files\Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MessageException.cpp">
+      <Filter>Source Files\Exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="StringHelper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AssemblerOutput.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="cxxopts.h">
+      <Filter>External files\CxxOpts</Filter>
+    </ClInclude>
+    <ClInclude Include="z85.h">
+      <Filter>External files\Z85</Filter>
+    </ClInclude>
+    <ClInclude Include="z85_cpp.h">
+      <Filter>External files\Z85</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandLineHelper.h">
+      <Filter>Header Files\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="FileReader.h">
+      <Filter>Header Files\Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AssemblerOutput.h">
+      <Filter>Header Files\Assembler</Filter>
+    </ClInclude>
+    <ClInclude Include="StringHelper.h">
+      <Filter>Header Files\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonRegexes.h">
+      <Filter>Header Files\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageException.h">
+      <Filter>Header Files\Exceptions</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
