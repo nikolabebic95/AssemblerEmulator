@@ -2,7 +2,7 @@
 #define _opening_brace_token_h_
 #include "OperationToken.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	/**
 	* \brief Token class representing the opening brace

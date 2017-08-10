@@ -1,7 +1,7 @@
 #include "MultiplyToken.h"
 #include "MultiplyOperation.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	int MultiplyToken::inputPriority() const noexcept {
 		return 3;

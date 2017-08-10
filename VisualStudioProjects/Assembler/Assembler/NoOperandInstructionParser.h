@@ -2,7 +2,7 @@
 #define _no_operand_instruction_parser_h_
 #include "InstructionParser.h"
 
-namespace bnss {
+namespace bnssassembler {
 	
 	class NoOperandInstructionParser : public InstructionParser {
 		

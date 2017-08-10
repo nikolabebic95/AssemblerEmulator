@@ -1,6 +1,6 @@
 #include "InvalidDataDefinitionException.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	InvalidDataDefinitionException::InvalidDataDefinitionException(std::string data) noexcept : MessageException(data + " can not be parsed as data") {}
 }

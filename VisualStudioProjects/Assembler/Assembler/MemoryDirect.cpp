@@ -1,6 +1,6 @@
 #include "MemoryDirect.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	MemoryDirect::MemoryDirect(MicroRiscExpression address) noexcept : address_(address) {}
 

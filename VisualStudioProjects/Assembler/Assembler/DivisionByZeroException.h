@@ -2,7 +2,7 @@
 #define _division_by_zero_exception_h_
 #include "MessageException.h"
 
-namespace bnss {
+namespace bnssassembler {
 	
 	/**
 	 * \brief Exception class representing division by zero

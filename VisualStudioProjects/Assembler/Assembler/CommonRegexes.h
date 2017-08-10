@@ -2,7 +2,7 @@
 #define _common_regexes_h_
 #include <regex>
 
-namespace bnss {
+namespace bnssassembler {
 
 	const std::string ZERO = "0";
 	const std::string DECIMAL = "[1-9][0-9]*";

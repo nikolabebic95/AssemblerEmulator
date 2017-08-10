@@ -1,6 +1,6 @@
 #include "FirstPassException.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	FirstPassException::FirstPassException(size_t line_number, std::string line, std::string specific_message) noexcept : AssemblerException(line_number, line), specific_message_(specific_message) {}
 

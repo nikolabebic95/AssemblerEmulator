@@ -3,7 +3,7 @@
 #include "MessageException.h"
 #include "CommonRegexes.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	std::vector<std::shared_ptr<Operand>> InstructionParser::parse(std::string str) const {
 		std::vector<std::shared_ptr<Operand>> operands;

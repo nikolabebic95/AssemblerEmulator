@@ -3,7 +3,7 @@
 #include "Token.h"
 #include <vector>
 
-namespace bnss {
+namespace bnssassembler {
 	
 	class GlobalSymbolsToken : public Token {
 	public:

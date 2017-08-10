@@ -8,7 +8,7 @@
 #include <memory>
 #include "OperandType.h"
 
-namespace bnss {
+namespace bnssassembler {
 	
 	/**
 	 * \brief Class representing the instruction in an assembler source file

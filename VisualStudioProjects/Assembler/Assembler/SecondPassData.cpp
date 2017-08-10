@@ -3,7 +3,7 @@
 #include <iostream>
 #include "PrintHelpers.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	SecondPassData::SecondPassData(FirstPassData &&first_pass_data) noexcept : symbol_table_(move(first_pass_data.symbol_table_)), section_table_(move(first_pass_data.section_table_)) {}
 

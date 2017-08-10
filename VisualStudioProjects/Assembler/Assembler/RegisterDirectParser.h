@@ -2,7 +2,7 @@
 #define _register_direct_parser_h_
 #include "OperandParser.h"
 
-namespace bnss {
+namespace bnssassembler {
 	
 	/**
 	 * \brief Class representing the parser for the register direct operand

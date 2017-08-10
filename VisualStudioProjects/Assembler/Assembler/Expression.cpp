@@ -1,6 +1,6 @@
 #include "Expression.h"
 
-namespace bnss {
+namespace bnssassembler {
 	bool Expression::setValue(std::string symbol, std::shared_ptr<Expression> value) noexcept {
 		// Default: No value set
 		return false;

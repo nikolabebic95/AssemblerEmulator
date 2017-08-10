@@ -3,7 +3,7 @@
 #include "FirstPassData.h"
 #include "SectionType.h"
 
-namespace bnss {
+namespace bnssassembler {
 	
 	/**
 	 * \brief Class representing the data that will be updated during the second pass

@@ -1,6 +1,6 @@
 #include "NonExistingSymbolException.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	NonExistingSymbolException::NonExistingSymbolException(std::string symbol) noexcept : MessageException("The symbol \"" + symbol + "\" is not defined") {}
 }

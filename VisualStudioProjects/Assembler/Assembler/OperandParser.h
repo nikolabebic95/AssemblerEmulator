@@ -4,7 +4,7 @@
 #include "Operand.h"
 #include <string>
 
-namespace bnss {
+namespace bnssassembler {
 	
 	/**
 	 * \brief Chain of command class used to parse operands of the instructions

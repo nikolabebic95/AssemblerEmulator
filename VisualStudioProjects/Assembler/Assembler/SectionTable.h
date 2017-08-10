@@ -4,7 +4,7 @@
 #include "SectionData.h"
 #include <unordered_set>
 
-namespace bnss {
+namespace bnssassembler {
 	
 	/**
 	 * \brief Class representing the table of sections

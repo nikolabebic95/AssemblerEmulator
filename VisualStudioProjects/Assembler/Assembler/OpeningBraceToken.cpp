@@ -2,7 +2,7 @@
 #include "MessageException.h"
 #include <climits>
 
-namespace bnss {
+namespace bnssassembler {
 
 	int OpeningBraceToken::inputPriority() const noexcept {
 		return INT_MAX - 1;

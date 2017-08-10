@@ -3,7 +3,7 @@
 #include "Expression.h"
 #include <memory>
 
-namespace bnss {
+namespace bnssassembler {
 	
 	/**
 	 * \brief Class representing the mathematical operation with two operands

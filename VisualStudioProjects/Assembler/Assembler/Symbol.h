@@ -2,7 +2,7 @@
 #define _symbol_h_
 #include "Expression.h"
 
-namespace bnss {
+namespace bnssassembler {
 	
 	class Symbol : public Expression {
 	public:

@@ -6,7 +6,7 @@
 #include "ExpressionToken.h"
 #include "ExpressionTokenFactory.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	/**
 	 * \brief Fixes the expression that starts with an unary minus sign

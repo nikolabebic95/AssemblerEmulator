@@ -2,7 +2,7 @@
 #include "SubtractOperation.h"
 #include "RelocationRecord.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	int32_t AddOperation::calculate(int32_t lhs, int32_t rhs) const noexcept {
 		return lhs + rhs;

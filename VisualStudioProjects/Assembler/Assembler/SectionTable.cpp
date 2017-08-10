@@ -5,7 +5,7 @@
 #include "PrintHelpers.h"
 #include <iomanip>
 
-namespace bnss {
+namespace bnssassembler {
 
 	SectionTable & SectionTable::operator+=(const SectionData & data) {
 		if (set_.count(data) > 0) {

@@ -1,6 +1,6 @@
 #include "MessageException.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	MessageException::MessageException(std::string message) noexcept : message_(message) {}
 

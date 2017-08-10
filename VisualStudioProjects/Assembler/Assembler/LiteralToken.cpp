@@ -4,7 +4,7 @@
 // ReSharper disable once CppUnusedIncludeDirective
 #include <climits>
 
-namespace bnss {
+namespace bnssassembler {
 	LiteralToken::LiteralToken(std::string value) {
 		value_ = StringHelper::parseNumber<int32_t>(value);
 	}

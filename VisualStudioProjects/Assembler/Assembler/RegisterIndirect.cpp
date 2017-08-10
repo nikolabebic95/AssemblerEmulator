@@ -1,6 +1,6 @@
 #include "RegisterIndirect.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	RegisterIndirect::RegisterIndirect(Register reg) noexcept : reg_(reg) {}
 

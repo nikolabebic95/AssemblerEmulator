@@ -2,7 +2,7 @@
 #include "MessageException.h"
 #include "SecondPassException.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	SecondPassData SecondPass::execute(std::vector<std::shared_ptr<Token>> tokens, FirstPassData && first_pass_data) {
 		SecondPassData ret(std::move(first_pass_data));

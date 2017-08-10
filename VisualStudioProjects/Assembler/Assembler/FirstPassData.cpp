@@ -1,7 +1,7 @@
 #include "FirstPassData.h"
 #include "MessageException.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	void FirstPassData::incLocationCounter(size_t offset) {
 		if (section_table_.empty()) {

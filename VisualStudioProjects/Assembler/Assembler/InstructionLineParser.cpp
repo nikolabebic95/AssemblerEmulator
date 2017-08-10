@@ -13,7 +13,7 @@
 #include "MessageException.h"
 #include <unordered_map>
 
-namespace bnss {
+namespace bnssassembler {
 
 	/**
 	 * \brief Hack to fix the load and store instructions which can have various operands

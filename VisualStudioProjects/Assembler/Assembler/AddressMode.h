@@ -1,7 +1,7 @@
 #ifndef _address_mode_h_
 #define _address_mode_h_
 
-namespace bnss {
+namespace bnssassembler {
 	
 	/**
 	 * \brief Enum representing the address mode

@@ -2,7 +2,7 @@
 #include "MessageException.h"
 #include <algorithm>
 
-namespace bnss {
+namespace bnssassembler {
 	SectionType SectionTypeParser::parse(std::string type) {
 		transform(type.begin(), type.end(), type.begin(), tolower);
 

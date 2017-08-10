@@ -1,7 +1,7 @@
 #ifndef _operand_type_h_
 #define _operand_type_h_
 
-namespace bnss {
+namespace bnssassembler {
 	
 	/**
 	 * \brief Enum representing the operand type

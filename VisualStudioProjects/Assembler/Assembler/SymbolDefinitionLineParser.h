@@ -2,7 +2,7 @@
 #define _symbol_definition_line_parser_h_
 #include "LineParser.h"
 
-namespace bnss {
+namespace bnssassembler {
 	
 	class SymbolDefinitionLineParser : public LineParser {
 	protected:

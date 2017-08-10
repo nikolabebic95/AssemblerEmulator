@@ -2,7 +2,7 @@
 #define _symbol_definition_h_
 #include "MicroRiscExpression.h"
 
-namespace bnss {
+namespace bnssassembler {
 	
 	/**
 	 * \brief Class representing a symbol definition
@@ -43,11 +43,11 @@ namespace bnss {
 }
 
 namespace std {
-	template <> struct hash<bnss::SymbolDefinition> {
-		size_t operator()(const bnss::SymbolDefinition & symbol) const;
+	template <> struct hash<bnssassembler::SymbolDefinition> {
+		size_t operator()(const bnssassembler::SymbolDefinition & symbol) const;
 	};
 
-	inline size_t hash<bnss::SymbolDefinition>::operator()(const bnss::SymbolDefinition & symbol) const {
+	inline size_t hash<bnssassembler::SymbolDefinition>::operator()(const bnssassembler::SymbolDefinition & symbol) const {
 		return hash<string>()(symbol.name());
 	}
 }

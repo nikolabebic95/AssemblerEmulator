@@ -3,7 +3,7 @@
 #include <utility>
 #include <string>
 
-namespace bnss {
+namespace bnssassembler {
 	
 	class CommandLineHelper final {
 	public:

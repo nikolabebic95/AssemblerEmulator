@@ -2,7 +2,7 @@
 #define _org_directive_line_parser_h_
 #include "LineParser.h"
 
-namespace bnss {
+namespace bnssassembler {
 	
 	/**
 	 * \brief Class representing a line parser for the origin directive

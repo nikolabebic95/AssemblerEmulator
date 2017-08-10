@@ -2,7 +2,7 @@
 #include "MessageException.h"
 #include "FirstPassException.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	FirstPassData FirstPass::execute(std::vector<std::shared_ptr<Token>> tokens) {
 		FirstPassData ret;

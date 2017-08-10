@@ -3,7 +3,7 @@
 #include "Token.h"
 #include "MicroRiscExpression.h"
 
-namespace bnss {
+namespace bnssassembler {
 	
 	class OrgDirectiveToken : public Token {
 	public:

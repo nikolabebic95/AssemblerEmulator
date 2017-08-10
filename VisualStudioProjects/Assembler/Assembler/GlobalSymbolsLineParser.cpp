@@ -4,7 +4,7 @@
 #include "StringHelper.h"
 #include "GlobalSymbolToken.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	std::shared_ptr<Token> GlobalSymbolsLineParser::parse(const std::string & line, size_t line_number, std::string initial_line) const {
 		static std::regex regex("[[:space:]]*" + GLOBAL_DIRECTIVE + "(.*)[[:space:]]*");

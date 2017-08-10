@@ -3,7 +3,7 @@
 #include <vector>
 #include <string>
 
-namespace bnss {
+namespace bnssassembler {
 	
 	/**
 	 * \brief Utility class providing methods for reading the file

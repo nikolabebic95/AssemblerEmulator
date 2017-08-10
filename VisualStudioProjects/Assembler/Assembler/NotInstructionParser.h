@@ -2,7 +2,7 @@
 #define _not_instruction_parser_h_
 #include "InstructionParser.h"
 
-namespace bnss {
+namespace bnssassembler {
 	
 	/**
 	 * \brief Class representing the parser for the not instruction

@@ -5,7 +5,7 @@
 #include "RegisterIndirectParser.h"
 #include "ImmediateParser.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	LoadInstructionParser::LoadInstructionParser() noexcept {
 		operands_.push_back(std::make_shared<RegisterDirectParser>());

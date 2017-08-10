@@ -5,7 +5,7 @@
 #include <unordered_set>
 #include "InstructionBitFieldUnion.h"
 
-namespace bnss {
+namespace bnssassembler {
 	
 	/**
 	 * \brief Class representing one operand in an instruction

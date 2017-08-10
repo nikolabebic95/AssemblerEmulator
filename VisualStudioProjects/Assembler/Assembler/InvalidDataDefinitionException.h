@@ -2,7 +2,7 @@
 #define _invalid_data_definition_exception_h_
 #include "MessageException.h"
 
-namespace bnss {
+namespace bnssassembler {
 	
 	class InvalidDataDefinitionException : public MessageException {
 	public:

@@ -1,6 +1,6 @@
 #include "ParserException.h"
 
-namespace bnss {
+namespace bnssassembler {
 	std::string ParserException::messageBody() const noexcept {
 		return "Error during the parsing phase:\n" + specific_message_;
 	}

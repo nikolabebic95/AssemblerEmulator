@@ -3,7 +3,7 @@
 #include <string>
 #include "SecondPassData.h"
 
-namespace bnss {
+namespace bnssassembler {
 	
 	/**
 	 * \brief Class used to write the assembler result to a file

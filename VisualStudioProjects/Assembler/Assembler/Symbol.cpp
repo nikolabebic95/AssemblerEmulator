@@ -1,7 +1,7 @@
 #include "Symbol.h"
 #include "NonExistingSymbolException.h"
 
-namespace bnss {
+namespace bnssassembler {
 	Symbol::Symbol(std::string name) noexcept : name_(name) {}
 
 	int32_t Symbol::value() const {

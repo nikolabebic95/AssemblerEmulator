@@ -1,7 +1,7 @@
 #include "DivideOperation.h"
 #include "DivisionByZeroException.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	bool DivideOperation::validate() const noexcept {
 		return !containsSymbol();

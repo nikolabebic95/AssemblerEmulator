@@ -1,7 +1,7 @@
 #include "Operand.h"
 #include <unordered_set>
 
-namespace bnss {
+namespace bnssassembler {
 
 	void Operand::resolveSymbols(std::unordered_set<SymbolDefinition> symbols) noexcept {
 		// Default: Do nothing

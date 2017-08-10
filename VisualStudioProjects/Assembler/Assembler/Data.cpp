@@ -1,6 +1,6 @@
 #include "Data.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	Data::Data(DataType type, MicroRiscExpression value, MicroRiscExpression count) noexcept : type_(type), value_(value), count_(count) {}
 

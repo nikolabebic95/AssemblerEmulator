@@ -1,7 +1,7 @@
 #include "SubtractOperation.h"
 #include "StringHelper.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	bool SubtractOperation::containsSymbol() const noexcept {
 		if (Operation::containsSymbol()) {

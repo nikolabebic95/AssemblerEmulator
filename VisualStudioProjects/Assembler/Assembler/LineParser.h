@@ -5,7 +5,7 @@
 #include <functional>
 #include <memory>
 
-namespace bnss {
+namespace bnssassembler {
 	
 	/**
 	 * \brief Chain of command abstract class used for parsing one line of file

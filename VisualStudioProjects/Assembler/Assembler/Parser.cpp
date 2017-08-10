@@ -8,7 +8,7 @@
 #include "CommonRegexes.h"
 #include "ParserException.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	/**
 	 * \brief Strips the comment from one line of the file

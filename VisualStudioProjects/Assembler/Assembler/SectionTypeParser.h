@@ -4,7 +4,7 @@
 #include <string>
 #include <unordered_map>
 
-namespace bnss {
+namespace bnssassembler {
 	
 	/**
 	 * \brief Utility class representing the parser for the section types

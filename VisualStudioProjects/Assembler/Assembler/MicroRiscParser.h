@@ -2,7 +2,7 @@
 #define _micro_risc_parser_h_
 #include "Parser.h"
 
-namespace bnss {
+namespace bnssassembler {
 	
 	/**
 	 * \brief Class representing the parser for the MicroRISC assembly

@@ -3,7 +3,7 @@
 #include <string>
 #include "DataType.h"
 
-namespace bnss {
+namespace bnssassembler {
 	
 	/**
 	 * \brief Class representing one relocation record

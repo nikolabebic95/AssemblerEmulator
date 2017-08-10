@@ -4,7 +4,7 @@
 // ReSharper disable once CppUnusedIncludeDirective
 #include <utility>
 
-namespace bnss {
+namespace bnssassembler {
 
 	/**
 	 * \brief Enum representing the instruction code
@@ -42,11 +42,11 @@ namespace bnss {
 }
 
 namespace std {
-	template <> struct hash<bnss::InstructionCode> {
-		size_t operator()(const bnss::InstructionCode & code) const;
+	template <> struct hash<bnssassembler::InstructionCode> {
+		size_t operator()(const bnssassembler::InstructionCode & code) const;
 	};
 
-	inline size_t hash<bnss::InstructionCode>::operator()(const bnss::InstructionCode & code) const {
+	inline size_t hash<bnssassembler::InstructionCode>::operator()(const bnssassembler::InstructionCode & code) const {
 		return hash<int8_t>()(static_cast<int8_t>(code));
 	}
 }

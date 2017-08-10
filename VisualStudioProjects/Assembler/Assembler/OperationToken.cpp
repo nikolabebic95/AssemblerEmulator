@@ -2,7 +2,7 @@
 #include "MessageException.h"
 #include "ExpressionBuilder.h"
 
-namespace bnss {
+namespace bnssassembler {
 	void OperationToken::process(std::list<std::shared_ptr<ExpressionToken>>& output, std::stack<std::shared_ptr<ExpressionToken>>& stack, int & expression_rank) const {
 		while (!stack.empty() && stack.top()->stackPriority() >= inputPriority()) {
 			ExpressionBuilder::popToPostfix(output, stack, expression_rank);

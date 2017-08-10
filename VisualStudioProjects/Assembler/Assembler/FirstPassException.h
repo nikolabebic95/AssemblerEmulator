@@ -2,7 +2,7 @@
 #define _first_pass_exception_h_
 #include "AssemblerException.h"
 
-namespace bnss {
+namespace bnssassembler {
 	
 	class FirstPassException : public AssemblerException {
 	public:

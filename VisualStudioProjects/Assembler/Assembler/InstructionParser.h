@@ -4,7 +4,7 @@
 #include "InstructionToken.h"
 #include "OperandParser.h"
 
-namespace bnss {
+namespace bnssassembler {
 	
 	/**
 	 * \brief Abstract lass used for parsing one instruction

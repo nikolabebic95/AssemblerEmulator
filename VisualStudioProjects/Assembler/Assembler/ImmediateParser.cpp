@@ -4,7 +4,7 @@
 #include "ExpressionBuilder.h"
 #include "Immediate.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	std::shared_ptr<Operand> ImmediateParser::parse(std::string str) const {
 		static std::regex regex("#(" + CONSTANT_TERM + ")");

@@ -3,7 +3,7 @@
 #include "Expression.h"
 #include <cstdint>
 
-namespace bnss {
+namespace bnssassembler {
 	
 	/**
 	 * \brief Class representing the literal value

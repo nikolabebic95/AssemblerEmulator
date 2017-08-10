@@ -1,6 +1,6 @@
 #include "SymbolDefinition.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	SymbolDefinition::SymbolDefinition(std::string name, MicroRiscExpression expression) noexcept : name_(name), expression_(expression) {}
 

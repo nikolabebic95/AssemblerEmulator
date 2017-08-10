@@ -2,7 +2,7 @@
 #define _multiply_operation_h_
 #include "Operation.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	/**
 	* \brief Class implementing the behaviour of the * operator in expressions

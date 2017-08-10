@@ -8,7 +8,7 @@
 #include <list>
 #include "RelocationRecord.h"
 
-namespace bnss {
+namespace bnssassembler {
 	
 	/**
 	 * \brief Class representing the math expression

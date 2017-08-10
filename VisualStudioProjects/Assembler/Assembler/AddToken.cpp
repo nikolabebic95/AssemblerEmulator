@@ -1,7 +1,7 @@
 #include "AddToken.h"
 #include "AddOperation.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	int AddToken::inputPriority() const noexcept {
 		return 2;

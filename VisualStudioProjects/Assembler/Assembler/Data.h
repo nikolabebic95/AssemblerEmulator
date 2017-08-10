@@ -3,7 +3,7 @@
 #include "DataType.h"
 #include "MicroRiscExpression.h"
 
-namespace bnss {
+namespace bnssassembler {
 	
 	/**
 	 * \brief Class representing the MicroRISC data

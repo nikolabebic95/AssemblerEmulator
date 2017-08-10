@@ -3,7 +3,7 @@
 #include <unordered_map>
 #include "InstructionCode.h"
 
-namespace bnss {
+namespace bnssassembler {
 	
 	/**
 	 * \brief Utility class used for parsing instruction codes

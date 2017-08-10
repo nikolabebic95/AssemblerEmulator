@@ -1,6 +1,6 @@
 #include "SecondPassException.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	SecondPassException::SecondPassException(size_t line_number, std::string line, std::string specific_message) noexcept : AssemblerException(line_number, line), specific_message_(specific_message) {}
 

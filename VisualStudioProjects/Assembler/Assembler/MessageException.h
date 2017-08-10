@@ -3,7 +3,7 @@
 #include <string>
 #include <exception>
 
-namespace bnss {
+namespace bnssassembler {
 	
 	/**
 	 * \brief Represents an exception with a string message

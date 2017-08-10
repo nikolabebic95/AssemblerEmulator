@@ -3,7 +3,7 @@
 #include "RegisterParser.h"
 #include "RegisterIndirect.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	std::shared_ptr<Operand> RegisterIndirectParser::parse(std::string str) const {
 		static std::regex regex("[[:space:]]*\\[[[:space:]]*(.*)[[:space:]]*\\][[:space:]]*");

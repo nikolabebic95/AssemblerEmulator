@@ -3,7 +3,7 @@
 #include "DataType.h"
 #include <unordered_map>
 
-namespace bnss {
+namespace bnssassembler {
 	
 	/**
 	 * \brief Utility class used for parsing data types

@@ -1,7 +1,7 @@
 #include "FileReader.h"
 #include "StringHelper.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	std::vector<std::string> FileReader::readAllLines(std::string filename) {
 		auto raw_file = StringHelper::fileToString(filename);

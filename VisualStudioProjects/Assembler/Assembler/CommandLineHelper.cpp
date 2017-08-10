@@ -2,7 +2,7 @@
 #include <iostream>
 #include "cxxopts.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	std::pair<std::string, std::string> CommandLineHelper::parse(int argc, char * argv[]) {
 		cxxopts::Options options(argv[0], " - command line options");

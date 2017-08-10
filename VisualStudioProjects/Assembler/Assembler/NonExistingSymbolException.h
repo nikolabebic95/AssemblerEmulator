@@ -3,7 +3,7 @@
 #include <string>
 #include "MessageException.h"
 
-namespace bnss {
+namespace bnssassembler {
 	
 	class NonExistingSymbolException : public MessageException {
 	public:

@@ -2,7 +2,7 @@
 #include "Symbol.h"
 #include <climits>
 
-namespace bnss {
+namespace bnssassembler {
 
 	SymbolToken::SymbolToken(std::string name) noexcept : name_(name) {}
 

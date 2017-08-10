@@ -4,7 +4,7 @@
 #include "MicroRiscExpression.h"
 #include "ExpressionToken.h"
 
-namespace bnss {
+namespace bnssassembler {
 	
 	/**
 	 * \brief Utility class used for building math expressions

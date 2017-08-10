@@ -4,7 +4,7 @@
 #include <sstream>
 #include "z85_cpp.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	void FileWriter::write(std::string filename, const SecondPassData & data) {
 		std::ofstream out_file(filename, std::ofstream::binary);

@@ -1,7 +1,7 @@
 ﻿#ifndef _data_type_h_
 #define _data_type_h_
 
-namespace bnss {
+namespace bnssassembler {
 	
 	/**
 	 * \brief Enum representing a data type

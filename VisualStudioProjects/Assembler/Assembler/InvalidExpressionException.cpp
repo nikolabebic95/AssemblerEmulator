@@ -1,6 +1,6 @@
 #include "InvalidExpressionException.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	InvalidExpressionException::InvalidExpressionException() noexcept : MessageException("The expression is invalid") {}
 }

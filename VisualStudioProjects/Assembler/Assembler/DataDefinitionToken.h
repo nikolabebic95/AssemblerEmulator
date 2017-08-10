@@ -4,7 +4,7 @@
 #include "Data.h"
 #include "Token.h"
 
-namespace bnss {
+namespace bnssassembler {
 	
 	/**
 	 * \brief Class representing the data definition token

@@ -3,7 +3,7 @@
 #include "Register.h"
 #include <unordered_map>
 
-namespace bnss {
+namespace bnssassembler {
 	
 	/**
 	 * \brief Utility Class used for parsing registers

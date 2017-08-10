@@ -2,7 +2,7 @@
 #define _invalid_data_type_exception_h_
 #include "MessageException.h"
 
-namespace bnss {
+namespace bnssassembler {
 	
 	class InvalidDataTypeException : public MessageException {
 	public:

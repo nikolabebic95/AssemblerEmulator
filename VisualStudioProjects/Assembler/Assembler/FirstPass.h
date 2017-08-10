@@ -3,7 +3,7 @@
 #include "FirstPassData.h"
 #include "Token.h"
 
-namespace bnss {
+namespace bnssassembler {
 	
 	/**
 	 * \brief Class representing the executor of the first pass

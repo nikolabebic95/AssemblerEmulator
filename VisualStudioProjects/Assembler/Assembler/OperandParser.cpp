@@ -1,6 +1,6 @@
 #include "OperandParser.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	std::shared_ptr<Operand> OperandParser::tryParse(std::string str) const {
 		auto ret = parse(str);

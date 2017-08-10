@@ -3,7 +3,7 @@
 
 #include <string>
 
-namespace bnss {
+namespace bnssassembler {
 	
 	/**
 	 * \brief Class representing the custom exception for the assembler

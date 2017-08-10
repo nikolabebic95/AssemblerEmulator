@@ -2,7 +2,7 @@
 #define _store_instruction_parser_h_
 #include "InstructionParser.h"
 
-namespace bnss {
+namespace bnssassembler {
 	
 	class StoreInstructionParser : public InstructionParser {
 	public:

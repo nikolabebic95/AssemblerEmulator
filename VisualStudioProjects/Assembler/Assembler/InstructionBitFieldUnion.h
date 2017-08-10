@@ -2,7 +2,7 @@
 #define _instruction_bit_field_union_h_
 #include "InstructionBitField.h"
 
-namespace bnss {
+namespace bnssassembler {
 	
 	/**
 	 * \brief Union that enables easier manipulation of the instruction bit field

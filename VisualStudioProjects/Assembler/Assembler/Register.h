@@ -3,7 +3,7 @@
 // ReSharper disable once CppUnusedIncludeDirective
 #include <cstddef>
 
-namespace bnss {
+namespace bnssassembler {
 
 	const size_t NUM_OF_REGISTERS = 16;
 

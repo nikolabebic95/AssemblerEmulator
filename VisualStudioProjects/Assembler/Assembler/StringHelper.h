@@ -8,7 +8,7 @@
 #include <iomanip>
 #include <sstream>
 
-namespace bnss {
+namespace bnssassembler {
 
 	/**
 	 * \brief Utility class providing helper methods for std::string class

@@ -2,7 +2,7 @@
 #define _load_instruction_parser_h_
 #include "InstructionParser.h"
 
-namespace bnss {
+namespace bnssassembler {
 	
 	/**
 	 * \brief Class representing the load instruction parser

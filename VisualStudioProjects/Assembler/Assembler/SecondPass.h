@@ -3,7 +3,7 @@
 #include "SecondPassData.h"
 #include "Token.h"
 
-namespace bnss {
+namespace bnssassembler {
 	
 	/**
 	 * \brief Utility class executing the second pass

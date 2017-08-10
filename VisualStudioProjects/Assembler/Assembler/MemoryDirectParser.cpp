@@ -4,7 +4,7 @@
 #include "ExpressionBuilder.h"
 #include "MemoryDirect.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	std::shared_ptr<Operand> MemoryDirectParser::parse(std::string str) const {
 		if (!regex_match(str, CONSTANT_TERM_REGEX)) {

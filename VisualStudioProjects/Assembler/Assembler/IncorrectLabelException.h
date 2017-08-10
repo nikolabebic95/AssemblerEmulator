@@ -3,7 +3,7 @@
 #include <string>
 #include "MessageException.h"
 
-namespace bnss {
+namespace bnssassembler {
 	
 	/**
 	 * \brief Exception representing the incorrect label

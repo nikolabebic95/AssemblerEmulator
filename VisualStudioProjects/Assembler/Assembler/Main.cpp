@@ -11,14 +11,14 @@
 
 int main(int argc, char *argv[]) {
 	try {
-		auto in_out = bnss::CommandLineHelper::parse(argc, argv);
-		auto lines = bnss::FileReader::readAllLines(in_out.first);
-		auto parsed = bnss::MicroRiscParser::instance().parse(lines);
-		auto first = bnss::FirstPass::execute(parsed);
-		auto second = bnss::SecondPass::execute(parsed, std::move(first));
-		bnss::FileWriter::write(in_out.second, second);
+		auto in_out = bnssassembler::CommandLineHelper::parse(argc, argv);
+		auto lines = bnssassembler::FileReader::readAllLines(in_out.first);
+		auto parsed = bnssassembler::MicroRiscParser::instance().parse(lines);
+		auto first = bnssassembler::FirstPass::execute(parsed);
+		auto second = bnssassembler::SecondPass::execute(parsed, std::move(first));
+		bnssassembler::FileWriter::write(in_out.second, second);
 	}
-	catch (bnss::AssemblerException &e) {
+	catch (bnssassembler::AssemblerException &e) {
 		std::cerr << e.message() << std::endl;
 	}
 	catch (std::exception &e) {

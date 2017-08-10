@@ -3,7 +3,7 @@
 #include <cstdint>
 #include <functional>
 
-namespace bnss {
+namespace bnssassembler {
 
 	/**
 	 * \brief Enum representing the type of the section
@@ -17,11 +17,11 @@ namespace bnss {
 }
 
 namespace std {
-	template <> struct hash<bnss::SectionType> {
-		size_t operator()(const bnss::SectionType & type) const;
+	template <> struct hash<bnssassembler::SectionType> {
+		size_t operator()(const bnssassembler::SectionType & type) const;
 	};
 
-	inline size_t hash<bnss::SectionType>::operator()(const bnss::SectionType & type) const {
+	inline size_t hash<bnssassembler::SectionType>::operator()(const bnssassembler::SectionType & type) const {
 		return hash<int8_t>()(static_cast<int8_t>(type));
 	}
 }

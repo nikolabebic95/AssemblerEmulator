@@ -2,7 +2,7 @@
 #define _instruction_bit_field_h_
 #include <cstdint>
 
-namespace bnss {
+namespace bnssassembler {
 	
 	/**
 	 * \brief Bit field that enables easier manipulation of instructions

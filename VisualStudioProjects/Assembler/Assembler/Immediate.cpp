@@ -1,6 +1,6 @@
 #include "Immediate.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	Immediate::Immediate(MicroRiscExpression value) noexcept : value_(value) {}
 

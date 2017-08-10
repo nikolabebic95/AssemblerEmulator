@@ -3,7 +3,7 @@
 #include <algorithm>
 #include "MessageException.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	InstructionCode InstructionCodeParser::parse(std::string str) {
 		transform(str.begin(), str.end(), str.begin(), tolower);

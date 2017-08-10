@@ -5,7 +5,7 @@
 #include <stdexcept>
 #include <iomanip>
 
-namespace bnss {
+namespace bnssassembler {
 
 	std::string StringHelper::fileToString(std::string file_name) {
 		std::ifstream file(file_name);

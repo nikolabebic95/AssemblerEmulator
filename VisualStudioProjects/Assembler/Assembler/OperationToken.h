@@ -2,7 +2,7 @@
 #define _operation_token_h_
 #include "ExpressionToken.h"
 
-namespace bnss {
+namespace bnssassembler {
 	
 	/**
 	 * \brief Token class representing a math operator

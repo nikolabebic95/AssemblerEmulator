@@ -10,7 +10,7 @@
 #include <list>
 #include "RelocationRecord.h"
 
-namespace bnss {
+namespace bnssassembler {
 	
 	/**
 	 * \brief Class representing the data about one section
@@ -135,11 +135,11 @@ namespace bnss {
 }
 
 namespace std {
-	template <> struct hash<bnss::SectionData> {
-		size_t operator()(const bnss::SectionData & section_data) const;
+	template <> struct hash<bnssassembler::SectionData> {
+		size_t operator()(const bnssassembler::SectionData & section_data) const;
 	};
 
-	inline size_t hash<bnss::SectionData>::operator()(const bnss::SectionData & section_data) const {
+	inline size_t hash<bnssassembler::SectionData>::operator()(const bnssassembler::SectionData & section_data) const {
 		return hash<size_t>()(section_data.hash());
 	}
 }

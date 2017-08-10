@@ -4,7 +4,7 @@
 #include "RegisterIndirectParser.h"
 #include "RegisterDirectParser.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	StoreInstructionParser::StoreInstructionParser() noexcept {
 		operands_.push_back(std::make_shared<RegisterDirectParser>());

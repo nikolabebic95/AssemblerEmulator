@@ -3,7 +3,7 @@
 #include "RegisterIndirectOffsetParser.h"
 #include "RegisterIndirectParser.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	UndonditionalJumpInstructionParser::UndonditionalJumpInstructionParser() noexcept {
 		auto memdir = std::make_shared<MemoryDirectParser>();

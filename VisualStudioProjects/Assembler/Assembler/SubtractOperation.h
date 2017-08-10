@@ -4,7 +4,7 @@
 #include "RelocationRecord.h"
 #include <list>
 
-namespace bnss {
+namespace bnssassembler {
 
 	/**
 	* \brief Class implementing the behaviour of the - operator in expressions

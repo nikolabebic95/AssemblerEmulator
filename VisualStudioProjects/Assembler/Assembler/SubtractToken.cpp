@@ -1,7 +1,7 @@
 #include "SubtractToken.h"
 #include "SubtractOperation.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	int SubtractToken::inputPriority() const noexcept {
 		return 2;

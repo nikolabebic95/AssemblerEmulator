@@ -2,7 +2,7 @@
 #define _second_pass_exception_h_
 #include "AssemblerException.h"
 
-namespace bnss {
+namespace bnssassembler {
 	
 	class SecondPassException : public AssemblerException {
 	public:

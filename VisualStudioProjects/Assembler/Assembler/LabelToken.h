@@ -2,7 +2,7 @@
 #define _label_token_h_
 #include "Token.h"
 
-namespace bnss {
+namespace bnssassembler {
 	
 	/**
 	 * \brief Class representing the label token

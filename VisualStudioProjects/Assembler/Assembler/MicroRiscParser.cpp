@@ -7,7 +7,7 @@
 #include "GlobalSymbolsLineParser.h"
 #include <regex>
 
-namespace bnss {
+namespace bnssassembler {
 
 	MicroRiscParser &MicroRiscParser::instance() noexcept {
 		static MicroRiscParser instance;

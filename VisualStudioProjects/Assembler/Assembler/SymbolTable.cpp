@@ -4,7 +4,7 @@
 #include <iostream>
 #include <iomanip>
 
-namespace bnss {
+namespace bnssassembler {
 
 	SymbolTable &SymbolTable::operator+=(const SymbolData & data) {
 		insert(make_pair(data.name(), data));

@@ -11,7 +11,7 @@
 #include "OpeningBraceToken.h"
 #include "ClosingBraceToken.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	std::shared_ptr<ExpressionToken> ExpressionTokenFactory::create(std::string param) {
 		if (regex_match(param, LITERAL_REGEX)) {

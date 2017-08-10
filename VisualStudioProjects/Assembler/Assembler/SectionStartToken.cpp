@@ -1,7 +1,7 @@
 #include "SectionStartToken.h"
 #include "SecondPassData.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	SectionStartToken::SectionStartToken(SectionType type, size_t line_number, std::string line) noexcept : Token(line_number, line), type_(type) {}
 

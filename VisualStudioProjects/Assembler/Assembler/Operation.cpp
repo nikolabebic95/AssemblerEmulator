@@ -1,6 +1,6 @@
 #include "Operation.h"
 
-namespace bnss {
+namespace bnssassembler {
 	int32_t Operation::value() const {
 		return calculate(left_->value(), right_->value());
 	}

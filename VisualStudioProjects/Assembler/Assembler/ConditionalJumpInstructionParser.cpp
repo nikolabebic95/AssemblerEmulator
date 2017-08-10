@@ -4,7 +4,7 @@
 #include "RegisterIndirectParser.h"
 #include "RegisterIndirectOffsetParser.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	ConditionalJumpInstructionParser::ConditionalJumpInstructionParser() noexcept {
 		operands_.push_back(std::make_shared<RegisterDirectParser>());

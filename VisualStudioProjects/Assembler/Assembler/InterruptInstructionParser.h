@@ -2,7 +2,7 @@
 #define _interrupt_instruction_parser_h_
 #include "InstructionParser.h"
 
-namespace bnss {
+namespace bnssassembler {
 	
 	class InterruptInstructionParser : public InstructionParser {
 	public:

@@ -5,7 +5,7 @@
 // ReSharper disable once CppUnusedIncludeDirective
 #include "SecondPassData.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	/**
 	 * \brief Class representing one token of the assembler source file

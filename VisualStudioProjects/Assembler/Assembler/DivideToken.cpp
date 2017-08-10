@@ -1,7 +1,7 @@
 #include "DivideToken.h"
 #include "DivideOperation.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	int DivideToken::inputPriority() const noexcept {
 		return 3;

@@ -2,7 +2,7 @@
 #define _invalid_expression_exception_h_
 #include "MessageException.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	/**
 	 * \brief Exception representing the invalid expression

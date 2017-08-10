@@ -1,7 +1,7 @@
 #include "MicroRiscExpression.h"
 #include "MessageException.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	MicroRiscExpression::MicroRiscExpression(std::shared_ptr<Expression> expression) noexcept : expression_(expression) {}
 

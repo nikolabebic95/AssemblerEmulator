@@ -1,6 +1,6 @@
 #include "IncorrectLabelException.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	IncorrectLabelException::IncorrectLabelException(std::string label) noexcept : MessageException("The label \"" + label + "\" is in incorrect format") {}
 }

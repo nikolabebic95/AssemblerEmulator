@@ -1,7 +1,7 @@
 #include "NotInstructionParser.h"
 #include "RegisterDirectParser.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	NotInstructionParser::NotInstructionParser() noexcept {
 		operands_.push_back(std::make_shared<RegisterDirectParser>());

@@ -3,7 +3,7 @@
 #include "Register.h"
 #include "Operand.h"
 
-namespace bnss {
+namespace bnssassembler {
 	
 	/**
 	 * \brief Class representing the register direct operand

@@ -3,7 +3,7 @@
 #include <iomanip>
 #include "PrintHelpers.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	RelocationRecord::RelocationRecord(bool absolute, size_t section_index) noexcept : absolute_(absolute), section_index_(section_index), section_(true) {}
 	RelocationRecord::RelocationRecord(bool absolute, std::string symbol_name) noexcept : absolute_(absolute), symbol_name_(symbol_name), section_(false) {}

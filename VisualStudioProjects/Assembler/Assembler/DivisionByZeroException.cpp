@@ -1,6 +1,6 @@
 #include "DivisionByZeroException.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	DivisionByZeroException::DivisionByZeroException() noexcept : MessageException("Error: Division by zero") {}
 }

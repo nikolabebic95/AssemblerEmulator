@@ -2,7 +2,7 @@
 #define _symbol_data_h_
 #include <string>
 
-namespace bnss {
+namespace bnssassembler {
 	
 	/**
 	 * \brief Class representing data about one symbol

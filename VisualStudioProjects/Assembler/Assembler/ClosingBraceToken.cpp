@@ -1,7 +1,7 @@
 #include "ClosingBraceToken.h"
 #include "MessageException.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	int ClosingBraceToken::inputPriority() const noexcept {
 		return 1;

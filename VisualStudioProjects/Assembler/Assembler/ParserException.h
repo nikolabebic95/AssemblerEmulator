@@ -2,7 +2,7 @@
 #define _parser_exception_h_
 #include "AssemblerException.h"
 
-namespace bnss {
+namespace bnssassembler {
 	
 	/**
 	 * \brief Represents an exception that happend during the parsing of the file

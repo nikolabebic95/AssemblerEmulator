@@ -5,7 +5,7 @@
 #include <list>
 #include "Expression.h"
 
-namespace bnss {
+namespace bnssassembler {
 	
 	/**
 	 * \brief Class representing the token found in infix and postfix expressions

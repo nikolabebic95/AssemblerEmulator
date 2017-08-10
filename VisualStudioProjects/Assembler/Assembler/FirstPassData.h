@@ -5,7 +5,7 @@
 #include "SymbolDefinition.h"
 #include <unordered_set>
 
-namespace bnss {
+namespace bnssassembler {
 	
 	/**
 	 * \brief Class representing the data that the two-pass assembler will modify in the first pass

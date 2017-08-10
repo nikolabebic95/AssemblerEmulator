@@ -3,7 +3,7 @@
 #include <iostream>
 #include "PrintHelpers.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	SectionData::SectionData(SectionType type) noexcept : type_(type) {}
 	SectionData::SectionData(SectionType type, size_t index) noexcept : type_(type), indexed_(true), index_(index) {}

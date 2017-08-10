@@ -3,7 +3,7 @@
 #include "SecondPassData.h"
 #include "MessageException.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	DataDefinitionToken::DataDefinitionToken(std::vector<Data> data, size_t line_number, std::string line) noexcept : Token(line_number, line), data_(data) {}
 

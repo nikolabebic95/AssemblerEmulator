@@ -3,7 +3,7 @@
 #include <algorithm>
 #include <regex>
 
-namespace bnss {
+namespace bnssassembler {
 
 	Register RegisterParser::parse(std::string str) {
 		static std::regex regex("[[:space:]]*([a-z0-9]*)[[:space:]]*");

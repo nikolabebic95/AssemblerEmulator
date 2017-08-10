@@ -5,7 +5,7 @@
 #include "RegisterIndirectOffset.h"
 #include "CommonRegexes.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	/**
 	 * \brief Parses the input as a PC relative address

@@ -2,7 +2,7 @@
 #define _section_start_line_parser_h_
 #include "LineParser.h"
 
-namespace bnss {
+namespace bnssassembler {
 	
 	/**
 	 * \brief Class used for parsing section start definitions

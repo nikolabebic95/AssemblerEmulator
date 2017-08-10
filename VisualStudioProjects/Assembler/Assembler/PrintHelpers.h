@@ -2,7 +2,7 @@
 #define _print_helpers_h_
 #include <string>
 
-namespace bnss {
+namespace bnssassembler {
 #ifdef _MSC_VER
 	const unsigned char UPPER_LEFT = 201;
 	const unsigned char UPPER_RIGHT = 187;

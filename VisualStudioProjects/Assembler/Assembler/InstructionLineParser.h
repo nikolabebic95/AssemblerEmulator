@@ -6,7 +6,7 @@
 #include <memory>
 #include <unordered_map>
 
-namespace bnss {
+namespace bnssassembler {
 
 	/**
 	 * \brief Class used for parsing instructions

@@ -1,6 +1,6 @@
 #include "Literal.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	Literal::Literal(int32_t value) noexcept : value_(value) {}
 

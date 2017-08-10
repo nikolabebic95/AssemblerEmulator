@@ -6,7 +6,7 @@
 #include <memory>
 #include "LineParser.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	/**
 	 * \brief Abstract class representing a text parser

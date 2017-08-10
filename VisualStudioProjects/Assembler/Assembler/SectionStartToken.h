@@ -3,7 +3,7 @@
 #include "Token.h"
 #include "SectionType.h"
 
-namespace bnss {
+namespace bnssassembler {
 	
 	/**
 	 * \brief Class representing the section start token

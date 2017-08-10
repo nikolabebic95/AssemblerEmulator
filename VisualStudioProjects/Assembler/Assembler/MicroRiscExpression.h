@@ -3,7 +3,7 @@
 #include <memory>
 #include "Expression.h"
 
-namespace bnss {
+namespace bnssassembler {
 	
 	/**
 	 * \brief Adapter class for Expression

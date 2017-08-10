@@ -8,7 +8,7 @@
 #include "DataTypeParser.h"
 #include "ExpressionBuilder.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	/** 
 	 * \brief Parses the data from the string

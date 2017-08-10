@@ -1,6 +1,6 @@
 #include "MultiplyOperation.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	bool MultiplyOperation::validate() const noexcept {
 		return !containsSymbol();

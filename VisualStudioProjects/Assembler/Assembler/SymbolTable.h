@@ -3,7 +3,7 @@
 #include "SymbolData.h"
 #include <unordered_map>
 
-namespace bnss {
+namespace bnssassembler {
 
 	/**
 	 * \brief Class representing the symbol table

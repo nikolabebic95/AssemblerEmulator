@@ -3,7 +3,7 @@
 #include <locale>
 #include "InvalidDataTypeException.h"
 
-namespace bnss {
+namespace bnssassembler {
 
 	DataType DataTypeParser::parse(std::string str) {
 		transform(str.begin(), str.end(), str.begin(), tolower);
