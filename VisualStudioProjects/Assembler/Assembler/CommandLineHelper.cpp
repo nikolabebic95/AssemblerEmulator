@@ -11,7 +11,6 @@ namespace bnssassembler {
 			("o,output", "Specifies output file", cxxopts::value<std::string>()->default_value("out.txt"))
 			("h,help", "Prints help");
 
-		options.parse_positional("positional");
 		options.parse(argc, argv);
 
 		if (options.count("help")) {
