@@ -375,9 +375,6 @@
     <ClCompile Include="FileReader.cpp">
       <Filter>Source Files\Files</Filter>
     </ClCompile>
-    <ClCompile Include="FileWriter.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="z85_impl.cpp">
       <Filter>External Files\Z85</Filter>
     </ClCompile>
@@ -385,7 +382,10 @@
       <Filter>External Files\Z85</Filter>
     </ClCompile>
     <ClCompile Include="CommandLineHelper.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="FileWriter.cpp">
+      <Filter>Source Files\Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
