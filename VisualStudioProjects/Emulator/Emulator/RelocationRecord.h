@@ -1,6 +1,7 @@
 #ifndef _relocation_record_h_
 #define _relocation_record_h_
 #include <string>
+#include <istream>
 #include "DataType.h"
 
 namespace bnssemulator {

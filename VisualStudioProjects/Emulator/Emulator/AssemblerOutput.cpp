@@ -3,7 +3,7 @@
 
 namespace bnssemulator {
 
-	std::istream & bnssemulator::operator>>(std::istream & is, AssemblerOutput & data) {
+	std::istream & operator>>(std::istream & is, AssemblerOutput & data) {
 		size_t num_of_imported_symbols;
 		is >> num_of_imported_symbols;
 		for (size_t i = 0; i < num_of_imported_symbols; i++) {

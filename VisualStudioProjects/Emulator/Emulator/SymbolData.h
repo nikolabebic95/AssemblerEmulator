@@ -1,6 +1,7 @@
 #ifndef _symbol_data_h_
 #define _symbol_data_h_
 #include <string>
+#include <istream>
 
 namespace bnssemulator {
 	

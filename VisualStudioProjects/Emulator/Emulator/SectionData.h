@@ -3,6 +3,7 @@
 #include "SectionType.h"
 #include "RelocationRecord.h"
 #include <vector>
+#include <istream>
 
 namespace bnssemulator {
 	
