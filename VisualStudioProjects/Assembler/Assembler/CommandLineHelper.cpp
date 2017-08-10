@@ -5,7 +5,7 @@
 namespace bnssassembler {
 
 	std::pair<std::string, std::string> CommandLineHelper::parse(int argc, char * argv[]) {
-		cxxopts::Options options(argv[0], " - command line options");
+		cxxopts::Options options(argv[0], "Assembler\nSystem software\nSchool of Electrical Engineering\nUniversity of Belgrade\nCopyright (c) 2017 Nikola Bebic\n");
 		options.add_options()
 			("i,input", "Specifies input file", cxxopts::value<std::string>()->default_value("in.txt"))
 			("o,output", "Specifies output file", cxxopts::value<std::string>()->default_value("out.txt"))
