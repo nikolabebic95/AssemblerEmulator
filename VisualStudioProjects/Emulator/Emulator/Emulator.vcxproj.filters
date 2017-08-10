@@ -43,6 +43,9 @@
     <Filter Include="Source Files\Exceptions">
       <UniqueIdentifier>{826b6c18-f02f-4186-85c1-b35afddc9282}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Assembler">
+      <UniqueIdentifier>{080d3675-3a71-4eb2-960a-39b861ec7e2d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -64,10 +67,19 @@
       <Filter>Source Files\Exceptions</Filter>
     </ClCompile>
     <ClCompile Include="StringHelper.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Helpers</Filter>
     </ClCompile>
     <ClCompile Include="AssemblerOutput.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Assembler</Filter>
+    </ClCompile>
+    <ClCompile Include="RelocationRecord.cpp">
+      <Filter>Source Files\Assembler</Filter>
+    </ClCompile>
+    <ClCompile Include="SectionData.cpp">
+      <Filter>Source Files\Assembler</Filter>
+    </ClCompile>
+    <ClCompile Include="SymbolData.cpp">
+      <Filter>Source Files\Assembler</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -97,6 +109,21 @@
     </ClInclude>
     <ClInclude Include="MessageException.h">
       <Filter>Header Files\Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="SectionData.h">
+      <Filter>Header Files\Assembler</Filter>
+    </ClInclude>
+    <ClInclude Include="SectionType.h">
+      <Filter>Header Files\Assembler</Filter>
+    </ClInclude>
+    <ClInclude Include="RelocationRecord.h">
+      <Filter>Header Files\Assembler</Filter>
+    </ClInclude>
+    <ClInclude Include="DataType.h">
+      <Filter>Header Files\Assembler</Filter>
+    </ClInclude>
+    <ClInclude Include="SymbolData.h">
+      <Filter>Header Files\Assembler</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

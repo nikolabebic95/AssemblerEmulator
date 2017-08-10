@@ -28,6 +28,7 @@ namespace bnssassembler {
 		std::cout << VERTICAL << "                     Name                      " << VERTICAL << " Section " << VERTICAL << " Offset " << VERTICAL << " Global/Local " << VERTICAL << std::endl;
 		std::cout << T_RIGHT << multiple(HORIZONTAL, 47) << ALL_FOUR << multiple(HORIZONTAL, 9) << ALL_FOUR << multiple(HORIZONTAL, 8) << ALL_FOUR << multiple(HORIZONTAL, 14) << T_LEFT << std::endl;
 
+		os << table.size() << std::endl;
 		for (auto &entry : table) {
 			os << entry.second << std::endl;
 		}

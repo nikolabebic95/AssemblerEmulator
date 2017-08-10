@@ -205,6 +205,7 @@ namespace bnssassembler {
 		std::cout << VERTICAL << " Offset " << VERTICAL << " Absolute " << VERTICAL << " Section " << VERTICAL << "                      Symbol                       " << VERTICAL << std::endl;
 		std::cout << T_RIGHT << multiple(HORIZONTAL, 8) << ALL_FOUR << multiple(HORIZONTAL, 10) << ALL_FOUR << multiple(HORIZONTAL, 9) << ALL_FOUR << multiple(HORIZONTAL, 51) << T_LEFT << std::endl;
 
+		os << data.relocation_records_.size() << std::endl;
 		for (auto &record : data.relocation_records_) {
 			os << record << std::endl;
 		}

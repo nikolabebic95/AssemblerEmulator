@@ -147,7 +147,10 @@
     <ClCompile Include="FileReader.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MessageException.cpp" />
+    <ClCompile Include="RelocationRecord.cpp" />
+    <ClCompile Include="SectionData.cpp" />
     <ClCompile Include="StringHelper.cpp" />
+    <ClCompile Include="SymbolData.cpp" />
     <ClCompile Include="z85.cpp" />
     <ClCompile Include="z85_impl.cpp" />
   </ItemGroup>
@@ -156,9 +159,14 @@
     <ClInclude Include="CommandLineHelper.h" />
     <ClInclude Include="CommonRegexes.h" />
     <ClInclude Include="cxxopts.h" />
+    <ClInclude Include="DataType.h" />
     <ClInclude Include="FileReader.h" />
     <ClInclude Include="MessageException.h" />
+    <ClInclude Include="RelocationRecord.h" />
+    <ClInclude Include="SectionData.h" />
+    <ClInclude Include="SectionType.h" />
     <ClInclude Include="StringHelper.h" />
+    <ClInclude Include="SymbolData.h" />
     <ClInclude Include="z85.h" />
     <ClInclude Include="z85_cpp.h" />
   </ItemGroup>
