@@ -119,9 +119,6 @@
     <ClInclude Include="RelocationRecord.h">
       <Filter>Header Files\Assembler</Filter>
     </ClInclude>
-    <ClInclude Include="DataType.h">
-      <Filter>Header Files\Assembler</Filter>
-    </ClInclude>
     <ClInclude Include="SymbolData.h">
       <Filter>Header Files\Assembler</Filter>
     </ClInclude>

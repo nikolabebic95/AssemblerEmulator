@@ -10,10 +10,12 @@ int main(int argc, char *argv[]) {
 	}
 	catch (const std::exception &exception) {
 		std::cerr << exception.what() << std::endl;
+		return EXIT_FAILURE;
 	}
 	catch (...) {
 		std::cerr << "Unknown exception" << std::endl;
+		return EXIT_FAILURE;
 	}
 
-	return 0;
+	return EXIT_SUCCESS;
 }

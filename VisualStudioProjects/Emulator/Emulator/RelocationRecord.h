@@ -2,7 +2,6 @@
 #define _relocation_record_h_
 #include <string>
 #include <istream>
-#include "DataType.h"
 
 namespace bnssemulator {
 	
@@ -21,7 +20,6 @@ namespace bnssemulator {
 		size_t section_index_ = 0;
 		std::string symbol_name_;
 		bool section_ = false;
-		DataType data_type_ = DOUBLE_WORD;
 		bool opposite_ = false;
 	};
 }

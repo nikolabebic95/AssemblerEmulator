@@ -18,7 +18,7 @@ namespace bnssassembler {
 	 */
 	Data parseData(std::string str) {
 		static std::regex splitter("(.*)" + DUPLICATE_DIRECTIVE + "(.*)");
-		static std::regex left_regex("[[:space:]]*([a-zA-Z]*)(" + CONSTANT_TERM + ")");
+		static std::regex left_regex("[[:space:]]*([Dd][BbWwDd])(" + CONSTANT_TERM + ")");
 		static std::regex uninitialized_value("[[:space:]]*\\?[[:space:]]*");
 
 		auto left = str;

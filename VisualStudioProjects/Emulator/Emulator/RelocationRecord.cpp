@@ -12,10 +12,6 @@ namespace bnssemulator {
 		else {
 			is >> data.symbol_name_;
 		}
-		
-		int type;
-		is >> type;
-		data.data_type_ = static_cast<DataType>(type);
 
 		return is;
 	}

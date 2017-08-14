@@ -38,23 +38,17 @@ namespace bnssassembler {
 
 	void SectionData::addData(uint8_t data, std::list<RelocationRecord> &relocations) {
 		addData(data);
-		for (auto &relocation : relocations) {
-			relocation.offset(data_.size() - 1);
-			relocation.dataType(BYTE);
+		if (!relocations.empty()) {
+			throw MessageException("Only 32bit data definitions can contain labels");
 		}
-
-		relocation_records_.splice(relocation_records_.end(), move(relocations));
 	}
 
 	void SectionData::addData(uint16_t data, std::list<RelocationRecord> &relocations) {
 		addData(static_cast<uint8_t>(data & 0x00FF));
 		addData(static_cast<uint8_t>((data & 0xFF00) >> 8));
-		for (auto &relocation : relocations) {
-			relocation.offset(data_.size() - 2);
-			relocation.dataType(WORD);
+		if (!relocations.empty()) {
+			throw MessageException("Only 32bit data definitions can contain labels");
 		}
-
-		relocation_records_.splice(relocation_records_.end(), move(relocations));
 	}
 
 	void SectionData::addData(uint32_t data, std::list<RelocationRecord> &relocations) {
@@ -64,7 +58,6 @@ namespace bnssassembler {
 		addData(static_cast<uint8_t>((data & 0xFF000000) >> 24));
 		for (auto &relocation : relocations) {
 			relocation.offset(data_.size() - 4);
-			relocation.dataType(DOUBLE_WORD);
 		}
 
 		relocation_records_.splice(relocation_records_.end(), move(relocations));

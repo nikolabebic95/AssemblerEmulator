@@ -26,7 +26,8 @@ load r1, $
              kurac  def  0x0
 
 v:  DD  6, DB 7 DUP    5 , dw 2 dup 0x1234
-
+dd kurac_moj
+dw 2
 .bss
 aaa:
     DW 0x100 DUP ?

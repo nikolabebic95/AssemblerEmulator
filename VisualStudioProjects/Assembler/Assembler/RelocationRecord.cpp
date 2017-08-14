@@ -12,10 +12,6 @@ namespace bnssassembler {
 		offset_ = offset;
 	}
 
-	void RelocationRecord::dataType(DataType data_type) noexcept {
-		data_type_ = data_type;
-	}
-
 	void RelocationRecord::absolute(bool absolute) noexcept {
 		absolute_ = absolute;
 	}
@@ -50,9 +46,7 @@ namespace bnssassembler {
 		else {
 			os << record.symbol_name_ << std::endl;
 		}
-
-		os << record.data_type_ << std::endl;
-
+		
 		std::cout << VERTICAL << " " << std::setw(7) << std::left << record.offset_ << VERTICAL << " " << (record.absolute_ ? "Absolute" : "Relative") << " " << VERTICAL << " ";
 		if (record.section_) {
 			std::cout << std::setw(8) << std::left << std::to_string(record.section_index_) + "." << VERTICAL << std::setw(51) << " " << VERTICAL << std::endl;
@@ -69,8 +63,7 @@ namespace bnssassembler {
 			lhs.offset_ == rhs.offset_ &&
 			lhs.absolute_ == rhs.absolute_ &&
 			lhs.section_ == rhs.section_ &&
-			(lhs.section_ ? lhs.section_index_ == rhs.section_index_ : lhs.symbol_name_ == rhs.symbol_name_) &&
-			lhs.data_type_ == rhs.data_type_;
+			(lhs.section_ ? lhs.section_index_ == rhs.section_index_ : lhs.symbol_name_ == rhs.symbol_name_);
 	}
 
 	bool operator!=(const RelocationRecord &lhs, const RelocationRecord &rhs) {

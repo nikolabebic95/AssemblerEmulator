@@ -20,13 +20,16 @@ int main(int argc, char *argv[]) {
 	}
 	catch (bnssassembler::AssemblerException &e) {
 		std::cerr << e.message() << std::endl;
+		return EXIT_FAILURE;
 	}
 	catch (std::exception &e) {
 		std::cerr << e.what() << std::endl;
+		return EXIT_FAILURE;
 	}
 	catch (...) {
 		std::cerr << "Unknown error" << std::endl;
+		return EXIT_FAILURE;
 	}
 
-	return 0;
+	return EXIT_SUCCESS;
 }

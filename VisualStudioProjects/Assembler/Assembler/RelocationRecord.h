@@ -1,7 +1,6 @@
 #ifndef _relocation_record_h_
 #define _relocation_record_h_
 #include <string>
-#include "DataType.h"
 
 namespace bnssassembler {
 	
@@ -31,11 +30,6 @@ namespace bnssassembler {
 		 * \param offset New offset
 		 */
 		void offset(size_t offset) noexcept;
-
-		/**
-		 * \brief Sets the data type of the relocation
-		 */
-		void dataType(DataType data_type) noexcept;
 		
 		/**
 		 * \brief Toggles the opposite flag
@@ -89,7 +83,6 @@ namespace bnssassembler {
 		size_t section_index_ = 0;
 		std::string symbol_name_;
 		bool section_;
-		DataType data_type_ = DOUBLE_WORD;
 		bool opposite_ = false;
 	};
 }

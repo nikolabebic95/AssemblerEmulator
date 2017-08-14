@@ -159,7 +159,6 @@
     <ClInclude Include="CommandLineHelper.h" />
     <ClInclude Include="CommonRegexes.h" />
     <ClInclude Include="cxxopts.h" />
-    <ClInclude Include="DataType.h" />
     <ClInclude Include="FileReader.h" />
     <ClInclude Include="MessageException.h" />
     <ClInclude Include="RelocationRecord.h" />
