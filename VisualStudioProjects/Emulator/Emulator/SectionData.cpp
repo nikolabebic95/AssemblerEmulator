@@ -36,4 +36,33 @@ namespace bnssemulator {
 
 		return is;
 	}
+
+	bool SectionData::hasAddress() const noexcept {
+		return org_valid_;
+	}
+
+	uint32_t SectionData::address() const noexcept {
+		return org_address_;
+	}
+
+	void SectionData::address(uint32_t address) noexcept {
+		org_valid_ = true;
+		org_address_ = address;
+	}
+
+	size_t SectionData::size() const noexcept {
+		return location_counter_;
+	}
+
+	SectionType SectionData::type() const noexcept {
+		return type_;
+	}
+
+	std::vector<uint8_t> & SectionData::data() noexcept {
+		return data_;
+	}
+
+	const std::vector<uint8_t> & SectionData::data() const noexcept {
+		return const_cast<SectionData &>(*this).data();
+	}
 }

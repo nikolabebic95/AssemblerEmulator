@@ -18,7 +18,19 @@ namespace bnssemulator {
 		 * \return Input stream
 		 */
 		friend std::istream &operator>>(std::istream &is, AssemblerOutput &data);
-		// TODO: Implementation
+		
+		/**
+		 * \brief Gets the section table
+		 * \return Section table
+		 */
+		std::vector<SectionData> &sectionTable() noexcept;
+
+		/**
+		 * \brief Gets the section table
+		 * \return Section table
+		 */
+		const std::vector<SectionData> &sectionTable() const noexcept;
+
 	private:
 		std::unordered_set<std::string> imported_symbols_;
 		std::vector<SectionData> section_table_;

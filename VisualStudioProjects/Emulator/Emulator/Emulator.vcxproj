@@ -142,6 +142,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AddressSpace.cpp" />
     <ClCompile Include="AssemblerOutput.cpp" />
     <ClCompile Include="CommandLineHelper.cpp" />
     <ClCompile Include="FileReader.cpp" />
@@ -149,21 +150,28 @@
     <ClCompile Include="MessageException.cpp" />
     <ClCompile Include="RelocationRecord.cpp" />
     <ClCompile Include="SectionData.cpp" />
+    <ClCompile Include="Segment.cpp" />
     <ClCompile Include="StringHelper.cpp" />
     <ClCompile Include="SymbolData.cpp" />
     <ClCompile Include="z85.cpp" />
     <ClCompile Include="z85_impl.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Address.h" />
+    <ClInclude Include="AddressSpace.h" />
     <ClInclude Include="AssemblerOutput.h" />
     <ClInclude Include="CommandLineHelper.h" />
     <ClInclude Include="CommonRegexes.h" />
     <ClInclude Include="cxxopts.h" />
     <ClInclude Include="FileReader.h" />
+    <ClInclude Include="InstructionBitField.h" />
+    <ClInclude Include="InstructionBitFieldUnion.h" />
     <ClInclude Include="MessageException.h" />
     <ClInclude Include="RelocationRecord.h" />
     <ClInclude Include="SectionData.h" />
     <ClInclude Include="SectionType.h" />
+    <ClInclude Include="Segment.h" />
+    <ClInclude Include="StlHelper.h" />
     <ClInclude Include="StringHelper.h" />
     <ClInclude Include="SymbolData.h" />
     <ClInclude Include="z85.h" />

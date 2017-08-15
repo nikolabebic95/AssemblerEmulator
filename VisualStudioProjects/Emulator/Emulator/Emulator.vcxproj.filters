@@ -46,6 +46,12 @@
     <Filter Include="Source Files\Assembler">
       <UniqueIdentifier>{080d3675-3a71-4eb2-960a-39b861ec7e2d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Memory">
+      <UniqueIdentifier>{424600eb-c877-4930-a435-b989e7f04557}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Memory">
+      <UniqueIdentifier>{4e3e06d2-a1a7-42e9-9fd1-994077797f68}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -80,6 +86,12 @@
     </ClCompile>
     <ClCompile Include="SymbolData.cpp">
       <Filter>Source Files\Assembler</Filter>
+    </ClCompile>
+    <ClCompile Include="Segment.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AddressSpace.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -121,6 +133,24 @@
     </ClInclude>
     <ClInclude Include="SymbolData.h">
       <Filter>Header Files\Assembler</Filter>
+    </ClInclude>
+    <ClInclude Include="Address.h">
+      <Filter>Header Files\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Segment.h">
+      <Filter>Header Files\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="AddressSpace.h">
+      <Filter>Header Files\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="InstructionBitField.h">
+      <Filter>Header Files\Assembler</Filter>
+    </ClInclude>
+    <ClInclude Include="InstructionBitFieldUnion.h">
+      <Filter>Header Files\Assembler</Filter>
+    </ClInclude>
+    <ClInclude Include="StlHelper.h">
+      <Filter>Header Files\Helpers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

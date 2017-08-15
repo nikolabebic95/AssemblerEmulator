@@ -30,4 +30,12 @@ namespace bnssemulator {
 		
 		return is;
 	}
+	
+	std::vector<SectionData> & AssemblerOutput::sectionTable() noexcept {
+		return section_table_;
+	}
+
+	const std::vector<SectionData> & AssemblerOutput::sectionTable() const noexcept {
+		return const_cast<AssemblerOutput &>(*this).sectionTable();
+	}
 }
