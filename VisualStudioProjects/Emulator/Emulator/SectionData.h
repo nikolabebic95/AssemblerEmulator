@@ -58,6 +58,18 @@ namespace bnssemulator {
 		 * \return Data vector of the section
 		 */
 		const std::vector<uint8_t> &data() const noexcept;
+
+		/**
+		 * \brief Gets the relocation records for the section
+		 * \return Relocation records for the section
+		 */
+		std::vector<RelocationRecord> &relocations() noexcept;
+
+		/**
+		 * \brief Gets the relocation records for the section
+		 * \return Relocation records for the section
+		 */
+		const std::vector<RelocationRecord> &relocations() const noexcept;
 	private:
 		SectionType type_ = TEXT;
 		bool indexed_ = false;

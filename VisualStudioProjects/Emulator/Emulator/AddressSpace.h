@@ -4,6 +4,8 @@
 #include <map>
 #include "SectionData.h"
 #include "InstructionBitField.h"
+#include "SymbolData.h"
+#include <unordered_map>
 
 namespace bnssemulator {
 	
@@ -16,7 +18,7 @@ namespace bnssemulator {
 		 * \brief Constructs an address space from the section table
 		 * \param section_table Section table
 		 */
-		explicit AddressSpace(std::vector<SectionData> &&section_table);
+		explicit AddressSpace(std::vector<SectionData> &&section_table, const std::unordered_map<std::string, SymbolData> symbol_table);
 
 		/**
 		 * \brief Gets the instruction at the specified address

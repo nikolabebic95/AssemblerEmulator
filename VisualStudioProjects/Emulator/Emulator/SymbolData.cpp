@@ -6,6 +6,14 @@ namespace bnssemulator {
 		return name_;
 	}
 
+	size_t SymbolData::sectionIndex() const noexcept {
+		return section_index_;
+	}
+
+	size_t SymbolData::offset() const noexcept {
+		return offset_;
+	}
+
 	std::istream & operator>>(std::istream & is, SymbolData & data) {
 		is >> data.name_;
 		is >> data.section_index_;

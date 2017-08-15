@@ -38,4 +38,16 @@ namespace bnssemulator {
 	const std::vector<SectionData> & AssemblerOutput::sectionTable() const noexcept {
 		return const_cast<AssemblerOutput &>(*this).sectionTable();
 	}
+
+	std::unordered_map<std::string, SymbolData> & AssemblerOutput::symbolTable() noexcept {
+		return symbol_table_;
+	}
+
+	const std::unordered_map<std::string, SymbolData> & AssemblerOutput::symbolTable() const noexcept {
+		return const_cast<AssemblerOutput &>(*this).symbolTable();
+	}
+
+	bool AssemblerOutput::importedSymbolsExist() const noexcept {
+		return imported_symbols_.size() == 0;
+	}
 }

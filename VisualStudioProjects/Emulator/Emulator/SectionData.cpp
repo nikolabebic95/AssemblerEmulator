@@ -65,4 +65,12 @@ namespace bnssemulator {
 	const std::vector<uint8_t> & SectionData::data() const noexcept {
 		return const_cast<SectionData &>(*this).data();
 	}
+
+	std::vector<RelocationRecord> & SectionData::relocations() noexcept {
+		return relocation_records_;
+	}
+
+	const std::vector<RelocationRecord> & SectionData::relocations() const noexcept {
+		return const_cast<SectionData &>(*this).relocations();
+	}
 }

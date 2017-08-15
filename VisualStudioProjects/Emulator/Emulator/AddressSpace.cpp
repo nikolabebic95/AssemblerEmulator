@@ -3,6 +3,8 @@
 #include "StlHelper.h"
 #include <list>
 #include <set>
+#include "SymbolData.h"
+#include <unordered_map>
 
 namespace bnssemulator {
 
@@ -84,7 +86,7 @@ namespace bnssemulator {
 		}
 	}
 
-	AddressSpace::AddressSpace(std::vector<SectionData>&& section_table) {
+	AddressSpace::AddressSpace(std::vector<SectionData>&& section_table, const std::unordered_map<std::string, SymbolData> symbol_table) {
 		if (checkOverlaps(section_table)) {
 			throw MessageException("Sections are overlapping");
 		}
@@ -94,6 +96,24 @@ namespace bnssemulator {
 		
 		for (auto &section : section_table) {
 			insert(make_pair(section.address(), Segment(section.address(), section.size(), section.type(), move(section.data()))));
+			
+			for (auto &relocation_entry : section.relocations()) {
+				uint32_t relocation;
+				
+				if (relocation_entry.section()) {
+					relocation = section_table.at(relocation_entry.sectionIndex()).address();
+				}
+				else {
+					auto &symbol = symbol_table.at(relocation_entry.symbolName());
+					relocation = section_table.at(symbol.sectionIndex()).address() + symbol.offset();
+				}
+
+				if (!relocation_entry.absolute()) {
+					relocation -= section.address() + relocation_entry.offset();
+				}
+
+				at(section.address()).relocate(section.address() + relocation_entry.offset(), relocation);
+			}
 		}
 	}
 

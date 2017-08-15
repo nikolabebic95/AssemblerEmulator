@@ -20,6 +20,18 @@ namespace bnssemulator {
 		* \return Input stream
 		*/
 		friend std::istream &operator>>(std::istream &is, SymbolData &data);
+
+		/**
+		 * \brief Gets the index of the section where the symbol is defined
+		 * \return Index of the section where the symbol is defined
+		 */
+		size_t sectionIndex() const noexcept;
+
+		/**
+		 * \brief Gets the offset of the symbol from the start of the section
+		 * \return Offset of the symbol from the start of the section
+		 */
+		size_t offset() const noexcept;
 	private:
 		std::string name_;
 		size_t section_index_ = 0;

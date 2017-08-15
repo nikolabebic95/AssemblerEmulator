@@ -31,6 +31,24 @@ namespace bnssemulator {
 		 */
 		const std::vector<SectionData> &sectionTable() const noexcept;
 
+		/**
+		 * \brief Gets the symbol table
+		 * \return Symbol table
+		 */
+		std::unordered_map<std::string, SymbolData> &symbolTable() noexcept;
+
+		/**
+		 * \brief Gets the symbol table
+		 * \return Symbol table
+		 */
+		const std::unordered_map<std::string, SymbolData> &symbolTable() const noexcept;
+
+		/**
+		 * \brief Checks if there are imported symbols
+		 * \return Whether there are imported symbols
+		 */
+		bool importedSymbolsExist() const noexcept;
+
 	private:
 		std::unordered_set<std::string> imported_symbols_;
 		std::vector<SectionData> section_table_;

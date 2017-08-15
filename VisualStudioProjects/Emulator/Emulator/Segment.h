@@ -38,6 +38,13 @@ namespace bnssemulator {
 		 */
 		void writeData(uint32_t address, uint8_t data);
 
+		/**
+		 * \brief Fixes the value at the address by a relocation
+		 * \param address Address
+		 * \param relocation Value to be added to the value at the address
+		 */
+		void relocate(uint32_t address, uint32_t relocation);
+
 		using vector::push_back;
 		using vector::resize;
 	private:

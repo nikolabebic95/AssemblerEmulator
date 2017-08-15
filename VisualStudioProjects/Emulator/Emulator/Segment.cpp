@@ -57,4 +57,26 @@ namespace bnssemulator {
 		auto offset = address - address_;
 		(*this)[offset] = data;
 	}
+
+	void Segment::relocate(uint32_t address, uint32_t relocation) {
+		if (address < address_ || address + 4 > address_ + length_) {
+			throw MessageException("Address " + StringHelper::toHexString(address) + " is out of range");
+		}
+
+		auto offset = address - address_;
+
+		uint32_t data = 0;
+
+		data |= (*this)[offset];
+		data |= (*this)[offset + 1] << 8;
+		data |= (*this)[offset + 2] << 16;
+		data |= (*this)[offset + 3] << 24;
+
+		data += relocation;
+
+		(*this)[offset] = static_cast<uint8_t>(data & 0x000000ff);
+		(*this)[offset + 1] = static_cast<uint8_t>((data & 0x0000ff00) >> 8);
+		(*this)[offset + 2] = static_cast<uint8_t>((data & 0x00ff0000) >> 16);
+		(*this)[offset + 3] = static_cast<uint8_t>((data & 0xff000000) >> 24);
+	}
 }
