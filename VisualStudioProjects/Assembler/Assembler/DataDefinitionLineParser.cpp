@@ -55,8 +55,10 @@ namespace bnssassembler {
 		auto parsed_line = line;
 		std::vector<Data> data_vector;
 		
+		static std::regex comma("(.*)','(.*)");
+
 		while (true) {
-			if (!regex_match(parsed_line, COMMA_TOKENIZER_REGEX)) {
+			if (!regex_match(parsed_line, COMMA_TOKENIZER_REGEX) || regex_match(parsed_line, comma)) {
 				break;
 			}
 
