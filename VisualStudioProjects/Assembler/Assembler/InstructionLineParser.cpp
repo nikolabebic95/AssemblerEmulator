@@ -74,7 +74,7 @@ namespace bnssassembler {
 		instructions_[JGZ] = cond_jump;
 		instructions_[JGEZ] = cond_jump;
 		instructions_[JLZ] = cond_jump;
-		instructions_[JLZ] = cond_jump;
+		instructions_[JLEZ] = cond_jump;
 
 		instructions_[LOAD] = std::make_shared<LoadInstructionParser>();
 		instructions_[STORE] = std::make_shared<StoreInstructionParser>();
