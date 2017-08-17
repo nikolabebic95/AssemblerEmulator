@@ -52,6 +52,30 @@
     <Filter Include="Source Files\Memory">
       <UniqueIdentifier>{4e3e06d2-a1a7-42e9-9fd1-994077797f68}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Executing">
+      <UniqueIdentifier>{ad045f5a-29ce-4802-961b-87dff3d796fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Processor">
+      <UniqueIdentifier>{7bbd9762-5a65-4d7b-9add-b8e3e38e9cce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Executing\Alu">
+      <UniqueIdentifier>{3b62cc3f-8dca-4e98-bf81-9e65bee9314d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Executing\ConditionalJumps">
+      <UniqueIdentifier>{224df3ec-f7ba-4e60-a4a2-0da31b790371}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Executing">
+      <UniqueIdentifier>{c83246d4-7577-48a1-834b-ed804d09a934}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Executing\Alu">
+      <UniqueIdentifier>{f7ee9e5e-df10-4456-b657-f313cb8856ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Executing\ConditionalJumps">
+      <UniqueIdentifier>{19a07f4b-620b-4da8-9a45-6b418c94ded6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Processor">
+      <UniqueIdentifier>{a2966847-75c5-4a2a-8bf7-a04dd235a403}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -87,11 +111,101 @@
     <ClCompile Include="SymbolData.cpp">
       <Filter>Source Files\Assembler</Filter>
     </ClCompile>
-    <ClCompile Include="Segment.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="AddressSpace.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="Segment.cpp">
+      <Filter>Source Files\Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="AddExecuter.cpp">
+      <Filter>Source Files\Executing\Alu</Filter>
+    </ClCompile>
+    <ClCompile Include="AluExecuter.cpp">
+      <Filter>Source Files\Executing\Alu</Filter>
+    </ClCompile>
+    <ClCompile Include="AndExecuter.cpp">
+      <Filter>Source Files\Executing\Alu</Filter>
+    </ClCompile>
+    <ClCompile Include="AslExecuter.cpp">
+      <Filter>Source Files\Executing\Alu</Filter>
+    </ClCompile>
+    <ClCompile Include="AsrExecuter.cpp">
+      <Filter>Source Files\Executing\Alu</Filter>
+    </ClCompile>
+    <ClCompile Include="CallExecuter.cpp">
+      <Filter>Source Files\Executing</Filter>
+    </ClCompile>
+    <ClCompile Include="ConditionalJumpExecuter.cpp">
+      <Filter>Source Files\Executing\ConditionalJumps</Filter>
+    </ClCompile>
+    <ClCompile Include="Context.cpp">
+      <Filter>Source Files\Processor</Filter>
+    </ClCompile>
+    <ClCompile Include="DivideExecuter.cpp">
+      <Filter>Source Files\Executing\Alu</Filter>
+    </ClCompile>
+    <ClCompile Include="IntExecuter.cpp">
+      <Filter>Source Files\Executing</Filter>
+    </ClCompile>
+    <ClCompile Include="JmpExecuter.cpp">
+      <Filter>Source Files\Executing</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuloExecuter.cpp">
+      <Filter>Source Files\Executing\Alu</Filter>
+    </ClCompile>
+    <ClCompile Include="MultiplyExecuter.cpp">
+      <Filter>Source Files\Executing\Alu</Filter>
+    </ClCompile>
+    <ClCompile Include="NotExecuter.cpp">
+      <Filter>Source Files\Executing</Filter>
+    </ClCompile>
+    <ClCompile Include="OrExecuter.cpp">
+      <Filter>Source Files\Executing\Alu</Filter>
+    </ClCompile>
+    <ClCompile Include="PopExecuter.cpp">
+      <Filter>Source Files\Executing</Filter>
+    </ClCompile>
+    <ClCompile Include="PushExecuter.cpp">
+      <Filter>Source Files\Executing</Filter>
+    </ClCompile>
+    <ClCompile Include="Register.cpp">
+      <Filter>Source Files\Processor</Filter>
+    </ClCompile>
+    <ClCompile Include="RetExecuter.cpp">
+      <Filter>Source Files\Executing</Filter>
+    </ClCompile>
+    <ClCompile Include="SubtractExecuter.cpp">
+      <Filter>Source Files\Executing\Alu</Filter>
+    </ClCompile>
+    <ClCompile Include="XorExecuter.cpp">
+      <Filter>Source Files\Executing\Alu</Filter>
+    </ClCompile>
+    <ClCompile Include="JzExecuter.cpp">
+      <Filter>Source Files\Executing\ConditionalJumps</Filter>
+    </ClCompile>
+    <ClCompile Include="JnzExecuter.cpp">
+      <Filter>Source Files\Executing\ConditionalJumps</Filter>
+    </ClCompile>
+    <ClCompile Include="JgzExecuter.cpp">
+      <Filter>Source Files\Executing\ConditionalJumps</Filter>
+    </ClCompile>
+    <ClCompile Include="JgezExecuter.cpp">
+      <Filter>Source Files\Executing\ConditionalJumps</Filter>
+    </ClCompile>
+    <ClCompile Include="JlzExecuter.cpp">
+      <Filter>Source Files\Executing\ConditionalJumps</Filter>
+    </ClCompile>
+    <ClCompile Include="JlezExecuter.cpp">
+      <Filter>Source Files\Executing\ConditionalJumps</Filter>
+    </ClCompile>
+    <ClCompile Include="Processor.cpp">
+      <Filter>Source Files\Processor</Filter>
+    </ClCompile>
+    <ClCompile Include="StoreExecuter.cpp">
+      <Filter>Source Files\Executing</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadExecuter.cpp">
+      <Filter>Source Files\Executing</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -151,6 +265,108 @@
     </ClInclude>
     <ClInclude Include="StlHelper.h">
       <Filter>Header Files\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Executer.h">
+      <Filter>Header Files\Executing</Filter>
+    </ClInclude>
+    <ClInclude Include="Register.h">
+      <Filter>Header Files\Processor</Filter>
+    </ClInclude>
+    <ClInclude Include="Context.h">
+      <Filter>Header Files\Processor</Filter>
+    </ClInclude>
+    <ClInclude Include="AddExecuter.h">
+      <Filter>Header Files\Executing\Alu</Filter>
+    </ClInclude>
+    <ClInclude Include="SubtractExecuter.h">
+      <Filter>Header Files\Executing\Alu</Filter>
+    </ClInclude>
+    <ClInclude Include="MultiplyExecuter.h">
+      <Filter>Header Files\Executing\Alu</Filter>
+    </ClInclude>
+    <ClInclude Include="DivideExecuter.h">
+      <Filter>Header Files\Executing\Alu</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuloExecuter.h">
+      <Filter>Header Files\Executing\Alu</Filter>
+    </ClInclude>
+    <ClInclude Include="AndExecuter.h">
+      <Filter>Header Files\Executing\Alu</Filter>
+    </ClInclude>
+    <ClInclude Include="OrExecuter.h">
+      <Filter>Header Files\Executing\Alu</Filter>
+    </ClInclude>
+    <ClInclude Include="XorExecuter.h">
+      <Filter>Header Files\Executing\Alu</Filter>
+    </ClInclude>
+    <ClInclude Include="AslExecuter.h">
+      <Filter>Header Files\Executing\Alu</Filter>
+    </ClInclude>
+    <ClInclude Include="AsrExecuter.h">
+      <Filter>Header Files\Executing\Alu</Filter>
+    </ClInclude>
+    <ClInclude Include="NotExecuter.h">
+      <Filter>Header Files\Executing</Filter>
+    </ClInclude>
+    <ClInclude Include="PushExecuter.h">
+      <Filter>Header Files\Executing</Filter>
+    </ClInclude>
+    <ClInclude Include="PopExecuter.h">
+      <Filter>Header Files\Executing</Filter>
+    </ClInclude>
+    <ClInclude Include="IntExecuter.h">
+      <Filter>Header Files\Executing</Filter>
+    </ClInclude>
+    <ClInclude Include="RetExecuter.h">
+      <Filter>Header Files\Executing</Filter>
+    </ClInclude>
+    <ClInclude Include="AluExecuter.h">
+      <Filter>Header Files\Executing\Alu</Filter>
+    </ClInclude>
+    <ClInclude Include="AddressMode.h">
+      <Filter>Header Files\Assembler</Filter>
+    </ClInclude>
+    <ClInclude Include="JmpExecuter.h">
+      <Filter>Header Files\Executing</Filter>
+    </ClInclude>
+    <ClInclude Include="CallExecuter.h">
+      <Filter>Header Files\Executing</Filter>
+    </ClInclude>
+    <ClInclude Include="ConditionalJumpExecuter.h">
+      <Filter>Header Files\Executing\ConditionalJumps</Filter>
+    </ClInclude>
+    <ClInclude Include="JzExecuter.h">
+      <Filter>Header Files\Executing\ConditionalJumps</Filter>
+    </ClInclude>
+    <ClInclude Include="JnzExecuter.h">
+      <Filter>Header Files\Executing\ConditionalJumps</Filter>
+    </ClInclude>
+    <ClInclude Include="JgzExecuter.h">
+      <Filter>Header Files\Executing\ConditionalJumps</Filter>
+    </ClInclude>
+    <ClInclude Include="JgezExecuter.h">
+      <Filter>Header Files\Executing\ConditionalJumps</Filter>
+    </ClInclude>
+    <ClInclude Include="JlzExecuter.h">
+      <Filter>Header Files\Executing\ConditionalJumps</Filter>
+    </ClInclude>
+    <ClInclude Include="JlezExecuter.h">
+      <Filter>Header Files\Executing\ConditionalJumps</Filter>
+    </ClInclude>
+    <ClInclude Include="OperandType.h">
+      <Filter>Header Files\Assembler</Filter>
+    </ClInclude>
+    <ClInclude Include="StoreExecuter.h">
+      <Filter>Header Files\Executing</Filter>
+    </ClInclude>
+    <ClInclude Include="Processor.h">
+      <Filter>Header Files\Processor</Filter>
+    </ClInclude>
+    <ClInclude Include="InstructionCode.h">
+      <Filter>Header Files\Assembler</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadExecuter.h">
+      <Filter>Header Files\Executing</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

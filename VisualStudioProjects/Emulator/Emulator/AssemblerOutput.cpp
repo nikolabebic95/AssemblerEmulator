@@ -1,5 +1,6 @@
 #include "AssemblerOutput.h"
 #include <string>
+#include "MessageException.h"
 
 namespace bnssemulator {
 
@@ -48,6 +49,24 @@ namespace bnssemulator {
 	}
 
 	bool AssemblerOutput::importedSymbolsExist() const noexcept {
-		return imported_symbols_.size() == 0;
+		return imported_symbols_.size() != 0;
+	}
+
+	std::vector<std::string> AssemblerOutput::importedSymbolsAsVector() const noexcept {
+		std::vector<std::string> ret;
+		for (auto &symbol : imported_symbols_) {
+			ret.push_back(symbol);
+		}
+
+		return ret;
+	}
+
+	uint32_t AssemblerOutput::startOfProgram(std::string start_symbol) const {
+		if (symbol_table_.count(start_symbol) == 0) {
+			throw MessageException("The " + start_symbol + " symbol is not defined");
+		}
+
+		auto symbol = symbol_table_.at(start_symbol);
+		return section_table_[symbol.sectionIndex()].address() + symbol.offset();
 	}
 }

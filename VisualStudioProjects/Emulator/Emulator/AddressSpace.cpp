@@ -5,8 +5,20 @@
 #include <set>
 #include "SymbolData.h"
 #include <unordered_map>
+#include <iostream>
 
 namespace bnssemulator {
+
+	static void removeEmpty(std::vector<SectionData> &section_table) {
+		size_t j = 0;
+		for (size_t i = 0; i < section_table.size(); i++) {
+			if (section_table[i].size() != 0) {
+				section_table[j++] = section_table[i];
+			}
+		}
+
+		section_table.resize(j);
+	}
 
 	static bool checkOverlaps(const std::vector<SectionData> &section_table) {
 		std::vector<std::pair<uint32_t, uint32_t>> check;
@@ -87,6 +99,8 @@ namespace bnssemulator {
 	}
 
 	AddressSpace::AddressSpace(std::vector<SectionData>&& section_table, const std::unordered_map<std::string, SymbolData> symbol_table) {
+		removeEmpty(section_table);
+
 		if (checkOverlaps(section_table)) {
 			throw MessageException("Sections are overlapping");
 		}
@@ -96,10 +110,12 @@ namespace bnssemulator {
 		
 		for (auto &section : section_table) {
 			insert(make_pair(section.address(), Segment(section.address(), section.size(), section.type(), move(section.data()))));
-			
+		}
+
+		for (auto &section : section_table) {
 			for (auto &relocation_entry : section.relocations()) {
 				uint32_t relocation;
-				
+
 				if (relocation_entry.section()) {
 					relocation = section_table.at(relocation_entry.sectionIndex()).address();
 				}
@@ -121,30 +137,67 @@ namespace bnssemulator {
 		return segment(address).getInstruction(address);
 	}
 
+	int32_t AddressSpace::getSecondWordOfInstruction(uint32_t address) const {
+		return segment(address).getSecondWordOfInstruction(address);
+	}
+
 	uint8_t AddressSpace::get8bitData(uint32_t address) const {
 		return segment(address).readData(address);
 	}
 
 	uint16_t AddressSpace::get16bitData(uint32_t address) const {
-		return get8bitData(address) | get8bitData(address + 1) << 8;
+		return get8bitData(address) | (static_cast<uint16_t>(get8bitData(address + 1)) << 8);
 	}
 
 	uint32_t AddressSpace::get32bitData(uint32_t address) const {
-		return get16bitData(address) | get16bitData(address + 2) << 16;
+		return get16bitData(address) | (static_cast<uint32_t>(get16bitData(address + 2)) << 16);
 	}
 
 	void AddressSpace::set8bitData(uint32_t address, uint8_t data) {
 		segment(address).writeData(address, data);
+		if (address == stdout_address_) {
+			std::cout << data;
+		}
 	}
 
 	void AddressSpace::set16bitData(uint32_t address, uint16_t data) {
 		set8bitData(address, static_cast<uint8_t>(data & 0x00ff));
-		set8bitData(address + 1, static_cast<uint8_t>(data & 0xff00 >> 8));
+		set8bitData(address + 1, static_cast<uint8_t>((data & 0xff00) >> 8));
 	}
 
 	void AddressSpace::set32bitData(uint32_t address, uint32_t data) {
 		set16bitData(address, static_cast<uint16_t>(data & 0x0000ffff));
-		set16bitData(address + 2, static_cast<uint16_t>(data & 0xffff0000 >> 16));
+		set16bitData(address + 2, static_cast<uint16_t>((data & 0xffff0000) >> 16));
+	}
+
+	uint32_t AddressSpace::initialStackPointer() const {
+		try {
+			return get32bitData(0);
+		}
+		catch (...) {
+			throw MessageException("Initial stack pointer value is not defined");
+		}
+	}
+
+	uint32_t AddressSpace::errorInterrupt() const noexcept {
+		return getInterrupt(3);
+	}
+
+	uint32_t AddressSpace::timerInterrupt() const noexcept {
+		return getInterrupt(4);
+	}
+
+	uint32_t AddressSpace::keyboardInterrupt() const noexcept {
+		return getInterrupt(5);
+	}
+
+	uint32_t AddressSpace::getInterrupt(uint32_t entry) const noexcept {
+		try {
+			return get32bitData(entry * 4);
+		}
+		catch (...) {
+			return 0;
+		}
 	}
 
 	Segment & AddressSpace::segment(uint32_t address) {

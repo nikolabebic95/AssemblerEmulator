@@ -28,6 +28,13 @@ namespace bnssemulator {
 		InstructionBitField getInstruction(uint32_t address) const;
 
 		/**
+		 * \brief Gets the second word of the instruction at the specified address
+		 * \param address Address
+		 * \return Second word of the instruction
+		 */
+		int32_t getSecondWordOfInstruction(uint32_t address) const;
+
+		/**
 		 * \brief Gets 8 bits of data at the specified address
 		 * \param address Address
 		 * \return Data
@@ -68,9 +75,44 @@ namespace bnssemulator {
 		* \param data Data
 		*/
 		void set32bitData(uint32_t address, uint32_t data);
+
+		/**
+		 * \brief Gets the initial value of the stack pointer
+		 * \return Initial value of the stack pointer
+		 * \throw Throws if the initial value of the stack pointer is not defined
+		 */
+		uint32_t initialStackPointer() const;
+
+		/**
+		 * \brief Gets the address of the error interrupt routine
+		 * \return Address of the error interrupt routine
+		 */
+		uint32_t errorInterrupt() const noexcept;
+
+		/**
+		* \brief Gets the address of the timer interrupt routine
+		* \return Address of the timer interrupt routine
+		*/
+		uint32_t timerInterrupt() const noexcept;
+
+		/**
+		* \brief Gets the address of the keyboard interrupt routine
+		* \return Address of the keyboard interrupt routine
+		*/
+		uint32_t keyboardInterrupt() const noexcept;
+
+		/**
+		 * \brief Gets the address of the interrupt routine at the specified entry
+		 * \param entry Entry
+		 * \return Address of the interrupt routine
+		 */
+		uint32_t getInterrupt(uint32_t entry) const noexcept;
 	private:		
 		Segment &segment(uint32_t address);
 		const Segment &segment(uint32_t address) const;
+
+		uint32_t stdout_address_ = 128;
+		uint32_t stdin_address_ = 132;
 	};
 }
 

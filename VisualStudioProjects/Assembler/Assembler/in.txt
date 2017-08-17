@@ -1,42 +1,52 @@
 org 0x0
-.rodata
-dd aaa
-dd 31 dup dummy
-in: dd 0
-out: dd 0
+.data.1
+    dd stack
+    dd 31 dup dummy
+out: 
+    dd 0
+in:
+    dd 0
 
-       org 0x500
-.text
-.global _start ,           kurac_moj
-_start:
-Load r1 , $_start
-loadUB r3, $kurac_moj
-            storew r1, $ + 0b10101010
-add r1, r1, r3
-PUSH R1 ; comment
-pop r2 // comment
-
-JNZ r2, x // comment
-
-ORG 0x123
-.text.1
-abc:
-; just a comment
- x : ASL R1, R1, R2
-y:
-kurac_moj : and r1, r2, r2
-load r1, $
-
- .data
-
-             kurac  def  0x0
-
-v:  DD  6, DB 7 DUP    5 , dw 2 dup 0x1234
-dd kurac_moj
-dw 2
 .bss
-aaa:
+stack: 
     DW 0x100 DUP ?
 
-.text.2
+.text
 dummy: ret
+
+.global _start
+_start:
+    call hello
+    load r0, #0
+    int r0
+
+hello:
+    load r0, #hello_string;
+loop:
+    loadub r1, [r0]
+    jz r1, skip
+    store r1, out
+    load r1, #1
+    add r0, r0, r1
+    jmp loop
+skip:
+    ret;
+
+.data
+hello_string:
+    DB 'H'
+    DB 'e'
+    DB 'l'
+    DB 'l'
+    DB 'o'
+    DB ','
+    DB ' '
+    DB 'W'
+    DB 'o'
+    DB 'r'
+    DB 'l'
+    DB 'd'
+    DB '!'
+    DB 13
+    DB 10
+    DB 0

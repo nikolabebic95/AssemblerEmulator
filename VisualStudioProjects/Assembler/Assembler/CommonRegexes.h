@@ -28,7 +28,7 @@ namespace bnssassembler {
 	const std::string GLOBAL_DIRECTIVE = "[.][Gg][Ll][Oo][Bb][Aa][Ll]";
 
 	const std::string COMMA_TOKENIZER = "[[:space:]]*(.*?)[[:space:]]*,(.*)";
-	const std::string LAST_COMMA_TOKEN = "[[:space:]]*(.*?)[[:space:]]*";
+	const std::string LAST_COMMA_TOKEN = "[[:space:]]*(.*)[[:space:]]*";
 
 	const std::regex ZERO_REGEX = std::regex(ZERO);
 	const std::regex DECIMAL_REGEX = std::regex(DECIMAL);

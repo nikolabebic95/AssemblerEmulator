@@ -25,6 +25,13 @@ namespace bnssemulator {
 		InstructionBitField getInstruction(uint32_t address) const;
 		
 		/**
+		* \brief Gets the second word of the instruction at the specified address
+		* \param address Address
+		* \return Second word of the instruction
+		*/
+		int32_t getSecondWordOfInstruction(uint32_t address) const;
+
+		/**
 		 * \brief Reads a byte of data at the specified address
 		 * \param address Address
 		 * \return Byte of read data

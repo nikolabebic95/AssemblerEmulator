@@ -49,6 +49,19 @@ namespace bnssemulator {
 		 */
 		bool importedSymbolsExist() const noexcept;
 
+		/**
+		 * \brief Gets the imported symbols as a vector of strings
+		 * \return Imported symbols as a vector of strings
+		 */
+		std::vector<std::string> importedSymbolsAsVector() const noexcept;
+
+		/**
+		 * \brief Gets the address of the start of the program
+		 * \param start_symbol Symbol representing the start of the program
+		 * \return Address of the start of program
+		 * \throw Throws if there is no start of program
+		 */
+		uint32_t startOfProgram(std::string start_symbol) const;
 	private:
 		std::unordered_set<std::string> imported_symbols_;
 		std::vector<SectionData> section_table_;

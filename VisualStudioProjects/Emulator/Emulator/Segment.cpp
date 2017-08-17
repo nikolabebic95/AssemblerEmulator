@@ -32,11 +32,28 @@ namespace bnssemulator {
 		return ret.bit_field;
 	}
 
-	uint8_t Segment::readData(uint32_t address) const {
-		if (type_ == TEXT) {
-			throw MessageException("No read permission at address " + StringHelper::toHexString(address));
+	int32_t Segment::getSecondWordOfInstruction(uint32_t address) const {
+		if (type_ != TEXT) {
+			throw MessageException("No execute permission at address " + StringHelper::toHexString(address));
 		}
 
+		if (address < address_ || address + 4 > address_ + length_) {
+			throw MessageException("Address " + StringHelper::toHexString(address) + " is out of range");
+		}
+
+		auto offset = address - address_;
+		// ReSharper disable once CppUseAuto
+		int32_t ret = 0;
+		
+		ret |= (*this)[offset];
+		ret |= (*this)[offset + 1] << 8;
+		ret |= (*this)[offset + 2] << 16;
+		ret |= (*this)[offset + 3] << 24;
+
+		return ret;
+	}
+
+	uint8_t Segment::readData(uint32_t address) const {
 		if (address < address_ || address > address_ + length_) {
 			throw MessageException("Address " + StringHelper::toHexString(address) + " is out of range");
 		}
@@ -47,7 +64,7 @@ namespace bnssemulator {
 
 	void Segment::writeData(uint32_t address, uint8_t data) {
 		if (type_ != DATA && type_ != BSS) {
-			throw MessageException("No read permission at address " + StringHelper::toHexString(address));
+			throw MessageException("No write permission at address " + StringHelper::toHexString(address));
 		}
 
 		if (address < address_ || address > address_ + length_) {
