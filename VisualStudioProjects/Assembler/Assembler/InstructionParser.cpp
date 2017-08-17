@@ -8,7 +8,7 @@ namespace bnssassembler {
 	std::vector<std::shared_ptr<Operand>> InstructionParser::parse(std::string str) const {
 		std::vector<std::shared_ptr<Operand>> operands;
 
-		for (size_t i = 0; i < operands_.size() - 1; i++) {
+		for (size_t i = 0; i < operands_.size() - 1 && operands_.size() != 0; i++) {
 			if (!regex_match(str, COMMA_TOKENIZER_REGEX)) {
 				throw MessageException("Invalid instruction format: " + str);
 			}

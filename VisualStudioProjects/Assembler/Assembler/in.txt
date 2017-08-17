@@ -1,7 +1,13 @@
-       org 0
+org 0x0
+.rodata
+dd aaa
+dd 31 dup dummy
+in: dd 0
+out: dd 0
+
+       org 0x500
 .text
 .global _start ,           kurac_moj
-.global mogla_sam
 _start:
 Load r1 , $_start
 loadUB r3, $kurac_moj
@@ -31,5 +37,6 @@ dw 2
 .bss
 aaa:
     DW 0x100 DUP ?
-    .end 
-kurac
+
+.text.2
+dummy: ret
