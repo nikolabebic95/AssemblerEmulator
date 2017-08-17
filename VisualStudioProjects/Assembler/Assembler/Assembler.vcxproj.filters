@@ -554,9 +554,6 @@
     <ClInclude Include="InterruptInstructionParser.h">
       <Filter>Header Files\Parsing\InstructionParsers</Filter>
     </ClInclude>
-    <ClInclude Include="NoOperandInstructionParser.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="ConditionalJumpInstructionParser.h">
       <Filter>Header Files\Parsing\InstructionParsers</Filter>
     </ClInclude>
@@ -697,6 +694,9 @@
     </ClInclude>
     <ClInclude Include="CommandLineHelper.h">
       <Filter>Header Files\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="NoOperandInstructionParser.h">
+      <Filter>Header Files\Parsing\InstructionParsers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
