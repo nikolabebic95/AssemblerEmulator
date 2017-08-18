@@ -152,6 +152,7 @@
     <ClCompile Include="CallExecuter.cpp" />
     <ClCompile Include="CommandLineHelper.cpp" />
     <ClCompile Include="ConditionalJumpExecuter.cpp" />
+    <ClCompile Include="ConsoleInputOutput.cpp" />
     <ClCompile Include="Context.cpp" />
     <ClCompile Include="DivideExecuter.cpp" />
     <ClCompile Include="FileReader.cpp" />
@@ -163,6 +164,7 @@
     <ClCompile Include="JmpExecuter.cpp" />
     <ClCompile Include="JnzExecuter.cpp" />
     <ClCompile Include="JzExecuter.cpp" />
+    <ClCompile Include="KeyboardListener.cpp" />
     <ClCompile Include="LoadExecuter.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MessageException.cpp" />
@@ -200,6 +202,7 @@
     <ClInclude Include="CommandLineHelper.h" />
     <ClInclude Include="CommonRegexes.h" />
     <ClInclude Include="ConditionalJumpExecuter.h" />
+    <ClInclude Include="ConsoleInputOutput.h" />
     <ClInclude Include="Context.h" />
     <ClInclude Include="cxxopts.h" />
     <ClInclude Include="DivideExecuter.h" />
@@ -216,6 +219,7 @@
     <ClInclude Include="JmpExecuter.h" />
     <ClInclude Include="JnzExecuter.h" />
     <ClInclude Include="JzExecuter.h" />
+    <ClInclude Include="KeyboardListener.h" />
     <ClInclude Include="LoadExecuter.h" />
     <ClInclude Include="MessageException.h" />
     <ClInclude Include="ModuloExecuter.h" />

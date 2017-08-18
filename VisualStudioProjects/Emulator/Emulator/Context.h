@@ -4,6 +4,8 @@
 #include <vector>
 #include "AssemblerOutput.h"
 #include "AddressSpace.h"
+#include <queue>
+#include <mutex>
 
 namespace bnssemulator {
 	
@@ -72,6 +74,12 @@ namespace bnssemulator {
 		void jumpToSubroutine(uint32_t address);
 
 		/**
+		 * \brief Jumps to interrupt routine at the specified entry
+		 * \param entry Entry
+		 */
+		void jumpToInterrupt(size_t entry);
+
+		/**
 		 * \brief Returns from subroutine
 		 */
 		void returnFromSubroutine();
@@ -115,11 +123,29 @@ namespace bnssemulator {
 		 * \return Whether the program finished
 		 */
 		bool programFinished() const noexcept;
+
+		/**
+		 * \brief Checks whether the program is executing an interrupt routine
+		 * \return Whether the program is executing an interrupt routine
+		 */
+		bool insideInterrupt() const noexcept;
+
+		/**
+		 * \brief Presses a character
+		 * \param character Character
+		 */
+		void pressCharacter(char character) noexcept;
 	private:
 		AddressSpace address_space_;
 		std::vector<Register> registers_;
 		Register &stack_pointer_;
 		Register &program_counter_;
+
+		bool inside_interrupt_ = false;
+		size_t interrupt_call_stack_depth_ = 0;
+
+		std::mutex characters_mutex;
+		std::queue<char> characters_;
 
 		bool end_of_program_ = false;
 	};

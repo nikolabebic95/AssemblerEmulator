@@ -76,6 +76,9 @@
     <Filter Include="Source Files\Processor">
       <UniqueIdentifier>{a2966847-75c5-4a2a-8bf7-a04dd235a403}</UniqueIdentifier>
     </Filter>
+    <Filter Include="External files\ConsoleIo">
+      <UniqueIdentifier>{70ac3705-ff30-4a8f-b7d0-2bce5692b967}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -206,6 +209,12 @@
     </ClCompile>
     <ClCompile Include="LoadExecuter.cpp">
       <Filter>Source Files\Executing</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyboardListener.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsoleInputOutput.cpp">
+      <Filter>External files\ConsoleIo</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -367,6 +376,12 @@
     </ClInclude>
     <ClInclude Include="LoadExecuter.h">
       <Filter>Header Files\Executing</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyboardListener.h">
+      <Filter>Header Files\Processor</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsoleInputOutput.h">
+      <Filter>External files\ConsoleIo</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

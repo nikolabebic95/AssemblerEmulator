@@ -37,7 +37,7 @@ namespace bnssemulator {
 	Register::Register(int32_t value, bool carryFlag, bool overflowFlag) noexcept : value_(value), carry_flag_(carryFlag), overflow_flag_(overflowFlag) {}
 
 	Register Register::operator-() const noexcept {
-		return Register(value_);
+		return Register(-value_);
 	}
 
 	Register Register::operator~() const noexcept {

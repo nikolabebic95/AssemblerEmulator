@@ -48,11 +48,27 @@ namespace bnssemulator {
 	}
 
 	void Context::jumpToSubroutine(uint32_t address) {
+		if (inside_interrupt_) {
+			interrupt_call_stack_depth_++;
+		}
+
 		pushToStack(program_counter_);
 		jumpTo(address);
 	}
 
+	void Context::jumpToInterrupt(size_t entry) {
+		inside_interrupt_ = true;
+		jumpToSubroutine(address_space_.getInterrupt(entry));
+	}
+
 	void Context::returnFromSubroutine() {
+		if (inside_interrupt_) {
+			interrupt_call_stack_depth_--;
+			if (interrupt_call_stack_depth_ == 0) {
+				inside_interrupt_ = false;
+			}
+		}
+
 		program_counter_ = popFromStack();
 	}
 
@@ -135,5 +151,15 @@ namespace bnssemulator {
 
 	bool Context::programFinished() const noexcept {
 		return end_of_program_;
+	}
+
+	bool Context::insideInterrupt() const noexcept {
+		return inside_interrupt_;
+	}
+
+	void Context::pressCharacter(char character) noexcept {
+		characters_mutex.lock();
+		characters_.push(character);
+		characters_mutex.unlock();
 	}
 }

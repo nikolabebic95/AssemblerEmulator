@@ -10,7 +10,6 @@ namespace bnssemulator {
 			return;
 		}
 
-		auto address = context.addressSpace().getInterrupt(entry);
-		context.jumpToSubroutine(address);
+		context.jumpToInterrupt(entry);
 	}
 }
