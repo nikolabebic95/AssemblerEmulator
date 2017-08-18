@@ -14,7 +14,7 @@ namespace bnssassembler {
 		}
 
 		auto name = regex_replace(line, regex, "$1");
-		auto expression_string = regex_replace(line, regex, "$2");
+		auto expression_string = regex_replace(line, regex, "$4");
 		auto expression = ExpressionBuilder::build(expression_string);
 
 		return std::make_shared<SymbolDefinitionToken>(name, expression, line_number, initial_line);
