@@ -28,11 +28,13 @@
 #include "StringHelper.h"
 #include "KeyboardListener.h"
 #include <thread>
+#include "TimerListener.h"
 
 namespace bnssemulator {
 
 	void Processor::executeProgram(Context & context) {
 		std::thread keyboard_listener(KeyboardListener::listen, &context);
+		std::thread timer_thread(TimerListener::listen, &context);
 
 		while (!context.programFinished()) {
 			executeInstruction(context);
@@ -41,10 +43,13 @@ namespace bnssemulator {
 				context.jumpToKeyboardInterrupt();
 			}
 
-			// TODO: Finish this
+			if (context.timerTriggered() && !context.insideInterrupt()) {
+				context.jumpToTimerInterrupt();
+			}
 		}
 
 		keyboard_listener.join();
+		timer_thread.join();
 	}
 
 	static InstructionCode opcode(InstructionBitField instruction) {

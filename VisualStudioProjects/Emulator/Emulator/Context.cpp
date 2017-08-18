@@ -158,24 +158,37 @@ namespace bnssemulator {
 	}
 
 	void Context::pressCharacter(char character) noexcept {
-		characters_mutex.lock();
+		characters_mutex_.lock();
 		characters_.push(character);
-		characters_mutex.unlock();
+		characters_mutex_.unlock();
 	}
 
 	bool Context::hasCharacters() const noexcept {
-		characters_mutex.lock();
+		characters_mutex_.lock();
 		auto ret = !characters_.empty();
-		characters_mutex.unlock();
+		characters_mutex_.unlock();
 		return ret;
 	}
 
 	char Context::getCharacter() noexcept {
-		characters_mutex.lock();
+		characters_mutex_.lock();
 		auto ret = characters_.front();
 		characters_.pop();
-		characters_mutex.unlock();
+		characters_mutex_.unlock();
 		return ret;
+	}
+
+	bool Context::timerTriggered() const noexcept {
+		timer_mutex_.lock();
+		auto ret = timer_triggered_;
+		timer_mutex_.unlock();
+		return ret;
+	}
+
+	void Context::timerTriggered(bool value) noexcept {
+		timer_mutex_.lock();
+		timer_triggered_ = value;
+		timer_mutex_.unlock();
 	}
 
 	void Context::jumpToErrorInterrupt() noexcept {
@@ -183,6 +196,7 @@ namespace bnssemulator {
 	}
 
 	void Context::jumpToTimerInterrupt() noexcept {
+		timer_triggered_ = false;
 		jumpToInterrupt(address_space_.timerInterrupt());
 	}
 

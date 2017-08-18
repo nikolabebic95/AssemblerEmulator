@@ -148,6 +148,18 @@ namespace bnssemulator {
 		char getCharacter() noexcept;
 
 		/**
+		 * \brief Checks if the timer was triggered
+		 * \return Whether the timer has been triggered
+		 */
+		bool timerTriggered() const noexcept;
+
+		/**
+		 * \brief Sets the timer triggered flag
+		 * \param value Flag
+		 */
+		void timerTriggered(bool value) noexcept;
+
+		/**
 		 * \brief Jumps to error interrupt
 		 */
 		void jumpToErrorInterrupt() noexcept;
@@ -170,8 +182,11 @@ namespace bnssemulator {
 		bool inside_interrupt_ = false;
 		size_t interrupt_call_stack_depth_ = 0;
 
-		mutable std::mutex characters_mutex;
+		mutable std::mutex characters_mutex_;
 		std::queue<char> characters_;
+
+		mutable std::mutex timer_mutex_;
+		bool timer_triggered_ = false;
 
 		bool end_of_program_ = false;
 	};

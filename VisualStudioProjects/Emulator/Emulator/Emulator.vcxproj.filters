@@ -216,6 +216,9 @@
     <ClCompile Include="ConsoleInputOutput.cpp">
       <Filter>External files\ConsoleIo</Filter>
     </ClCompile>
+    <ClCompile Include="TimerListener.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cxxopts.h">
@@ -382,6 +385,9 @@
     </ClInclude>
     <ClInclude Include="ConsoleInputOutput.h">
       <Filter>External files\ConsoleIo</Filter>
+    </ClInclude>
+    <ClInclude Include="TimerListener.h">
+      <Filter>Header Files\Processor</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

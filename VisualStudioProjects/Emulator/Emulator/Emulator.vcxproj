@@ -184,6 +184,7 @@
     <ClCompile Include="StringHelper.cpp" />
     <ClCompile Include="SubtractExecuter.cpp" />
     <ClCompile Include="SymbolData.cpp" />
+    <ClCompile Include="TimerListener.cpp" />
     <ClCompile Include="XorExecuter.cpp" />
     <ClCompile Include="z85.cpp" />
     <ClCompile Include="z85_impl.cpp" />
@@ -241,6 +242,7 @@
     <ClInclude Include="StringHelper.h" />
     <ClInclude Include="SubtractExecuter.h" />
     <ClInclude Include="SymbolData.h" />
+    <ClInclude Include="TimerListener.h" />
     <ClInclude Include="XorExecuter.h" />
     <ClInclude Include="z85.h" />
     <ClInclude Include="z85_cpp.h" />
