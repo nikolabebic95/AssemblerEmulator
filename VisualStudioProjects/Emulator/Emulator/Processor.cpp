@@ -26,14 +26,24 @@
 #include "NotExecuter.h"
 #include "MessageException.h"
 #include "StringHelper.h"
+#include "KeyboardListener.h"
 
 namespace bnssemulator {
 
 	void Processor::executeProgram(Context & context) {
+		std::thread keyboard_listener(KeyboardListener::listen, &context);
+
 		while (!context.programFinished()) {
 			executeInstruction(context);
+
+			if (context.hasCharacters() && !context.insideInterrupt()) {
+				context.jumpToKeyboardInterrupt();
+			}
+
 			// TODO: Finish this
 		}
+
+		keyboard_listener.join();
 	}
 
 	static InstructionCode opcode(InstructionBitField instruction) {

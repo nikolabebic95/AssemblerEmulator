@@ -12,7 +12,7 @@ namespace bnssemulator {
 		/**
 		 * \brief Listens to keyboard interrupts and sets the context flag every time they fire
 		 */
-		static void listen(Context &context);
+		static void listen(Context *context);
 	};
 }
 

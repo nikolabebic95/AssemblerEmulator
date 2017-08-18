@@ -6,6 +6,7 @@
 #include "InstructionBitField.h"
 #include "SymbolData.h"
 #include <unordered_map>
+#include <queue>
 
 namespace bnssemulator {
 	
@@ -84,22 +85,22 @@ namespace bnssemulator {
 		uint32_t initialStackPointer() const;
 
 		/**
-		 * \brief Gets the address of the error interrupt routine
-		 * \return Address of the error interrupt routine
+		 * \brief Gets the entry of the error interrupt routine
+		 * \return Entry of the error interrupt routine
 		 */
-		uint32_t errorInterrupt() const noexcept;
+		size_t errorInterrupt() const noexcept;
 
 		/**
-		* \brief Gets the address of the timer interrupt routine
-		* \return Address of the timer interrupt routine
+		* \brief Gets the entry of the timer interrupt routine
+		* \return Entry of the timer interrupt routine
 		*/
-		uint32_t timerInterrupt() const noexcept;
+		size_t timerInterrupt() const noexcept;
 
 		/**
-		* \brief Gets the address of the keyboard interrupt routine
-		* \return Address of the keyboard interrupt routine
+		* \brief Gets the entry of the keyboard interrupt routine
+		* \return Entry of the keyboard interrupt routine
 		*/
-		uint32_t keyboardInterrupt() const noexcept;
+		size_t keyboardInterrupt() const noexcept;
 
 		/**
 		 * \brief Gets the address of the interrupt routine at the specified entry
@@ -107,12 +108,29 @@ namespace bnssemulator {
 		 * \return Address of the interrupt routine
 		 */
 		uint32_t getInterrupt(uint32_t entry) const noexcept;
+
+		/**
+		 * \brief Check whether the standard input has been read
+		 * \return Whether the standard input has been read
+		 */
+		bool stdinRead() const noexcept;
+
+		/**
+		 * \brief Writes a character to stdin
+		 */
+		void writeToStdin(char character) noexcept;
 	private:		
 		Segment &segment(uint32_t address);
 		const Segment &segment(uint32_t address) const;
 
 		uint32_t stdout_address_ = 128;
 		uint32_t stdin_address_ = 132;
+
+		size_t error_interrupt_ = 3;
+		size_t timer_interrupt_ = 4;
+		size_t keyboard_interrupt_ = 5;
+
+		mutable bool stdin_read_ = true;
 	};
 }
 

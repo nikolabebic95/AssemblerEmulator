@@ -135,6 +135,32 @@ namespace bnssemulator {
 		 * \param character Character
 		 */
 		void pressCharacter(char character) noexcept;
+
+		/**
+		 * \brief Checks whether there are any characters that should be written to stdin
+		 */
+		bool hasCharacters() const noexcept;
+
+		/**
+		 * \brief Gets the first character to be written to stdin
+		 * \return Character to be written to stdin
+		 */
+		char getCharacter() noexcept;
+
+		/**
+		 * \brief Jumps to error interrupt
+		 */
+		void jumpToErrorInterrupt() noexcept;
+
+		/**
+		 * \brief Jumps to timer interrupt
+		 */
+		void jumpToTimerInterrupt() noexcept;
+
+		/**
+		 * \brief Jumps to keyboard interrupt
+		 */
+		void jumpToKeyboardInterrupt() noexcept;
 	private:
 		AddressSpace address_space_;
 		std::vector<Register> registers_;
@@ -144,7 +170,7 @@ namespace bnssemulator {
 		bool inside_interrupt_ = false;
 		size_t interrupt_call_stack_depth_ = 0;
 
-		std::mutex characters_mutex;
+		mutable std::mutex characters_mutex;
 		std::queue<char> characters_;
 
 		bool end_of_program_ = false;

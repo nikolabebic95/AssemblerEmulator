@@ -142,6 +142,10 @@ namespace bnssemulator {
 	}
 
 	uint8_t AddressSpace::get8bitData(uint32_t address) const {
+		if (address == stdin_address_) {
+			stdin_read_ = true;
+		}
+
 		return segment(address).readData(address);
 	}
 
@@ -157,6 +161,9 @@ namespace bnssemulator {
 		segment(address).writeData(address, data);
 		if (address == stdout_address_) {
 			std::cout << data;
+		}
+		else if (address == stdin_address_) {
+			stdin_read_ = false;
 		}
 	}
 
@@ -179,16 +186,16 @@ namespace bnssemulator {
 		}
 	}
 
-	uint32_t AddressSpace::errorInterrupt() const noexcept {
-		return getInterrupt(3);
+	size_t AddressSpace::errorInterrupt() const noexcept {
+		return error_interrupt_;
 	}
 
-	uint32_t AddressSpace::timerInterrupt() const noexcept {
-		return getInterrupt(4);
+	size_t AddressSpace::timerInterrupt() const noexcept {
+		return timer_interrupt_;
 	}
 
-	uint32_t AddressSpace::keyboardInterrupt() const noexcept {
-		return getInterrupt(5);
+	size_t AddressSpace::keyboardInterrupt() const noexcept {
+		return keyboard_interrupt_;
 	}
 
 	uint32_t AddressSpace::getInterrupt(uint32_t entry) const noexcept {
@@ -198,6 +205,14 @@ namespace bnssemulator {
 		catch (...) {
 			return 0;
 		}
+	}
+
+	bool AddressSpace::stdinRead() const noexcept {
+		return stdin_read_;
+	}
+
+	void AddressSpace::writeToStdin(char character) noexcept {
+		set8bitData(stdin_address_, character);
 	}
 
 	Segment & AddressSpace::segment(uint32_t address) {

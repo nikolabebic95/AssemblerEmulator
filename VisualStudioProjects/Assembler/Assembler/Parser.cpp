@@ -30,8 +30,9 @@ namespace bnssassembler {
 	static std::string extractLabel(std::string &line, std::vector<std::string> label_delimiters) {
 		auto delimiters = StringHelper::join(label_delimiters, "|");
 		static std::regex regex("[[:space:]]*(.*)[[:space:]]*(" + delimiters + ")[[:space:]]*(.*)[[:space:]]*");
+		static std::regex characters_fix(".*'" + delimiters + "'.*");
 
-		if (regex_match(line, regex)) {
+		if (regex_match(line, regex) && !regex_match(line, characters_fix)) {
 			static std::regex label_regex("[[:space:]]*(" + LABEL + ")[[:space:]]*");
 			auto ret = regex_replace(line, regex, "$1");
 			if (regex_match(ret, label_regex)) {

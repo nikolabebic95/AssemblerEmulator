@@ -1,8 +1,9 @@
 org 0x0
 .rodata.0
     dd stack - 4
-    dd print_string_interrupt
-    dd 30 dup dummy
+    dd 4 dup dummy
+    dd keyboard_interrupt
+    dd 26 dup dummy
 
 org 128
 .data.0
@@ -20,17 +21,7 @@ dummy: ret
 
 .global _start
 _start:
-    call hello
-    load r0, #0
-    int r0
-
-PRINT_STRING_INTERRUPT def 1
-
-hello:
-    load r0, #hello_string;
-    load r15, #PRINT_STRING_INTERRUPT
-    int r15;
-    ret;
+    jmp _start
 
 print_string:
     loadub r1, [r0]
@@ -42,25 +33,34 @@ print_string:
 skip:
     ret;
 
-print_string_interrupt:
+keyboard_interrupt:
+    loadub r2, in
+    loadub r3, quit_char
+    sub r4, r2, r3
+    jz r4, end
+    load r0, #keyboard_hit_string
     call print_string
-    ret;
+    storeb r2, out
+    load r0, #crlf_string
+    call print_string
+    ret
+end:
+    load r0, #0
+    int r0
 
 .rodata.1
-hello_string:
+keyboard_hit_string:
     DB 'H'
-    DB 'e' 
-    DB 'l' 
-    DB 'l' 
-    DB 'o' 
-    DB ',' 
+    DB 'i' 
+    DB 't' 
+    DB ':' 
     DB ' ' 
-    DB 'W' 
-    DB 'o' 
-    DB 'r' 
-    DB 'l' 
-    DB 'd' 
-    DB '!' 
-    DB 10 ; CR
-    DB 13 ; LF
-    DB 0  ; end of string
+    DB 0
+
+crlf_string:
+    DB 10
+    DB 13
+    DB 0
+
+quit_char:
+    DB 'q'

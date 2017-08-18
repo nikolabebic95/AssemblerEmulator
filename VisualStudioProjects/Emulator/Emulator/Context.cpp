@@ -162,4 +162,32 @@ namespace bnssemulator {
 		characters_.push(character);
 		characters_mutex.unlock();
 	}
+
+	bool Context::hasCharacters() const noexcept {
+		characters_mutex.lock();
+		auto ret = !characters_.empty();
+		characters_mutex.unlock();
+		return ret;
+	}
+
+	char Context::getCharacter() noexcept {
+		characters_mutex.lock();
+		auto ret = characters_.front();
+		characters_.pop();
+		characters_mutex.unlock();
+		return ret;
+	}
+
+	void Context::jumpToErrorInterrupt() noexcept {
+		jumpToInterrupt(address_space_.errorInterrupt());
+	}
+
+	void Context::jumpToTimerInterrupt() noexcept {
+		jumpToInterrupt(address_space_.timerInterrupt());
+	}
+
+	void Context::jumpToKeyboardInterrupt() noexcept {
+		address_space_.writeToStdin(getCharacter());
+		jumpToInterrupt(address_space_.keyboardInterrupt());
+	}
 }
