@@ -27,6 +27,7 @@
 #include "MessageException.h"
 #include "StringHelper.h"
 #include "KeyboardListener.h"
+#include <thread>
 
 namespace bnssemulator {
 
