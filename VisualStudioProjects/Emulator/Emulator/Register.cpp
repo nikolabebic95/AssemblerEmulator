@@ -100,7 +100,7 @@ namespace bnssemulator {
 		auto right = static_cast<bool>(rhs.value_ & INT32_MIN);
 		auto result = static_cast<bool>(result_value & INT32_MIN);
 
-		auto flags = ((result_value & TOP_32_BITS) != 0) || (!left && !right && result);
+		auto flags = (left && right && !result) || (!left && !right && result);
 		
 		return Register(static_cast<int32_t>(result_value), flags, flags);
 	}
