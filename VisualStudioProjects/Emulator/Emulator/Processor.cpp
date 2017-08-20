@@ -38,7 +38,16 @@ namespace bnssemulator {
 
 		try {
 			while (!context.programFinished()) {
-				executeInstruction(context);
+				try {
+					executeInstruction(context);
+				}
+				catch (...) {
+					if (context.insideInterrupt()) {
+						throw;
+					}
+
+					context.jumpToErrorInterrupt();
+				}
 
 				if (context.hasCharacters() && !context.insideInterrupt()) {
 					context.jumpToKeyboardInterrupt();
