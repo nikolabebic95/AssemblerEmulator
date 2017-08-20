@@ -23,7 +23,7 @@ namespace bnssassembler {
 	}
 
 	bool MicroRiscParser::isEnd(std::string line) const noexcept {
-		static std::regex regex("[[:space:]]*[.][Ee][Nn][Dd][[:space:]]*");
+		static std::regex regex("[[:space:]]*[.][Ee][Nn][Dd].*[[:space:]]*");
 		return regex_match(line, regex);
 	}
 
