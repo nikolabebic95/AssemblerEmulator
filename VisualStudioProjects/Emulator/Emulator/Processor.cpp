@@ -36,16 +36,24 @@ namespace bnssemulator {
 		std::thread keyboard_listener(KeyboardListener::listen, &context);
 		std::thread timer_thread(TimerListener::listen, &context);
 
-		while (!context.programFinished()) {
-			executeInstruction(context);
+		try {
+			while (!context.programFinished()) {
+				executeInstruction(context);
 
-			if (context.hasCharacters() && !context.insideInterrupt()) {
-				context.jumpToKeyboardInterrupt();
-			}
+				if (context.hasCharacters() && !context.insideInterrupt()) {
+					context.jumpToKeyboardInterrupt();
+				}
 
-			if (context.timerTriggered() && !context.insideInterrupt()) {
-				context.jumpToTimerInterrupt();
+				if (context.timerTriggered() && !context.insideInterrupt()) {
+					context.jumpToTimerInterrupt();
+				}
 			}
+		}
+		catch (...) {
+			context.finishProgram();
+			keyboard_listener.join();
+			timer_thread.join();
+			throw;
 		}
 
 		keyboard_listener.join();

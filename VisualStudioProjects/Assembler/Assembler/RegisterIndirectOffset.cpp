@@ -13,7 +13,7 @@ namespace bnssassembler {
 		instruction.bit_field.address_mode = REGISTER_INDIRECT_OFFSET;
 		second_word = offset_or_address_.value();
 		if (absolute_) {
-			second_word += pc_offset_ + 4;
+			second_word -= 4;
 			auto rels = offset_or_address_.generateRelocations();
 			if (rels.empty()) {
 				throw MessageException("PC Relative address must contain at least one label");
@@ -24,7 +24,7 @@ namespace bnssassembler {
 			for (auto &rel : rels) {
 				if (rel.sectionIndex() == pc_section_index_) {
 					found_same_section = true;
-					second_word -= (pc_offset_ + 4) * 2;
+					second_word -= pc_offset_ + 4;
 					rels.remove(rel);
 					break;
 				}

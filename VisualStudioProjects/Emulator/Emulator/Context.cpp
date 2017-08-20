@@ -119,13 +119,18 @@ namespace bnssemulator {
 	}
 
 	int32_t Context::getOperandAddress(InstructionBitField instruction, size_t register_index) {
+		// ReSharper disable once CppJoinDeclarationAndAssignment
+		uint32_t second_word;
+
 		switch (instruction.address_mode) {
 		case MEMORY_DIRECT:
 			return getSecondWordOfInstruction();
 		case REGISTER_INDIRECT:
 			return registers_[getRegisterIndex(instruction, register_index)];
 		case REGISTER_INDIRECT_OFFSET:
-			return static_cast<uint32_t>(registers_[getRegisterIndex(instruction, register_index)]) + getSecondWordOfInstruction();
+			// ReSharper disable once CppJoinDeclarationAndAssignment
+			second_word = getSecondWordOfInstruction();
+			return static_cast<uint32_t>(registers_[getRegisterIndex(instruction, register_index)]) + second_word;
 		default:
 			throw MessageException("Invalid address mode: " + StringHelper::toHexString(instruction.address_mode));
 		}
