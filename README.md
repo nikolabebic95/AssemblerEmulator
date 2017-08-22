@@ -154,54 +154,54 @@ Instruction format:
         <td><i><b>Comment</b></i></td>
     </tr>
     <tr>
-        <td>`INT op`</td>
+        <td><code>INT op</code></td>
         <td>Register direct</td>
         <td>Generates a software interrupt. Interrupt entry is in the register</td>
     </tr>
     <tr>
-        <td>`JMP op`</td>
+        <td><code>JMP op</code></td>
         <td>Memory direct, register indirect, register indirect with offset</td>
         <td>Jumps to given address</td>
     </tr>
     <tr>
-        <td>`CALL op`</td>
+        <td><code>CALL op</code></td>
         <td>Memory direct, register indirect, register indirect with offset</td>
-        <td>Calls a subroutine. `PC` is pushed to the stack</td>
+        <td>Calls a subroutine. <code>PC</code> is pushed to the stack</td>
     </tr>
     <tr>
-        <td>`RET`</td>
+        <td><code>RET</code></td>
         <td>None</td>
         <td>Returns from subroutine</td>
     </tr>
     <tr>
-        <td>`JZ reg, op`</td>
-        <td>`reg`: Register direct, `op`: Memory direct, register indirect, register indirect with offset</td>
-        <td>Jumps to `op` if `reg == 0`</td>
+        <td><code>JZ reg, op</code></td>
+        <td><code>reg</code>: Register direct, <code>op</code>: Memory direct, register indirect, register indirect with offset</td>
+        <td>Jumps to <code>op</code> if <code>reg == 0</code></td>
     </tr>
     <tr>
-        <td>`JNZ reg, op`</td>
-        <td>`reg`: Register direct, `op`: Memory direct, register indirect, register indirect with offset</td>
-        <td>Jumps to `op` if `reg != 0`</td>
+        <td><code>JNZ reg, op</code></td>
+        <td><code>reg</code>: Register direct, <code>op</code>: Memory direct, register indirect, register indirect with offset</td>
+        <td>Jumps to <code>op</code> if <code>reg != 0</code></td>
     </tr>
     <tr>
-        <td>`JGZ reg, op`</td>
-        <td>`reg`: Register direct, `op`: Memory direct, register indirect, register indirect with offset</td>
-        <td>Jumps to `op` if `reg > 0`</td>
+        <td><code>JGZ reg, op</code></td>
+        <td><code>reg</code>: Register direct, <code>op</code>: Memory direct, register indirect, register indirect with offset</td>
+        <td>Jumps to <code>op</code> if <code>reg > 0</code></td>
     </tr>
     <tr>
-        <td>`JGEZ reg, op`</td>
-        <td>`reg`: Register direct, `op`: Memory direct, register indirect, register indirect with offset</td>
-        <td>Jumps to `op` if `reg >= 0`</td>
+        <td><code>JGEZ reg, op</code></td>
+        <td><code>reg</code>: Register direct, <code>op</code>: Memory direct, register indirect, register indirect with offset</td>
+        <td>Jumps to <code>op</code> if <code>reg >= 0</code></td>
     </tr>
     <tr>
-        <td>`JLZ reg, op`</td>
-        <td>`reg`: Register direct, `op`: Memory direct, register indirect, register indirect with offset</td>
-        <td>Jumps to `op` if `reg < 0`</td>
+        <td><code>JLZ reg, op</code></td>
+        <td><code>reg</code>: Register direct, <code>op</code>: Memory direct, register indirect, register indirect with offset</td>
+        <td>Jumps to <code>op</code> if <code>reg < 0</code></td>
     </tr>
     <tr>
-        <td>`JLEZ reg, op`</td>
-        <td>`reg`: Register direct, `op`: Memory direct, register indirect, register indirect with offset</td>
-        <td>Jumps to `op` if `reg < 0`</td>
+        <td><code>JLEZ reg, op</code></td>
+        <td><code>reg</code>: Register direct, <code>op</code>: Memory direct, register indirect, register indirect with offset</td>
+        <td>Jumps to <code>op</code> if <code>reg < 0</code></td>
     </tr>
 </table>
 
@@ -228,13 +228,13 @@ Size of word is 2 bytes, and size of double word is 2 words
         <td><i><b>Comment</b></i></td>
     </tr>
     <tr>
-        <td>`LOAD reg, op`</td>
-        <td>`reg`: Register direct, `op`: All</td>
+        <td><code>LOAD reg, op</code></td>
+        <td><code>reg</code>: Register direct, <code>op</code>: All</td>
         <td>Loads the data into the register</td>
     </tr>
     <tr>
-        <td>`STORE reg, op`</td>
-        <td>`reg`: Register direct, `op`: All except Immediate</td>
+        <td><code>STORE reg, op</code></td>
+        <td><code>reg</code>: Register direct, <code>op</code>: All except Immediate</td>
         <td>Stores the data from the register</td>
     </tr>
 </table>
@@ -250,12 +250,12 @@ Size of word is 2 bytes, and size of double word is 2 words
         <td><i><b>Comment</b></i></td>
     </tr>
     <tr>
-        <td>`PUSH reg`</td>
+        <td><code>PUSH reg</code></td>
         <td>Register direct</td>
         <td>Pushes the register to the stack</td>
     </tr>
     <tr>
-        <td>`STORE reg, op`</td>
+        <td><code>STORE reg, op</code></td>
         <td>Register direct</td>
         <td>Pops the register from the stack</td>
     </tr>
@@ -273,59 +273,59 @@ Size of word is 2 bytes, and size of double word is 2 words
         <td><i><b>Comment</b></i></td>
     </tr>
     <tr>
-        <td>`ADD reg0, reg1, reg2`</td>
+        <td><code>ADD reg0, reg1, reg2</code></td>
         <td>Register direct</td>
-        <td>`reg0 = reg1 + reg2`</td>
+        <td><code>reg0 = reg1 + reg2</code></td>
     </tr>
     <tr>
-        <td>`SUB reg0, reg1, reg2`</td>
+        <td><code>SUB reg0, reg1, reg2</code></td>
         <td>Register direct</td>
-        <td>`reg0 = reg1 - reg2`</td>
+        <td><code>reg0 = reg1 - reg2</code></td>
     </tr>
     <tr>
-        <td>`MUL reg0, reg1, reg2`</td>
+        <td><code>MUL reg0, reg1, reg2</code></td>
         <td>Register direct</td>
-        <td>`reg0 = reg1 * reg2`</td>
+        <td><code>reg0 = reg1 * reg2</code></td>
     </tr>
     <tr>
-        <td>`DIV reg0, reg1, reg2`</td>
+        <td><code>DIV reg0, reg1, reg2</code></td>
         <td>Register direct</td>
-        <td>`reg0 = reg1 / reg2`</td>
+        <td><code>reg0 = reg1 / reg2</code></td>
     </tr>
     <tr>
-        <td>`MOD reg0, reg1, reg2`</td>
+        <td><code>MOD reg0, reg1, reg2</code></td>
         <td>Register direct</td>
-        <td>`reg0 = reg1 % reg2`</td>
+        <td><code>reg0 = reg1 % reg2</code></td>
     </tr>
     <tr>
-        <td>`AND reg0, reg1, reg2`</td>
+        <td><code>AND reg0, reg1, reg2</code></td>
         <td>Register direct</td>
-        <td>`reg0 = reg1 & reg2`</td>
+        <td><code>reg0 = reg1 & reg2</code></td>
     </tr>
     <tr>
-        <td>`OR reg0, reg1, reg2`</td>
+        <td><code>OR reg0, reg1, reg2</code></td>
         <td>Register direct</td>
-        <td>`reg0 = reg1 | reg2`</td>
+        <td><code>reg0 = reg1 | reg2</code></td>
     </tr>
     <tr>
-        <td>`XOR reg0, reg1, reg2`</td>
+        <td><code>XOR reg0, reg1, reg2</code></td>
         <td>Register direct</td>
-        <td>`reg0 = reg1 ^ reg2`</td>
+        <td><code>reg0 = reg1 ^ reg2</code></td>
     </tr>
     <tr>
-        <td>`NOT reg0, reg1`</td>
+        <td><code>NOT reg0, reg1</code></td>
         <td>Register direct</td>
-        <td>`reg0 = ~reg1`</td>
+        <td><code>reg0 = ~reg1</code></td>
     </tr>
     <tr>
-        <td>`ASL reg0, reg1, reg2`</td>
+        <td><code>ASL reg0, reg1, reg2</code></td>
         <td>Register direct</td>
-        <td>`reg0 = reg1 << reg2`</td>
+        <td><code>reg0 = reg1 << reg2</code></td>
     </tr>
     <tr>
-        <td>`ASR reg0, reg1, reg2`</td>
+        <td><code>ASR reg0, reg1, reg2</code></td>
         <td>Register direct</td>
-        <td>`reg0 = reg1 >> reg2`</td>
+        <td><code>reg0 = reg1 >> reg2</code></td>
     </tr>
 </table>
 
