@@ -4,6 +4,9 @@
 
 namespace bnssassembler {
 	
+	/**
+	 * \brief Class representing the parser for the instruction without operands
+	 */
 	class NoOperandInstructionParser : public InstructionParser {
 		
 	};

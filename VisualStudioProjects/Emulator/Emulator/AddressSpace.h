@@ -18,6 +18,7 @@ namespace bnssemulator {
 		/**
 		 * \brief Constructs an address space from the section table
 		 * \param section_table Section table
+		 * \param symbol_table Symbol table
 		 */
 		explicit AddressSpace(std::vector<SectionData> &&section_table, const std::unordered_map<std::string, SymbolData> symbol_table);
 

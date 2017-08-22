@@ -19,6 +19,10 @@ namespace bnssassembler {
 		 */
 		std::shared_ptr<Operand> tryParse(std::string str) const;
 
+		/**
+		 * \brief Sets the next parser in the chain
+		 * \param next Next parser in the chain
+		 */
 		void next(std::shared_ptr<OperandParser> next) noexcept;
 		virtual ~OperandParser() = default;
 	protected:

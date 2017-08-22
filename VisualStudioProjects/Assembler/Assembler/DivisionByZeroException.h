@@ -9,6 +9,9 @@ namespace bnssassembler {
 	 */
 	class DivisionByZeroException : public MessageException {
 	public:
+		/**
+		 * \brief Constructs a DivisionByZeroException object
+		 */
 		DivisionByZeroException() noexcept;
 	};
 }

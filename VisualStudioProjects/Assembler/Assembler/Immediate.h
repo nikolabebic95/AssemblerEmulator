@@ -10,7 +10,12 @@ namespace bnssassembler {
 	 */
 	class Immediate : public Operand {
 	public:
+		/**
+		 * \brief Constructs an Immediate object
+		 * \param value Value of the immediate operand
+		 */
 		explicit Immediate(MicroRiscExpression value) noexcept;
+
 		void packToInstruction(InstructionBitFieldUnion &instruction, uint32_t &second_word, std::list<RelocationRecord> &relocations) const override;
 		void resolveSymbols(std::unordered_set<SymbolDefinition> symbols) noexcept override;
 		void resolveSymbolTable(const SymbolTable &symbol_table) noexcept override;

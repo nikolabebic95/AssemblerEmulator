@@ -10,6 +10,10 @@ namespace bnssassembler {
 	 */
 	class IncorrectLabelException : public MessageException {
 	public:
+		/**
+		 * \brief Constructs an IncorrectLabelException object
+		 * \param label Label that was incorrect
+		 */
 		explicit IncorrectLabelException(std::string label) noexcept;
 	};
 }

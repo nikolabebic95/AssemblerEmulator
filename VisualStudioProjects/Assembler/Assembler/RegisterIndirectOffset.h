@@ -11,7 +11,14 @@ namespace bnssassembler {
 	 */
 	class RegisterIndirectOffset : public Operand {
 	public:
+		/**
+		 * \brief Constructs a RegisterIndirectOffset object
+		 * \param reg Register
+		 * \param offset_or_address Offset or absolute address of the operand
+		 * \param absolute Whether the address is absolute
+		 */
 		RegisterIndirectOffset(Register reg, MicroRiscExpression offset_or_address, bool absolute);
+		
 		void packToInstruction(InstructionBitFieldUnion &instruction, uint32_t &second_word, std::list<RelocationRecord> &relocations) const override;
 		void resolveSymbols(std::unordered_set<SymbolDefinition> symbols) noexcept override;
 		void resolveSymbolTable(const SymbolTable &symbol_table) noexcept override;

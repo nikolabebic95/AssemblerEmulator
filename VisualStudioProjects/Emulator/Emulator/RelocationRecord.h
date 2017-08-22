@@ -4,7 +4,10 @@
 #include <istream>
 
 namespace bnssemulator {
-	
+
+	/**
+	* \brief Class representing one relocation record
+	*/
 	class RelocationRecord {
 	public:
 		/**

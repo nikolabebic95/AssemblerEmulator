@@ -10,7 +10,12 @@ namespace bnssassembler {
 	 */
 	class RegisterIndirect : public Operand {
 	public:
+		/**
+		 * \brief Constructs a RegisterIndirect object
+		 * \param reg Register
+		 */
 		explicit RegisterIndirect(Register reg) noexcept;
+
 		void packToInstruction(InstructionBitFieldUnion &instruction, uint32_t &second_word, std::list<RelocationRecord> &relocations) const override;
 		AddressMode addressMode() const noexcept override;
 	private:

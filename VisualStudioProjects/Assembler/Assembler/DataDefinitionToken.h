@@ -11,7 +11,14 @@ namespace bnssassembler {
 	 */
 	class DataDefinitionToken : public Token {
 	public:
+		/**
+		 * \brief Constructs a DataDefinitionToken object
+		 * \param data Data that is defined
+		 * \param line_number Number of the line where data is defined
+		 * \param line Line where data is defined
+		 */
 		DataDefinitionToken(std::vector<Data> data, size_t line_number, std::string line) noexcept;
+
 		void resolveSymbolDefinitions(std::unordered_set<SymbolDefinition> symbols) noexcept override;
 		void firstPass(FirstPassData &data) const override;
 		void secondPass(SecondPassData &data) const override;

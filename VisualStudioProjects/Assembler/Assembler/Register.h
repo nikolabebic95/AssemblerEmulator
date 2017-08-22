@@ -5,8 +5,14 @@
 
 namespace bnssassembler {
 
+	/**
+	 * \brief Number of all purpose registers (excluding PC and SP)
+	 */
 	const size_t NUM_OF_REGISTERS = 16;
 
+	/**
+	 * \brief Enum representing a register
+	 */
 	enum Register {
 		R0 = 0x00,
 		R1,

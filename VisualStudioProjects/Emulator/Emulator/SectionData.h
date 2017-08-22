@@ -7,6 +7,9 @@
 
 namespace bnssemulator {
 	
+	/**
+	* \brief Class representing the data about one section
+	*/
 	class SectionData {
 	public:
 		/**

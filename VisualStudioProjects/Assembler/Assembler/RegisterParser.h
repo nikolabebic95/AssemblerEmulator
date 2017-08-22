@@ -6,7 +6,7 @@
 namespace bnssassembler {
 	
 	/**
-	 * \brief Utility Class used for parsing registers
+	 * \brief Utility class used for parsing registers
 	 */
 	class RegisterParser final {
 	public:

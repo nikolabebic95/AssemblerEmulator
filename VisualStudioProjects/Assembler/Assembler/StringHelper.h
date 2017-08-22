@@ -57,7 +57,6 @@ namespace bnssassembler {
 
 		/**
 		* \brief Converts the number to its hex string representation
-		* \tparam Num Type of the number
 		* \param number Number to be converted
 		* \return Hex string representation of the number
 		*/
@@ -65,7 +64,6 @@ namespace bnssassembler {
 
 		/**
 		* \brief Converts the number to its hex string representation
-		* \tparam Num Type of the number
 		* \param number Number to be converted
 		* \return Hex string representation of the number
 		*/

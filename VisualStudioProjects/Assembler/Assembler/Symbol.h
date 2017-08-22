@@ -4,6 +4,9 @@
 
 namespace bnssassembler {
 	
+	/**
+	 * \brief Class representing a symbol inside an expression
+	 */
 	class Symbol : public Expression {
 	public:
 		explicit Symbol(std::string name) noexcept;

@@ -10,6 +10,13 @@ namespace bnssassembler {
 	 */
 	class SymbolDefinitionToken : public Token {
 	public:
+		/**
+		 * \brief Constructs a SymbolDefinitionToken object
+		 * \param name Name of the symbol
+		 * \param value Value of the symbol
+		 * \param line_number Number of the line where the definition is located
+		 * \param line Line where the definition is located
+		 */
 		SymbolDefinitionToken(std::string name, MicroRiscExpression value, size_t line_number, std::string line) noexcept;
 		void resolveSymbolDefinitions(std::unordered_set<SymbolDefinition> symbols) noexcept override;
 		void firstPass(FirstPassData &data) const override;

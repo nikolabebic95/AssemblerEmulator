@@ -9,6 +9,9 @@ namespace bnssassembler {
 	 */
 	class InvalidExpressionException : public MessageException {
 	public:
+		/**
+		 * \brief Constructs an InvalidExpressionException object
+		 */
 		InvalidExpressionException() noexcept;
 	};
 }

@@ -26,6 +26,7 @@ namespace bnssassembler {
 		* \param index Index of section
 		*/
 		SectionStartToken(SectionType type, size_t line_number, std::string line, size_t index) noexcept;
+
 		void firstPass(FirstPassData &data) const override;
 		void secondPass(SecondPassData &data) const override;
 		bool usesAddress() const noexcept override;

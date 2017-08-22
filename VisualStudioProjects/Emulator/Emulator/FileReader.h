@@ -5,6 +5,9 @@
 
 namespace bnssemulator {
 	
+	/**
+	 * \brief Utility class used for reading assembler output from the file
+	 */
 	class FileReader final {
 	public:
 		/**

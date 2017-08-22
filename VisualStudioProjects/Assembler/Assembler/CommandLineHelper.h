@@ -5,6 +5,9 @@
 
 namespace bnssassembler {
 	
+	/**
+	 * \brief Utility class used to parse the command line
+	 */
 	class CommandLineHelper final {
 	public:
 		/**

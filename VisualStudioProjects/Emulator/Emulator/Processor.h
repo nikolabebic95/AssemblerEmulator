@@ -12,8 +12,16 @@ namespace bnssemulator {
 	 */
 	class Processor final {
 	public:
+		/**
+		 * \brief Executes the program using the given processor context
+		 * \param context Reference to the processor context
+		 */
 		static void executeProgram(Context &context);
 	private:
+		/**
+		 * \brief Executes one instruction of the program using the given processor context
+		 * \param context Reference to the processor context
+		 */
 		static void executeInstruction(Context &context);
 
 		struct ProcessorStaticData {

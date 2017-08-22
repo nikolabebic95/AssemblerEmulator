@@ -5,8 +5,15 @@
 
 namespace bnssassembler {
 	
+	/**
+	 * \brief Exception representing the non existing symbol
+	 */
 	class NonExistingSymbolException : public MessageException {
 	public:
+		/**
+		 * \brief Constructs a NonExistingSymbolException object
+		 * \param symbol Non existing symbol
+		 */
 		explicit NonExistingSymbolException(std::string symbol) noexcept;
 	};
 }

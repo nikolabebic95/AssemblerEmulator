@@ -10,7 +10,12 @@ namespace bnssassembler {
 	 */
 	class MemoryDirect : public Operand {
 	public:
+		/**
+		 * \brief Constructs a MemoryDirect object
+		 * \param address Address of the memory direct operand
+		 */
 		explicit MemoryDirect(MicroRiscExpression address) noexcept;
+
 		void packToInstruction(InstructionBitFieldUnion &instruction, uint32_t &second_word, std::list<RelocationRecord> &relocations) const override;
 		void resolveSymbols(std::unordered_set<SymbolDefinition> symbols) noexcept override;
 		void resolveSymbolTable(const SymbolTable &symbol_table) noexcept override;

@@ -4,7 +4,10 @@
 #include <istream>
 
 namespace bnssemulator {
-	
+
+	/**
+	* \brief Class representing data about one symbol
+	*/
 	class SymbolData {
 	public:
 		/**

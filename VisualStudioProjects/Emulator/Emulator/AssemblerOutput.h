@@ -9,6 +9,9 @@
 
 namespace bnssemulator {
 	
+	/**
+	 * \brief Class representing the output from the assembler
+	 */
 	class AssemblerOutput {
 	public:
 		/**

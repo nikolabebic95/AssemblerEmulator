@@ -9,6 +9,9 @@ namespace bnssassembler {
 	 */
 	class ConditionalJumpInstructionParser : public InstructionParser {
 	public:
+		/**
+		 * \brief Constructs a ConditionalJumpInstructionParser object
+		 */
 		ConditionalJumpInstructionParser() noexcept;
 	};
 }

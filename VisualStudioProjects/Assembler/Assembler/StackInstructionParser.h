@@ -9,6 +9,9 @@ namespace bnssassembler {
 	 */
 	class StackInstructionParser : public InstructionParser {
 	public:
+		/**
+		 * \brief Constructs a StackInstructionParser object
+		 */
 		StackInstructionParser() noexcept;
 	};
 }

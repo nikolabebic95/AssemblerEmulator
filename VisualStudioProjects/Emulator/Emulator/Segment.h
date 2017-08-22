@@ -7,6 +7,9 @@
 
 namespace bnssemulator {
 	
+	/**
+	 * \brief Class representing one segment of memory
+	 */
 	class Segment : std::vector<uint8_t> {
 	public:
 		/**
@@ -14,6 +17,7 @@ namespace bnssemulator {
 		 * \param address Starting address of the segment
 		 * \param length Length of the segment
 		 * \param type Type of the segment
+		 * \param data Data contained in the segment
 		 */
 		Segment(uint32_t address, size_t length, SectionType type, vector<uint8_t> &&data);
 

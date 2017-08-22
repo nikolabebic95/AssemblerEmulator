@@ -3,6 +3,7 @@
 #include "OperationToken.h"
 
 namespace bnssassembler {
+
 	/**
 	* \brief Token class representing the - operation
 	*/

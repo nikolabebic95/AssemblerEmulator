@@ -28,6 +28,12 @@ namespace bnssassembler {
 	const std::string T_DOWN = "\u2566";
 	const std::string ALL_FOUR = "\u256c";
 #endif
+	/**
+	 * \brief Returns a string containing multiple of the same characters
+	 * \param c Character
+	 * \param times Number of times this character should be in the string
+	 * \return String containing all the characters
+	 */
 	inline std::string multiple(unsigned char c, size_t times) {
 		std::string ret;
 		for (size_t i = 0; i < times; i++) {
@@ -37,6 +43,12 @@ namespace bnssassembler {
 		return ret;
 	}
 
+	/**
+	* \brief Returns a string containing multiple of the same strings
+	* \param s String
+	* \param times Number of times this string should be in the returning string
+	* \return String containing all the strings
+	*/
 	inline std::string multiple(std::string s, size_t times) {
 		std::string ret;
 		for (size_t i = 0; i < times; i++) {
@@ -44,7 +56,6 @@ namespace bnssassembler {
 		}
 
 		return ret;
-
 	}
 }
 

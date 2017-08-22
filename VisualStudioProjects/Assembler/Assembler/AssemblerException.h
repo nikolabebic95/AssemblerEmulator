@@ -24,6 +24,9 @@ namespace bnssassembler {
 		std::string message() const noexcept;
 		const char *what() const noexcept override;
 	protected:
+		/**
+		 * \brief Returns the actual message body of the exception
+		 */
 		virtual std::string messageBody() const noexcept = 0;
 	private:
 		size_t line_number_;

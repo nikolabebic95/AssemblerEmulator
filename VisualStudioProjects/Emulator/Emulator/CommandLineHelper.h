@@ -5,6 +5,9 @@
 
 namespace bnssemulator {
 
+	/**
+	 * \brief Utility class used for parsing the command line
+	 */
 	class CommandLineHelper final {
 	public:
 		/**

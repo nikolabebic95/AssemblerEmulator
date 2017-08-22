@@ -4,8 +4,14 @@
 
 namespace bnssassembler {
 	
+	/**
+	 * \brief Class representing the parser for the unconditional jump instructions
+	 */
 	class UndonditionalJumpInstructionParser : public InstructionParser {
 	public:
+		/**
+		 * \brief Constructs an UnconditionalJumpInstructionParser object
+		 */
 		UndonditionalJumpInstructionParser() noexcept;
 	};
 }

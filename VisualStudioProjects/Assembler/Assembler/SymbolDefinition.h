@@ -28,6 +28,7 @@ namespace bnssassembler {
 		 */
 		MicroRiscExpression expression() const noexcept;
 
+		// Operator overloads:
 		friend bool operator==(const SymbolDefinition &lhs, const SymbolDefinition &rhs);
 		friend bool operator!=(const SymbolDefinition &lhs, const SymbolDefinition &rhs);
 
