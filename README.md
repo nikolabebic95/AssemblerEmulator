@@ -156,17 +156,21 @@ Instruction format:
     <tr>
         <td><code>INT op</code></td>
         <td>Register direct</td>
-        <td>Generates a software interrupt. Interrupt entry is in the register</td>
+        <td>Generates a software interrupt.<br/>
+        Interrupt entry is in the register</td>
     </tr>
     <tr>
         <td><code>JMP op</code></td>
-        <td>Memory direct, register indirect, register indirect with offset</td>
+        <td>Memory direct, register indirect,<br/>
+        register indirect with offset</td>
         <td>Jumps to given address</td>
     </tr>
     <tr>
         <td><code>CALL op</code></td>
-        <td>Memory direct, register indirect, register indirect with offset</td>
-        <td>Calls a subroutine. <code>PC</code> is pushed to the stack</td>
+        <td>Memory direct, register indirect,<br/>
+        register indirect with offset</td>
+        <td>Calls a subroutine.<br/>
+        <code>PC</code> is pushed to the stack</td>
     </tr>
     <tr>
         <td><code>RET</code></td>
@@ -175,32 +179,38 @@ Instruction format:
     </tr>
     <tr>
         <td><code>JZ reg, op</code></td>
-        <td><code>reg</code>: Register direct, <code>op</code>: Memory direct, register indirect, register indirect with offset</td>
+        <td><code>reg</code>: Register direct, <code>op</code>: Memory direct,<br/> 
+        register indirect, register indirect with offset</td>
         <td>Jumps to <code>op</code> if <code>reg == 0</code></td>
     </tr>
     <tr>
         <td><code>JNZ reg, op</code></td>
-        <td><code>reg</code>: Register direct, <code>op</code>: Memory direct, register indirect, register indirect with offset</td>
+        <td><code>reg</code>: Register direct, <code>op</code>: Memory direct,<br/> 
+        register indirect, register indirect with offset</td>
         <td>Jumps to <code>op</code> if <code>reg != 0</code></td>
     </tr>
     <tr>
         <td><code>JGZ reg, op</code></td>
-        <td><code>reg</code>: Register direct, <code>op</code>: Memory direct, register indirect, register indirect with offset</td>
+        <td><code>reg</code>: Register direct, <code>op</code>: Memory direct,<br/> 
+        register indirect, register indirect with offset</td>
         <td>Jumps to <code>op</code> if <code>reg > 0</code></td>
     </tr>
     <tr>
         <td><code>JGEZ reg, op</code></td>
-        <td><code>reg</code>: Register direct, <code>op</code>: Memory direct, register indirect, register indirect with offset</td>
+        <td><code>reg</code>: Register direct, <code>op</code>: Memory direct,<br/>  
+        register indirect, register indirect with offset</td>
         <td>Jumps to <code>op</code> if <code>reg >= 0</code></td>
     </tr>
     <tr>
         <td><code>JLZ reg, op</code></td>
-        <td><code>reg</code>: Register direct, <code>op</code>: Memory direct, register indirect, register indirect with offset</td>
+        <td><code>reg</code>: Register direct, <code>op</code>: Memory direct,<br/> 
+        register indirect, register indirect with offset</td>
         <td>Jumps to <code>op</code> if <code>reg < 0</code></td>
     </tr>
     <tr>
         <td><code>JLEZ reg, op</code></td>
-        <td><code>reg</code>: Register direct, <code>op</code>: Memory direct, register indirect, register indirect with offset</td>
+        <td><code>reg</code>: Register direct, <code>op</code>: Memory direct,<br/> 
+        register indirect, register indirect with offset</td>
         <td>Jumps to <code>op</code> if <code>reg < 0</code></td>
     </tr>
 </table>
@@ -234,7 +244,7 @@ Size of word is 2 bytes, and size of double word is 2 words
     </tr>
     <tr>
         <td><code>STORE reg, op</code></td>
-        <td><code>reg</code>: Register direct, <code>op</code>: All except Immediate</td>
+        <td><code>reg</code>: Register direct, <code>op</code>: All except immediate</td>
         <td>Stores the data from the register</td>
     </tr>
 </table>
@@ -255,7 +265,7 @@ Size of word is 2 bytes, and size of double word is 2 words
         <td>Pushes the register to the stack</td>
     </tr>
     <tr>
-        <td><code>STORE reg, op</code></td>
+        <td><code>POP reg</code></td>
         <td>Register direct</td>
         <td>Pops the register from the stack</td>
     </tr>
