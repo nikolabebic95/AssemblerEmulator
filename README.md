@@ -215,7 +215,7 @@ Instruction format:
     </tr>
 </table>
 
-### Load/Store instructions
+#### Load/Store instructions
 
 Load, sizes of operands:
 * Unsigned byte, suffix: `UB`
@@ -249,7 +249,7 @@ Size of word is 2 bytes, and size of double word is 2 words
     </tr>
 </table>
 
-### Stack instructions
+#### Stack instructions
 
 * 32-bit double word is always pushed to the stack, and popped from the stack
 
@@ -271,7 +271,7 @@ Size of word is 2 bytes, and size of double word is 2 words
     </tr>
 </table>
 
-### ALU instructions
+#### ALU instructions
 
 * Work only on 32-bit operands
 * Signed arithmetic

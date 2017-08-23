@@ -139,7 +139,7 @@ $(function() {
 <td><code>JLEZ reg, op</code> </td><td><code>reg</code>: Register direct, <code>op</code>: Memory direct,<br />
  register indirect, register indirect with offset </td><td>Jumps to <code>op</code> if <code>reg &lt; 0</code>  </td></tr>
 </table>
-<h3>Load/Store instructions</h3>
+<h4>Load/Store instructions</h4>
 <p>Load, sizes of operands:</p><ul>
 <li>Unsigned byte, suffix: <code>UB</code></li>
 <li>Signed byte, suffix: <code>SB</code></li>
@@ -161,7 +161,7 @@ $(function() {
 <tr>
 <td><code>STORE reg, op</code> </td><td><code>reg</code>: Register direct, <code>op</code>: All except immediate </td><td>Stores the data from the register  </td></tr>
 </table>
-<h3>Stack instructions</h3>
+<h4>Stack instructions</h4>
 <ul>
 <li>32-bit double word is always pushed to the stack, and popped from the stack</li>
 </ul>
@@ -173,7 +173,7 @@ $(function() {
 <tr>
 <td><code>POP reg</code> </td><td>Register direct </td><td>Pops the register from the stack  </td></tr>
 </table>
-<h3>ALU instructions</h3>
+<h4>ALU instructions</h4>
 <ul>
 <li>Work only on 32-bit operands</li>
 <li>Signed arithmetic</li>
