@@ -15,8 +15,9 @@ namespace bnssassembler {
 	 */
 	std::shared_ptr<Operand> parsePcrel(std::string str) {
 		static std::regex regex("[[:space:]]*\\$(" + CONSTANT_TERM + ")");
+		static std::regex not_pcrel("[[:space:]]*\\$[[:space:]]*[-+*/].*[[:space:]]*");
 
-		if (!regex_match(str, regex)) {
+		if (!regex_match(str, regex) || regex_match(str, not_pcrel)) {
 			return nullptr;
 		}
 
