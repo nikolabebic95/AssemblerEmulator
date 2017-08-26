@@ -110,7 +110,7 @@ namespace bnssemulator {
 	}
 
 	Register operator*(const Register &lhs, const Register &rhs) noexcept {
-		auto result_value = static_cast<int64_t>(lhs.value_) + static_cast<int64_t>(rhs.value_);
+		auto result_value = static_cast<int64_t>(lhs.value_) * static_cast<int64_t>(rhs.value_);
 		auto left = static_cast<bool>(lhs.value_ & INT32_MIN);
 		auto right = static_cast<bool>(rhs.value_ & INT32_MIN);
 		auto result = static_cast<bool>(result_value & INT32_MIN);
