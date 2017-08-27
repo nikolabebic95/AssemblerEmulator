@@ -1,0 +1,54 @@
+%YAML 1.2
+---
+# http://www.sublimetext.com/docs/3/syntax.html
+name: MicroRISC Assembly
+file_extensions:
+  - ss
+scope: source.microrisc
+contexts:
+  main:
+    - match: \b(?i)(v)?(int|jmp|call|ret|jz|jnz|jgz|jgez|jlz|jlez|load|loadub|loadsb|loaduw|loadsw|store|storeb|storew|push|pop|add|sub|mul|div|mod|and|or|xor|not|asl|asr)\b
+      scope: keyword.control.instruction.microrisc
+    - match: '\b(?i)(r[0-9]|r1[0-5]|pc|sp)\b'
+      scope: variable.parameter.register.microrisc
+    - match: '\b0\b'
+      scope: constant.numeric.integer.zero.microrisc
+    - match: '\b[1-9][0-9]*\b'
+      scope: constant.numeric.integer.microrisc
+    - match: '\b(0x)(?i)[A-F0-9]+\b'
+      scope: constant.numeric.hex.microrisc
+    - match: '\b(?i)[A-F0-9]+h\b'
+      scope: constant.numeric.hex.microrisc
+    - match: '\b0[0-7]+\b'
+      scope: constant.numeric.octal.microrisc
+    - match: \b(?i)(0|1)+b\b
+      scope: constant.numeric.binary.microrisc
+    - match: \b(?i)(0b)(0|1)+\b
+      scope: constant.numeric.binary.microrisc
+    - match: '(\$|#|\?)'
+      scope: constant.language.microrisc
+    - match: ("|')[[:print:]]("|')
+      scope: string.quoted.single.character.microrisc
+    - match: '\['
+      push:
+        - meta_scope: support.type.memaccess.microrisc
+        - match: '\]'
+          pop: true
+    - match: \b(?i)(db|dw|dd|dup|def|org)\b
+      scope: support.function.directive.microrisc
+    - match: \.(?i)(globl|global|text|data|rodata|bss)[.]?[0-9]*(?-i)\b
+      scope: keyword.control.directive.microrisc
+    - match: (\s)*(;|\/\/).*$
+      scope: comment.line.microrisc
+    - match: '(([a-zA-Z_][a-zA-Z_0-9]*)|\$)[[:space:]]*[:]'
+      scope: variable.function.microrisc
+    - match: '(\+|\-|\*|\/)'
+      scope: keyword.operator.microrisc
+    - match: ','
+      scope: punctuation.separator.microrisc
+    - match: '[.]end\b'
+      scope: keyword.control.directive.microrisc
+      set:
+        - meta_content_scope: comment.microrisc
+    - match: .+?
+      scope: entity.name.function.microrisc
